@@ -45,8 +45,19 @@ public class StudenCourse extends javax.swing.JFrame {
         RegisterCourse = new javax.swing.JButton();
         ViewCourseInfo = new javax.swing.JButton();
         CourseOverviewJPanel = new javax.swing.JPanel();
+        CourseNameLabel = new javax.swing.JLabel();
+        CourseTypeLabel = new javax.swing.JLabel();
+        CourseDescriptionLabel = new javax.swing.JLabel();
+        CourseSemesterLabel = new javax.swing.JLabel();
+        Department = new javax.swing.JLabel();
+        TutorLabel = new javax.swing.JLabel();
+        CourseNameTextField = new javax.swing.JTextField();
+        CourseTypeTextField = new javax.swing.JTextField();
+        CourseSemesterTextField = new javax.swing.JTextField();
+        DepartmentTextField = new javax.swing.JTextField();
+        TutorTextField = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        StudentCourseSearchInfo = new javax.swing.JTextArea();
+        CourseDescriptionTextArea = new javax.swing.JTextArea();
         MenuBar = new javax.swing.JMenuBar();
         MyDashboardMenu = new javax.swing.JMenu();
         Exit = new javax.swing.JMenu();
@@ -218,11 +229,21 @@ public class StudenCourse extends javax.swing.JFrame {
 
         CourseOverviewJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Course Details"));
 
-        StudentCourseSearchInfo.setEditable(false);
-        StudentCourseSearchInfo.setBackground(new java.awt.Color(240, 240, 240));
-        StudentCourseSearchInfo.setColumns(20);
-        StudentCourseSearchInfo.setRows(5);
-        jScrollPane2.setViewportView(StudentCourseSearchInfo);
+        CourseNameLabel.setText("Course Name");
+
+        CourseTypeLabel.setText("Course Type");
+
+        CourseDescriptionLabel.setText("Course Description");
+
+        CourseSemesterLabel.setText("Course Semester");
+
+        Department.setText("Department");
+
+        TutorLabel.setText("Tutor");
+
+        CourseDescriptionTextArea.setColumns(20);
+        CourseDescriptionTextArea.setRows(5);
+        jScrollPane2.setViewportView(CourseDescriptionTextArea);
 
         javax.swing.GroupLayout CourseOverviewJPanelLayout = new javax.swing.GroupLayout(CourseOverviewJPanel);
         CourseOverviewJPanel.setLayout(CourseOverviewJPanelLayout);
@@ -230,15 +251,59 @@ public class StudenCourse extends javax.swing.JFrame {
             CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2)
+                        .addContainerGap())
+                    .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
+                        .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
+                                .addComponent(CourseNameLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CourseNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(CourseTypeLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CourseTypeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
+                            .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
+                                .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CourseSemesterLabel)
+                                    .addComponent(CourseDescriptionLabel)
+                                    .addComponent(Department)
+                                    .addComponent(TutorLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CourseSemesterTextField)
+                                    .addComponent(DepartmentTextField)
+                                    .addComponent(TutorTextField))))
+                        .addGap(12, 12, 12))))
         );
         CourseOverviewJPanelLayout.setVerticalGroup(
             CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
+                .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CourseNameLabel)
+                    .addComponent(CourseTypeLabel)
+                    .addComponent(CourseNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CourseTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(CourseDescriptionLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CourseSemesterLabel)
+                    .addComponent(CourseSemesterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Department)
+                    .addComponent(DepartmentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TutorLabel)
+                    .addComponent(TutorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -315,28 +380,32 @@ public class StudenCourse extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StudenCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StudenCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StudenCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(StudenCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new StudenCourse().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new StudenCourse().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CourseDescriptionLabel;
+    private javax.swing.JTextArea CourseDescriptionTextArea;
+    private javax.swing.JLabel CourseNameLabel;
+    private javax.swing.JTextField CourseNameTextField;
     private javax.swing.JPanel CourseOverviewJPanel;
     private javax.swing.JPanel CourseSearchJPanel;
+    private javax.swing.JLabel CourseSemesterLabel;
+    private javax.swing.JTextField CourseSemesterTextField;
+    private javax.swing.JLabel CourseTypeLabel;
+    private javax.swing.JTextField CourseTypeTextField;
+    private javax.swing.JLabel Department;
+    private javax.swing.JTextField DepartmentTextField;
     private javax.swing.JMenu Exit;
     private javax.swing.JButton LogOutStudent;
     private javax.swing.JMenuBar MenuBar;
@@ -347,8 +416,9 @@ public class StudenCourse extends javax.swing.JFrame {
     private javax.swing.JTextField SearchCourseInput;
     private javax.swing.JList<String> SearchCoursePrintout;
     private javax.swing.JList<String> StudentCourseListPrintout;
-    private javax.swing.JTextArea StudentCourseSearchInfo;
     private javax.swing.JPanel StudentCoursesJPanel;
+    private javax.swing.JLabel TutorLabel;
+    private javax.swing.JTextField TutorTextField;
     private javax.swing.JButton UnregiesterCourse;
     private javax.swing.JButton ViewCourseInfo;
     private javax.swing.JButton ViewStudentInfo;

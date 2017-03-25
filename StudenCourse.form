@@ -393,8 +393,40 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="428" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jScrollPane2" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="CourseNameLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="CourseNameTextField" pref="118" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="CourseTypeLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="CourseTypeTextField" pref="119" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="CourseSemesterLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CourseDescriptionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Department" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="TutorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="CourseSemesterTextField" max="32767" attributes="0"/>
+                                          <Component id="DepartmentTextField" max="32767" attributes="0"/>
+                                          <Component id="TutorTextField" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -402,13 +434,77 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="CourseNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CourseTypeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CourseNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CourseTypeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="CourseDescriptionLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="121" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="CourseSemesterLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CourseSemesterTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Department" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DepartmentTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="TutorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TutorTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
+            <Component class="javax.swing.JLabel" name="CourseNameLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Course Name"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="CourseTypeLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Course Type"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="CourseDescriptionLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Course Description"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="CourseSemesterLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Course Semester"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="Department">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Department"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="TutorLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tutor"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="CourseNameTextField">
+            </Component>
+            <Component class="javax.swing.JTextField" name="CourseTypeTextField">
+            </Component>
+            <Component class="javax.swing.JTextField" name="CourseSemesterTextField">
+            </Component>
+            <Component class="javax.swing.JTextField" name="DepartmentTextField">
+            </Component>
+            <Component class="javax.swing.JTextField" name="TutorTextField">
+            </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -416,12 +512,8 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="StudentCourseSearchInfo">
+                <Component class="javax.swing.JTextArea" name="CourseDescriptionTextArea">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="f0" green="f0" red="f0" type="rgb"/>
-                    </Property>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
