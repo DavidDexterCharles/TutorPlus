@@ -1,6 +1,6 @@
 package comp6601.src.utils;
 
-import comp6601.src.server.Server;
+import comp6601.src.server.TutorPlusApplication;
 import comp6601.src.server.User;
 import comp6601.src.server.UserAccountType;
 
@@ -25,7 +25,7 @@ public class UserFactory {
      */
     public User getUser(String username){
 
-        HashMap<String,Object>  userData = Server.dbHelper.getUserData(username);
+        HashMap<String,Object>  userData = TutorPlusApplication.dbHelper.getUserData(username);
 
         System.out.println(userData.toString());
         if (userData.size() > 0) {

@@ -13,7 +13,7 @@ import java.util.HashMap;
  * Created by jason on 29/03/2017.
  */
 public class DbHelper {
-    private Connection conn;
+    public Connection conn;
 
     public  DbHelper(){
 
@@ -57,7 +57,6 @@ public class DbHelper {
      */
     public HashMap getUserData(String username){
 
-//        ArrayList<Object> userData = new ArrayList<>();
         ArrayList<String> userPrivilegeTypes = new ArrayList<>();
         HashMap<String,Object> userData = new HashMap();
 

@@ -1,37 +1,50 @@
 package comp6601.src.server;
 
-import comp6601.src.utils.DbHelper;
-import comp6601.src.utils.UserFactory;
-
+import java.beans.Statement;
+import java.rmi.Naming;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 
 /**
  * Created by jason on 29/03/2017.
  */
 public class Server {
 
-    public static DbHelper dbHelper;
-    public static UserManager userManager;
-    public static UserFactory userFactory;
-    public static TutorPlusUserInterface tutorPlusUserInterface;
+    public static TutorPlusApplication tutorPlusApplication;
+    public  static String SERVER_ADDR = "localhost";
+    public  static String SERVER_PORT = "1099";
 
     public static void main(String [] args){
 
-        dbHelper =  new DbHelper();
-        userFactory = new UserFactory();
-        userManager = new UserManager();
-        tutorPlusUserInterface = new TutorPlusUserInterface();
+        try {
+            System.out.println("Server starting...");
+            Thread.sleep(500);
+            System.out.println("Instantiating classes...");
+            Thread.sleep(500);
 
-       boolean result =  tutorPlusUserInterface.login("stu_jdoe","adm1n123");
+            tutorPlusApplication = new TutorPlusApplication();
+            System.out.println("Finish Instantiating classes!");
+            Thread.sleep(500);
+            Thread.sleep(500);
+            System.out.printf("Binding the tutorplus user functions to RMI registry at port: %s ...\n",SERVER_PORT);
+            Thread.sleep(500);
+            Naming.rebind("//"+ SERVER_ADDR +":"+SERVER_PORT+"/TutorPlusApplication", tutorPlusApplication);
+            System.out.println("Binding complete!");
 
-        System.out.println(result);
+
+//            boolean result = tutorPlusApplication.login("stu_jdoe", "adm1n123");
+
+//            System.out.println(result);
+        } catch(Exception e){
+
+            e.printStackTrace();
+        }
 
 
         /*
         try {
-            Statement statement = dbHelper.conn.createStatement();
+            Statement statement = TutorPlusApplication.dbHelper.conn();
             String sql = "select * from privilege";
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()){
@@ -41,6 +54,8 @@ public class Server {
             e.printStackTrace();
         }
         */
+
+
 
     }
 }

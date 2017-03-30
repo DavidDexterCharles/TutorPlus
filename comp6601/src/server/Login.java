@@ -19,9 +19,15 @@ public class Login {
     }
 
     public boolean validate(String username, String password){
+        boolean result = false;
+        if (this.username.equalsIgnoreCase(username) && this.password.equalsIgnoreCase(password)){
 
-        if (this.username.equalsIgnoreCase(username) && this.password.equalsIgnoreCase(password)) return true;
-        return false;
+            result = true;
+        }
+
+        this.password = null;
+        this.username = null;
+        return result;
     }
 
     public void setUsername(String username) {

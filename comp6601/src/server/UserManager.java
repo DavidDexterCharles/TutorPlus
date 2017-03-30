@@ -2,6 +2,7 @@ package comp6601.src.server;
 
 import java.util.HashMap;
 
+
 /**
  * Created by jason on 29/03/2017.
  */
@@ -40,7 +41,7 @@ public  class UserManager {
      */
     private boolean addUserFromDb(String username){
 
-        User user = Server.userFactory.getUser(username);
+        User user = TutorPlusApplication.userFactory.getUser(username);
         if (user != null){
             userList.put(username,user);
             return true;
