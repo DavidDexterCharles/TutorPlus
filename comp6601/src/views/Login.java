@@ -1,6 +1,9 @@
 package views;
 
 
+import javax.swing.JOptionPane;
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -74,6 +77,11 @@ public class Login extends javax.swing.JFrame {
         SI_Button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SI_ButtonMouseClicked(evt);
+            }
+        });
+        SI_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SI_ButtonActionPerformed(evt);
             }
         });
 
@@ -281,15 +289,39 @@ public class Login extends javax.swing.JFrame {
 
     private void Login_ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_ExitMouseClicked
         // TODO add your handling code here:
+        Exit(0);
     }//GEN-LAST:event_Login_ExitMouseClicked
 
     private void SI_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SI_ButtonMouseClicked
         // TODO add your handling code here:
+        if(SI_Username.getText().equals("123") && SI_Password.getText().equals("123")) 
+        {
+            StudentDashboard regFace =new StudentDashboard();
+            regFace.setVisible(true);
+            dispose();
+        }
+        else if(SI_Username.getText().equals("1234") && SI_Password.getText().equals("1234")) 
+        {
+            TutorDashboard regFace =new TutorDashboard();
+            regFace.setVisible(true);
+            dispose();
+        }        
+        else 
+        {
+            JOptionPane.showMessageDialog(null,"Wrong Password / Username");
+            SI_Username.setText("");
+            SI_Password.setText("");
+            SI_Username.requestFocus();
+        }
     }//GEN-LAST:event_SI_ButtonMouseClicked
 
     private void SU_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SU_ButtonMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_SU_ButtonMouseClicked
+
+    private void SI_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SI_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SI_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -343,4 +375,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel Welcome_JPanel;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void Exit(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
