@@ -509,12 +509,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="CreateTutorial" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="ViewTutorialInfo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="DeleteTutorial" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -527,10 +525,6 @@
                       <Component id="jScrollPane3" min="-2" pref="288" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="ViewTutorialInfo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="CreateTutorial" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="DeleteTutorial" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -564,16 +558,6 @@
             <Component class="javax.swing.JButton" name="ViewTutorialInfo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Tutorial Information"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="CreateTutorial">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Create New Tutorial"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="DeleteTutorial">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Delete Tutorial"/>
               </Properties>
             </Component>
           </SubComponents>

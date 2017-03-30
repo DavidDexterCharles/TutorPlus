@@ -56,8 +56,6 @@ public class TutorCourse extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         TutorialPrintout = new javax.swing.JList<>();
         ViewTutorialInfo = new javax.swing.JButton();
-        CreateTutorial = new javax.swing.JButton();
-        DeleteTutorial = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         PageLabel2 = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
@@ -293,10 +291,6 @@ public class TutorCourse extends javax.swing.JFrame {
 
         ViewTutorialInfo.setText("View Tutorial Information");
 
-        CreateTutorial.setText("Create New Tutorial");
-
-        DeleteTutorial.setText("Delete Tutorial");
-
         javax.swing.GroupLayout CourseTutorialJPanelLayout = new javax.swing.GroupLayout(CourseTutorialJPanel);
         CourseTutorialJPanel.setLayout(CourseTutorialJPanelLayout);
         CourseTutorialJPanelLayout.setHorizontalGroup(
@@ -305,11 +299,9 @@ public class TutorCourse extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(CourseTutorialJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3)
-                    .addComponent(CreateTutorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(CourseTutorialJPanelLayout.createSequentialGroup()
                         .addComponent(ViewTutorialInfo)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(DeleteTutorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         CourseTutorialJPanelLayout.setVerticalGroup(
@@ -319,10 +311,6 @@ public class TutorCourse extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(ViewTutorialInfo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CreateTutorial)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DeleteTutorial)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -452,9 +440,7 @@ public class TutorCourse extends javax.swing.JFrame {
     private javax.swing.JPanel CourseTutorialJPanel;
     private javax.swing.JComboBox<String> CourseTypeComboBox;
     private javax.swing.JLabel CourseTypeLabel;
-    private javax.swing.JButton CreateTutorial;
     private javax.swing.JButton DeleteCourse;
-    private javax.swing.JButton DeleteTutorial;
     private javax.swing.JLabel Department;
     private javax.swing.JComboBox<String> DepartmentComboBox;
     private javax.swing.JButton EditCourse;
@@ -463,8 +449,6 @@ public class TutorCourse extends javax.swing.JFrame {
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MyDashboardMenu;
     private javax.swing.JPanel MyProfileJPanel;
-    private javax.swing.JLabel PageLabel;
-    private javax.swing.JLabel PageLabel1;
     private javax.swing.JLabel PageLabel2;
     private javax.swing.JComboBox<String> SemesterComboBox;
     private javax.swing.JPanel StudentCoursesJPanel;
@@ -478,8 +462,6 @@ public class TutorCourse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
