@@ -5,12 +5,12 @@ package views;
  *
  * @author elleb
  */
-public class StudentDasboard extends javax.swing.JFrame {
+public class StudentDashboard extends javax.swing.JFrame {
 
     /**
-     * Creates new form StudentDasboard
+     * Creates new form StudentDashboard
      */
-    public StudentDasboard() {
+    public StudentDashboard() {
         initComponents();
     }
 
@@ -326,7 +326,7 @@ public class StudentDasboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StudentDasboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         
@@ -334,7 +334,7 @@ public class StudentDasboard extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new StudentDasboard().setVisible(true);
+            new StudentDashboard().setVisible(true);
         });
     }
 
