@@ -1,0 +1,1325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3855ace5-1656-43ae-8da4-d0311221666d" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="development" />
+      </map>
+    </option>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/comp6601/src/server/TutorialComponent.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/CourseComponent.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/Priviledge.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/UserAccount.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/utils/JDBCConnection.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/TutorialManager.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/TutorPlusUserInterface.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/client/Privilege.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/client/TutorPlusUserFunctionIntf.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/Client.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/TutorPlusUserFunctionIntf.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/client/User.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/client/Login.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/client/UserAccountType.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/utils/UserSession.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/Server.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/client/Client.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/Tutor.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/Privilege.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/Student.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/UserAccountType.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/StudentAccountType.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/TutorAccountType.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/utils/UserFactory.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/User.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/Login.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/utils/DbHelper.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/UserManager.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/client/StudentAccountType.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/client/TutorAccountType.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-11" />
+    <option name="y" value="49" />
+    <option name="width" value="2182" />
+    <option name="height" value="1402" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ojdbc6" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ojdbc6.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comp6601" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comp6601" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comp6601" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comp6601" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comp6601" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../COMP6601_ASG_2_JPETERS" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="comp6601.src.client" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jason\IdeaProjects\TutorPlus\comp6601\src\client" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/nbproject/private/private.xml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/controllers/TutorPlusUserFunctionIntf.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/controllers/TutorialClient.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/controllers/login.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateCourse$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateCourse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutor$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutor$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutor$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutor$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutor$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutor$6.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutor.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutor.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutorial$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutorial.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/CreateTutorial.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditStudent$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditStudent$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditStudent.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditStudent.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditTutor$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditTutor$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditTutor$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditTutor$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditTutor$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditTutor$6.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditTutor.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/EditTutor.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/Login$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/Login$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/Login$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/Login$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/Login.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/Login.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudenCourse$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudenCourse$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudenCourse$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudenCourse$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudenCourse$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudenCourse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudenCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudentDashboard$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudentDashboard$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudentDashboard$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudentDashboard$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudentDashboard$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudentDashboard.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/StudentDashboard.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorCourse$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorCourse$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorCourse$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorCourse$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorCourse$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorCourse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorDashboard$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorDashboard$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorDashboard$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorDashboard$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorDashboard.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/TutorDashboard.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/ViewTutorial$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/ViewTutorial$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/ViewTutorial.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/views/ViewTutorial.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/controllers/TutorPlusUserFunctionIntf.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/controllers/TutorialClient.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/controllers/login.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/CreateCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/CreateCourse.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/CreateTutor.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/CreateTutor.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/CreateTutorial.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/CreateTutorial.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/EditStudent.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/EditStudent.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/EditTutor.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/EditTutor.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/Login.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/Login.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/StudenCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/StudenCourse.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/StudentDashboard.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/StudentDashboard.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/TutorCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/TutorCourse.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/TutorDashboard.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/TutorDashboard.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/ViewTutorial.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/views/ViewTutorial.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateCourse$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateCourse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutor$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutor$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutor$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutor$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutor$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutor$6.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutor.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutor.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutorial$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutorial.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/CreateTutorial.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditStudent$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditStudent$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditStudent.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditStudent.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditTutor$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditTutor$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditTutor$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditTutor$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditTutor$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditTutor$6.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditTutor.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/EditTutor.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/Login$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/Login$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/Login$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/Login.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/Login.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudenCourse$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudenCourse$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudenCourse$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudenCourse$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudenCourse$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudenCourse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudenCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudentDasboard$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudentDasboard$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudentDasboard$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudentDasboard$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudentDasboard$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudentDasboard.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/StudentDasboard.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorCourse$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorCourse$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorCourse$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorCourse$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorCourse$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorCourse.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorDashboard$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorDashboard$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorDashboard$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorDashboard$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorDashboard.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/TutorDashboard.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/build/classes/comp6601/Comp6601.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/CreateCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/CreateCourse.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/CreateTutor.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/CreateTutor.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/CreateTutorial.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/CreateTutorial.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/EditStudent.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/EditStudent.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/EditTutor.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/EditTutor.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/Login.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/Login.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/StudenCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/StudenCourse.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/StudentDasboard.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/StudentDasboard.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/TutorCourse.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/TutorCourse.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/TutorDashboard.form</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/TutorDashboard.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/comp6601/src/comp6601/Comp6601.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunManager" selected="Application.Client">
+    <configuration default="false" name="CreateCourse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="CreateCourse" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TutorPlus" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="comp6601.src.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="comp6601.src.server.Server" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TutorPlus" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="comp6601.src.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="comp6601.src.client.Client" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TutorPlus" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TutorPlus" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.CreateCourse" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Server" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Client" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.Client" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Server" />
+        <item index="2" class="java.lang.String" itemvalue="Application.CreateCourse" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3855ace5-1656-43ae-8da4-d0311221666d" name="Default" comment="" />
+      <created>1490502664636</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1490502664636</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-11" y="49" width="2182" height="1402" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2930891" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32972524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24235182" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972524" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/comp6601/src/server/Server.java</url>
+          <line>19</line>
+          <properties field="SERVER_PORT" class="comp6601.src.server.Server" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/comp6601/src/client/Client.java</url>
+          <line>29</line>
+          <properties field="studentMenuOptionList" class="comp6601.src.client.Client" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/comp6601/src/utils/DbHelper.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/comp6601/src/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusUserFunctionIntf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/ComponentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorialManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/utils/DbHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/UserAccountType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/UserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Privilege.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Login.form" />
+    <entry file="file://$PROJECT_DIR$/CreateCourse.java" />
+    <entry file="file://$PROJECT_DIR$/comp6601/src/comp6601/Comp6601.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorialComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/CourseComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/ComponentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorialManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/client/TutorPlusUserFunctionIntf.java" />
+    <entry file="file://$PROJECT_DIR$/comp6601/src/client/Privilege.java" />
+    <entry file="file://$PROJECT_DIR$/comp6601/src/utils/JDBCConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/client/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/client/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/utils/UserSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="32" column="52" lean-forward="false" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/client/UserAccountType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Tutorial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Tutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Privilege.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/StudentAccountType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="11" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/UserAccountType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorAccountType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/utils/UserFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/utils/DbHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="128" column="47" lean-forward="false" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="175" column="77" lean-forward="false" selection-start-line="175" selection-start-column="77" selection-end-line="175" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusUserFunctionIntf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="68" column="25" lean-forward="true" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/UserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/client/StudentAccountType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/client/TutorAccountType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>TutorPlus</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>ojdbc6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
