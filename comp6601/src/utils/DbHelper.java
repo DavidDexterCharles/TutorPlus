@@ -2,10 +2,7 @@ package comp6601.src.utils;
 
 import comp6601.src.server.User;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -95,6 +92,53 @@ public class DbHelper {
             return userData;
         }
         
+    }
+
+    public void saveUser(User user){
+        try {
+
+            int nextSeqVal = 0;
+            Statement statement = conn.createStatement();
+            String sql = "select user_seq.nextval from dual\n";
+
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()) {
+                nextSeqVal = rs.getInt(1);
+            }
+
+            System.out.println(nextSeqVal);
+            System.out.println(user.getLastName());
+
+
+            int userAccountId;
+            if (user.getAccountType().getAccountTypeName().equalsIgnoreCase("student")){
+                userAccountId = 1;
+            }
+            else {
+                userAccountId =2;
+            }
+            String saveUserSql = "INSERT INTO t_user\n" +
+                    "VALUES (?,?,?,?,?,?,?,?)\n";
+
+            PreparedStatement saveUser = conn.prepareStatement(saveUserSql);
+            saveUser.setInt(1, nextSeqVal);
+            saveUser.setInt(2, userAccountId);
+            saveUser.setString(3, user.getFirstName());
+            saveUser.setString(4, user.getLastName());
+            saveUser.setString(5, "");
+            saveUser.setString(6, user.getEmail());
+            saveUser.setString(7, user.login.getUsername());
+            saveUser.setString(8, user.login.getPassword());
+            saveUser.execute();
+
+
+
+        }catch (Exception e){
+
+            e.printStackTrace();
+
+        }
+
     }
 
 }

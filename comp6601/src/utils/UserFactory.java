@@ -1,8 +1,6 @@
 package comp6601.src.utils;
 
-import comp6601.src.server.TutorPlusApplication;
-import comp6601.src.server.User;
-import comp6601.src.server.UserAccountType;
+import comp6601.src.server.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +10,7 @@ import java.util.HashMap;
  */
 public class UserFactory {
 
-    public User getUser(){
+    public static User getNewInstance(){
 
         return new User();
 
@@ -23,7 +21,7 @@ public class UserFactory {
      * @param username
      * @return A tutor plus user object
      */
-    public User getUser(String username){
+    public static  User getUser(String username){
 
         HashMap<String,Object>  userData = TutorPlusApplication.dbHelper.getUserData(username);
 
@@ -37,11 +35,26 @@ public class UserFactory {
             String password = (String) userData.get("password");
             ArrayList<String> privileges = (ArrayList<String>) userData.get("privileges");
 
-            UserAccountType userAccountType = new UserAccountType(accountName, privileges);
-            User user = new User(userId,firstName, lastName, email, userAccountType,username,password);
+            UserAccountType userAccountType;
+            if (accountName.equalsIgnoreCase("student")){
+                 userAccountType = new StudentAccountType();
+                userAccountType.addPrivileges(privileges);
+            }
+            else{
+                 userAccountType = new TutorAccountType();
+                userAccountType.addPrivileges(privileges);
+            }
+//            UserAccountType userAccountType = new UserAccountType(accountName, privileges);
+            System.out.println("accountType: " + userAccountType.getAccountTypeName());
 
+//            if (accountName.equalsIgnoreCase("student")){
+                return new User (userId,firstName, lastName, email, userAccountType,username,password);
+//            }
+//            if (accountName.equalsIgnoreCase("tutor")) {
+//                return new Tutor(userId,firstName, lastName, email, userAccountType,username,password);
 
-            return user;
+//            }
+
         }
         return null;
     }

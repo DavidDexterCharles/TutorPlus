@@ -9,16 +9,28 @@ import java.util.HashMap;
  */
 public class UserSession {
 
-    private HashMap<String,String> userSessionList = new HashMap<>();
+    private HashMap<String,String> userSessionIdList = new HashMap<>();
 
     public UserSession(){
 
-        this.userSessionList = new HashMap<>();
+        this.userSessionIdList = new HashMap<>();
     }
 
-    public void addUserToSessionList(String username){
+    public void addUserToSessionList(String username, String usersessionId){
 
-        this.userSessionList.put(username,username);
+        this.userSessionIdList.put(username,usersessionId);
+    }
+
+    public void removeUserFromSessionList (String username){
+
+        this.userSessionIdList.remove(username);
+
+
+    }
+
+    public String getUserSessionId(String username){
+
+        return this.userSessionIdList.get(username);
     }
 
 

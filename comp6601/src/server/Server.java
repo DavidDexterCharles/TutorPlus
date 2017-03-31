@@ -2,6 +2,10 @@ package comp6601.src.server;
 
 import java.beans.Statement;
 import java.rmi.Naming;
+import java.rmi.NoSuchObjectException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -13,48 +17,52 @@ public class Server {
 
     public static TutorPlusApplication tutorPlusApplication;
     public  static String SERVER_ADDR = "localhost";
-    public  static String SERVER_PORT = "1099";
+    public  static int SERVER_PORT = 1099;
 
     public static void main(String [] args){
 
         try {
             System.out.println("Server starting...");
             Thread.sleep(500);
-            System.out.println("Instantiating classes...");
+            System.out.println("Starting RMI Registry...");
             Thread.sleep(500);
 
-            tutorPlusApplication = new TutorPlusApplication();
-            System.out.println("Finish Instantiating classes!");
+//            Registry registry = LocateRegistry.getRegistry(SERVER_PORT);
+//            if (registry == null){
+                LocateRegistry.createRegistry(SERVER_PORT);
+
+//            }
+            System.out.println("Done!");
             Thread.sleep(500);
+            System.out.println("Instantiating classes...");
+            Thread.sleep(500);
+            tutorPlusApplication = new TutorPlusApplication();
+            System.out.println("Done!");
             Thread.sleep(500);
             System.out.printf("Binding the tutorplus user functions to RMI registry at port: %s ...\n",SERVER_PORT);
             Thread.sleep(500);
-            Naming.rebind("//"+ SERVER_ADDR +":"+SERVER_PORT+"/TutorPlusApplication", tutorPlusApplication);
             System.out.println("Binding complete!");
+            Naming.rebind("//"+ SERVER_ADDR +":"+SERVER_PORT+"/TutorPlusApplication", tutorPlusApplication);
+
+//            Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//
+//                    System.out.println("fdsafasfsadfas");
+//                    try {
+//                        UnicastRemoteObject.unexportObject(tutorPlusApplication,true);
+//                    } catch (NoSuchObjectException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//            }));
 
 
-//            boolean result = tutorPlusApplication.login("stu_jdoe", "adm1n123");
-
-//            System.out.println(result);
         } catch(Exception e){
 
             e.printStackTrace();
         }
-
-
-        /*
-        try {
-            Statement statement = TutorPlusApplication.dbHelper.conn();
-            String sql = "select * from privilege";
-            ResultSet rs = statement.executeQuery(sql);
-            while (rs.next()){
-                System.out.println("privilege id: " + rs.getInt(1) + " privilage name: " + rs.getString("privilege_name"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        */
-
 
 
     }

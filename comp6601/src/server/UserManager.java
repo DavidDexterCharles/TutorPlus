@@ -1,5 +1,7 @@
 package comp6601.src.server;
 
+import comp6601.src.utils.UserFactory;
+
 import java.util.HashMap;
 
 
@@ -35,6 +37,35 @@ public  class UserManager {
        return user;
     }
 
+    public User createUser(HashMap userDetails){
+
+        User user = UserFactory.getNewInstance();
+        user.setFirstName((String)userDetails.get("firstName"));
+        user.setLastName((String)userDetails.get("lastName"));
+        user.setEmail((String)userDetails.get("email"));
+        user.login.setUsername((String)userDetails.get("username"));
+        user.login.setPassword((String)userDetails.get("password"));
+
+        String accountType = (String)userDetails.get("accountType");
+
+        UserAccountType userAccountType;
+        if (accountType.equalsIgnoreCase("student")){
+             userAccountType = new StudentAccountType();
+        }
+        else {
+             userAccountType = new TutorAccountType();
+        }
+        user.setAccountType(userAccountType);
+
+        userList.put(user.login.getUsername(),user);
+
+        TutorPlusApplication.dbHelper.saveUser(user);
+
+        return user;
+
+    }
+
+    //================= Helpers ===================//
     /**
      * Adds a user to the system from the database
      * @param username
@@ -50,8 +81,7 @@ public  class UserManager {
 
     }
 
-    public void registerNewUser(){
 
-    }
+    //================End of Helpers===============//
 
 }

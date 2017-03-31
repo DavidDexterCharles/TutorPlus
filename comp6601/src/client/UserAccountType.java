@@ -1,4 +1,4 @@
-package comp6601.src.server;
+package comp6601.src.client;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -6,15 +6,16 @@ import java.util.ArrayList;
 /**
  * Created by jason on 29/03/2017.
  */
-public abstract class UserAccountType implements Serializable {
+public class UserAccountType implements Serializable {
 
 //    private int accountTypeId;
-    protected String accountTypeName;
-    protected ArrayList<String> accountPriviledges;
+    private String accountTypeName;
+    private ArrayList<String> accountPriviledges;
 
-
-
-    public void addPrivileges (ArrayList<String> accountPrivileges){
+    public UserAccountType(String accountTypeName, ArrayList<String> accountPrivileges){
+        this.accountPriviledges = new ArrayList<>();
+//        this.accountTypeId = accountTypeId;
+        this.accountTypeName = accountTypeName;
 
         for (String privilege: accountPrivileges) {
             this.accountPriviledges.add(privilege);

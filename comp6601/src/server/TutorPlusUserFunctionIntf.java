@@ -17,6 +17,11 @@ public interface TutorPlusUserFunctionIntf  extends Remote {
     public User login(String username, String password) throws RemoteException;
 
     /**
+     * Allows a user to terminate a session in tutorplus
+     */
+    public void logout (String username) throws RemoteException;
+
+    /**
      * Creates a new tutorplus user
      * @throws RemoteException
      */
