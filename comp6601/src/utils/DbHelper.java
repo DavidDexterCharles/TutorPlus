@@ -106,8 +106,8 @@ public class DbHelper {
                 nextSeqVal = rs.getInt(1);
             }
 
-            System.out.println(nextSeqVal);
-            System.out.println(user.getLastName());
+            //System.out.println(nextSeqVal);
+            //System.out.println(user.getLastName());
 
 
             int userAccountId;

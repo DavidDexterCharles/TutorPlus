@@ -10,6 +10,7 @@ import javax.crypto.spec.PBEKeySpec;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
@@ -41,7 +42,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     public User login(String username, String password) throws RemoteException{
 
         try {
-            password = this.getHashedPassword(password.toCharArray());
+            password = this.getHashedPassword(password);
 
             User user = userManager.findUser(username);
 
@@ -53,15 +54,13 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
                     String sessionId = this.nextSessionId();
                     user.setUserSessionId(sessionId);
                     userSession.addUserToSessionList(username, sessionId);
-                    System.out.println(userSession.getUserSessionId(username));
+//                    System.out.println(userSession.getUserSessionId(username));
 
 
                     return user;
                 }
             }
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (InvalidKeySpecException e) {
             e.printStackTrace();
         }
         return null;
@@ -84,15 +83,13 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
 
         try {
             String password = (String) userData.get("password");
-            password = this.getHashedPassword(password.toCharArray());
+            password = this.getHashedPassword(password);
 
             userData.put("password",password);
             userManager.createUser(userData);
 
 
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (InvalidKeySpecException e) {
             e.printStackTrace();
         }
 
@@ -136,15 +133,31 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
      * @throws NoSuchAlgorithmException
      * @throws InvalidKeySpecException
      */
-    private String getHashedPassword(char[] password) throws NoSuchAlgorithmException, InvalidKeySpecException {
-        SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
-        int iterations = 65536;
-        int keyLength = 128;
-        salt = saltStr.getBytes();
-        PBEKeySpec spec = new PBEKeySpec( password, salt, iterations, keyLength );
-        SecretKey key = secretKeyFactory.generateSecret( spec );
-        byte[] result = key.getEncoded( );
-        return new String(result);
+    private String getHashedPassword(String password) throws NoSuchAlgorithmException {
+//        SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
+//        int iterations = 65536;
+//        int keyLength = 128;
+//        salt = saltStr.getBytes();
+//        PBEKeySpec spec = new PBEKeySpec( password, salt, iterations, keyLength );
+//        SecretKey key = secretKeyFactory.generateSecret( spec );
+//        byte[] result = key.getEncoded( );
+//        return new String(result);
+
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        md.update(password.getBytes());
+
+        byte byteData[] = md.digest();
+
+        //convert the byte to hex format method 1
+        StringBuffer stringBuffer = new StringBuffer();
+        for (int i = 0; i < byteData.length; i++) {
+            stringBuffer.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        }
+
+        return stringBuffer.toString();
+
+
+
     }
     //=======================================End of Helpers==========================================
 

@@ -41,11 +41,11 @@ public class UserFactory {
                 userAccountType.addPrivileges(privileges);
             }
             else{
-                 userAccountType = new TutorAccountType();
+                userAccountType = new TutorAccountType();
                 userAccountType.addPrivileges(privileges);
             }
 //            UserAccountType userAccountType = new UserAccountType(accountName, privileges);
-            System.out.println("accountType: " + userAccountType.getAccountTypeName());
+//            System.out.println("accountType: " + userAccountType.getAccountTypeName());
 
 //            if (accountName.equalsIgnoreCase("student")){
                 return new User (userId,firstName, lastName, email, userAccountType,username,password);

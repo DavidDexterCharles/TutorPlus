@@ -22,6 +22,8 @@ public class Login implements Serializable {
 
     public boolean validate(String username, String password){
         boolean result = false;
+
+        System.out.println("storedpw: "+ this.password + "sentpw: "+ password);
         if (this.username.equalsIgnoreCase(username) && this.password.equalsIgnoreCase(password)){
 
             result = true;

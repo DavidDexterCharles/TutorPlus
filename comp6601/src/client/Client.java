@@ -25,7 +25,8 @@ public class Client {
             "\nChoose option from menu below\n",
             "1. Manage Tutorials\n",
             "2. Manage Users\n",
-            "-1. Logout\n"};
+            "3. logout\n",
+            "-1. Exit\n"};
 
     public static String[] studentMenuOptionList = {
             "\nChoose option from menu below\n",
