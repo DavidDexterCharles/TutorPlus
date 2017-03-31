@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3855ace5-1656-43ae-8da4-d0311221666d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/CreateCourse.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/CreateCourse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/CreateTutor.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/CreateTutor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/CreateTutorial.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/CreateTutorial.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/EditStudent.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/EditStudent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/EditTutor.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/EditTutor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/Login.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/Login.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/StudenCourse.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/StudenCourse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/StudentDasboard.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/StudentDasboard.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/TutorCourse.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/TutorCourse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/TutorDashboard.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comp6601/src/TutorDashboard.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/comp6601/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,7 +18,18 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="build.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/comp6601/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1077">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -86,6 +78,7 @@
         <option value="$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java" />
         <option value="$PROJECT_DIR$/comp6601/src/utils/DbHelper.java" />
         <option value="$PROJECT_DIR$/comp6601/src/server/UserManager.java" />
+        <option value="$PROJECT_DIR$/comp6601/build.xml" />
       </list>
     </option>
   </component>
@@ -136,24 +129,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="comp6601" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TutorPlus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TutorPlus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="comp6601" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -487,7 +462,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24235182" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32972524" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972524" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -534,22 +509,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/comp6601/src/utils/DbHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="128" column="47" lean-forward="false" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comp6601/src/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="175" column="77" lean-forward="false" selection-start-line="175" selection-start-column="77" selection-end-line="175" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusUserFunctionIntf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -634,6 +593,22 @@
     <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusUserFunctionIntf.java" />
     <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java" />
     <entry file="file://$PROJECT_DIR$/comp6601/src/server/UserManager.java" />
+    <entry file="file://$PROJECT_DIR$/comp6601/manifest.mf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1077">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
