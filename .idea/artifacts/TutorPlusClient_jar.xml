@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="TutorPlusClient:jar">
+    <output-path>$PROJECT_DIR$/../TutorPlusClient</output-path>
+    <root id="archive" name="TutorPlus.jar">
+      <element id="module-output" name="TutorPlus" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/ojdbc6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

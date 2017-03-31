@@ -25,7 +25,7 @@ public class UserFactory {
 
         HashMap<String,Object>  userData = TutorPlusApplication.dbHelper.getUserData(username);
 
-        System.out.println(userData.toString());
+//        System.out.println(userData.toString());
         if (userData.size() > 0) {
             int userId = (int) userData.get("userId");
             String firstName = (String) userData.get("firstName");

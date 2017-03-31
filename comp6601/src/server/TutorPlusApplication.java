@@ -4,10 +4,16 @@ import comp6601.src.utils.DbHelper;
 import comp6601.src.utils.UserFactory;
 import comp6601.src.utils.UserSession;
 
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.security.spec.InvalidKeySpecException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -20,6 +26,8 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     public static UserManager userManager;
     public static UserFactory userFactory;
     public static UserSession userSession;
+    String saltStr = "#$%&@abcd";
+    byte[] salt = new byte[16];
 
     public TutorPlusApplication() throws RemoteException{
 
@@ -32,21 +40,29 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     @Override
     public User login(String username, String password) throws RemoteException{
 
-        User user = userManager.findUser(username);
+        try {
+            password = this.getHashedPassword(password.toCharArray());
 
-        if (user != null){
+            User user = userManager.findUser(username);
 
-           boolean result = user.login.validate(username,password);
-           if (result){
+            if (user != null) {
 
-              String sessionId =  this.nextSessionId();
-              user.setUserSessionId(sessionId);
-              userSession.addUserToSessionList(username,sessionId);
-              System.out.println(userSession.getUserSessionId(username));
+                boolean result = user.login.validate(username, password);
+                if (result) {
+
+                    String sessionId = this.nextSessionId();
+                    user.setUserSessionId(sessionId);
+                    userSession.addUserToSessionList(username, sessionId);
+                    System.out.println(userSession.getUserSessionId(username));
 
 
-               return user;
-           }
+                    return user;
+                }
+            }
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
         }
         return null;
     }
@@ -66,16 +82,71 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     @Override
     public void registerUser(HashMap userData) throws RemoteException {
 
-        userManager.createUser(userData);
+        try {
+            String password = (String) userData.get("password");
+            password = this.getHashedPassword(password.toCharArray());
+
+            userData.put("password",password);
+            userManager.createUser(userData);
+
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        }
 
     }
 
+    @Override
+    public void createTutorial() throws RemoteException {
 
+    }
+
+    @Override
+    public void editTutorial(Tutorial tutorial) throws RemoteException {
+
+    }
+
+    @Override
+    public void submitTutorial(Tutorial tutorial) throws RemoteException {
+
+    }
+
+    @Override
+    public ArrayList<Tutorial> getTutorialList() throws RemoteException {
+        return null;
+    }
+
+    //=======================================Helpers==========================================
+    /**
+     * Gets a new session token for an authenticated userr
+     * @return A randomly generated string token
+     */
     private String nextSessionId() {
 
        SecureRandom random = new SecureRandom();
        return new BigInteger(130, random).toString(32);
     }
+
+    /**
+     * Hashes a passoword
+     * @param password
+     * @return A hashed password
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeySpecException
+     */
+    private String getHashedPassword(char[] password) throws NoSuchAlgorithmException, InvalidKeySpecException {
+        SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
+        int iterations = 65536;
+        int keyLength = 128;
+        salt = saltStr.getBytes();
+        PBEKeySpec spec = new PBEKeySpec( password, salt, iterations, keyLength );
+        SecretKey key = secretKeyFactory.generateSecret( spec );
+        byte[] result = key.getEncoded( );
+        return new String(result);
+    }
+    //=======================================End of Helpers==========================================
 
 
 }

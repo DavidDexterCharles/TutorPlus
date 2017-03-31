@@ -1,7 +1,6 @@
 package comp6601.src.client;
 
-import comp6601.src.server.Login;
-import comp6601.src.server.UserAccountType;
+import comp6601.src.server.Privilege;
 
 import java.io.Serializable;
 
@@ -10,18 +9,19 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
 
-    private int userId;
-    private String firstName;
-    private String lastName;
-    private String otherName;
-    private String email;
-    private boolean isEnabled;
-    private UserAccountType accountType;
-    private String userSessionId;
+    protected int userId;
+    protected String firstName;
+    protected String lastName;
+    protected String otherName;
+    protected String email;
+    protected boolean isEnabled;
+    protected UserAccountType accountType;
+    protected String userSessionId;
+    protected Privilege userPrivileges;
     public Login login;
 
     public User(int userId, String firstName, String lastName, String email, UserAccountType accountType,
-                String username, String password){
+                   String username, String password){
 
         this.userId = userId;
         this.firstName = firstName;
@@ -31,15 +31,15 @@ public class User implements Serializable {
         this.accountType = accountType;
 
         this.login = new Login(username,password);
+//        this.userPrivileges = new Privilege(true,true,)
+//        this.userPrivileges.
 
     }
-    public User(int userId){
-        this.userId = userId;
+
+    public User (){
+
         this.login = new Login();
-
-    }
-
-    public User(){
+        this.isEnabled = true;
 
     }
 
@@ -77,6 +77,11 @@ public class User implements Serializable {
         return userSessionId;
     }
 
+    public Privilege getUserPrivileges() {
+        return userPrivileges;
+    }
+
+
     //setters
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -108,5 +113,9 @@ public class User implements Serializable {
 
     public void setUserSessionId(String userSessionId) {
         this.userSessionId = userSessionId;
+    }
+
+    public void setUserPrivileges(Privilege userPrivileges) {
+        this.userPrivileges = userPrivileges;
     }
 }

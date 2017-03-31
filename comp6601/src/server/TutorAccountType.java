@@ -9,6 +9,6 @@ public class TutorAccountType extends UserAccountType {
 
     public TutorAccountType() {
         this.accountPriviledges = new ArrayList<>();
-        this.accountTypeName = "student";
+        this.accountTypeName = "tutor";
     }
 }

@@ -1,7 +1,5 @@
 package comp6601.src.client;
 
-import comp6601.src.server.UserAccountType;
-
 import java.util.ArrayList;
 
 /**
@@ -9,7 +7,7 @@ import java.util.ArrayList;
  */
 public class StudentAccountType extends UserAccountType {
 
-    public StudentAccountType( ){
+    public StudentAccountType ( ){
         this.accountPriviledges = new ArrayList<>();
         this.accountTypeName = "student";
 

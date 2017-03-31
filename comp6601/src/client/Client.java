@@ -87,8 +87,8 @@ public class Client {
                                 if (currentUser != null) {
 
                                     UserAccountType accountType = currentUser.getAccountType();
-                                    System.out.println(currentUser.getFirstName());
-                                    System.out.println(currentUser.getEmail());
+//                                    System.out.println(currentUser.getFirstName());
+//                                    System.out.println(currentUser.getEmail());
                                     try {
                                         //==============================User Menu===========================
                                         while (currentUser != null) {
@@ -112,7 +112,7 @@ public class Client {
                                             switch (option) {
 
                                                 case 1:
-                                                    System.out.println(currentUser.getUserSessionId());
+//                                                    System.out.println(currentUser.getUserSessionId());
 
                                                     break;
                                                 case 2:

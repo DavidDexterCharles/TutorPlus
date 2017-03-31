@@ -1,4 +1,7 @@
-package comp6601.src.server;
+package comp6601.src.client;
+
+import comp6601.src.server.Tutorial;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -20,7 +23,7 @@ public interface TutorPlusUserFunctionIntf  extends Remote {
     /**
      * Allows a user to terminate a session in tutorplus
      */
-    public void logout (String username) throws RemoteException;
+    public void logout(String username) throws RemoteException;
 
     /**
      * Creates a new tutorplus user
