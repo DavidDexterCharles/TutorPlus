@@ -5,5 +5,18 @@ package comp6601.src.server;
  */
 public abstract class TutorialComponent {
 
+    private String componentName;
+
+    /**
+     * Get the name of a component
+     * @return
+     */
+    public abstract String getComponentName();
+
+    /**
+     * Verifies if a component is registered
+     * @return
+     */
+    public abstract boolean isRegisteredComponent();
 
 }

@@ -27,6 +27,8 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     public static UserManager userManager;
     public static UserFactory userFactory;
     public static UserSession userSession;
+    public static ComponentManager componentManager;
+
     String saltStr = "#$%&@abcd";
     byte[] salt = new byte[16];
 
@@ -36,6 +38,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
         userFactory = new UserFactory();
         userSession = new UserSession();
         userManager = new UserManager();
+        componentManager = new ComponentManager();
     }
 
     @Override

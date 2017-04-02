@@ -7,25 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3855ace5-1656-43ae-8da4-d0311221666d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/server/Login.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/Login.class" afterPath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/StudentAccountType.class" afterPath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/StudentAccountType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/TutorAccountType.class" afterPath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/TutorAccountType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/TutorPlusUserFunctionIntf.class" afterPath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/TutorPlusUserFunctionIntf.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/User.class" afterPath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/UserAccountType.class" afterPath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/client/UserAccountType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/server/TutorPlusApplication.class" afterPath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/server/TutorPlusApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/server/UserManager.class" afterPath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/server/UserManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/utils/DbHelper.class" afterPath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/utils/DbHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/utils/UserFactory.class" afterPath="$PROJECT_DIR$/out/production/TutorPlus/comp6601/src/utils/UserFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/TutorPlusClient_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/TutorPlusClient_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/TutorPlusServer_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/TutorPlusServer_jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp6601/src/client/Client.java" afterPath="$PROJECT_DIR$/comp6601/src/client/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp6601/src/server/Login.java" afterPath="$PROJECT_DIR$/comp6601/src/server/Login.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp6601/src/server/ComponentManager.java" afterPath="$PROJECT_DIR$/comp6601/src/server/ComponentManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp6601/src/server/CourseComponent.java" afterPath="$PROJECT_DIR$/comp6601/src/server/CourseComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java" afterPath="$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp6601/src/utils/DbHelper.java" afterPath="$PROJECT_DIR$/comp6601/src/utils/DbHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp6601/src/utils/UserFactory.java" afterPath="$PROJECT_DIR$/comp6601/src/utils/UserFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp6601/src/server/Tutorial.java" afterPath="$PROJECT_DIR$/comp6601/src/server/Tutorial.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp6601/src/server/TutorialComponent.java" afterPath="$PROJECT_DIR$/comp6601/src/server/TutorialComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comp6601/src/server/TutorialManager.java" afterPath="$PROJECT_DIR$/comp6601/src/server/TutorialManager.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,95 +29,104 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+    <leaf>
       <file leaf-file-name="TutorPlusUserFunctionIntf.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusUserFunctionIntf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+            <state relative-caret-position="277">
+              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp6601/src/client/Login.java">
+      <file leaf-file-name="CourseComponent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comp6601/src/server/CourseComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="125">
+              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+              <folding>
+                <element signature="e#943#944#0" expanded="true" />
+                <element signature="e#978#979#0" expanded="true" />
+                <element signature="e#1015#1016#0" expanded="true" />
+                <element signature="e#1048#1049#0" expanded="true" />
+                <element signature="e#1083#1084#0" expanded="true" />
+                <element signature="e#1117#1118#0" expanded="true" />
+                <element signature="e#1149#1150#0" expanded="true" />
+                <element signature="e#1177#1178#0" expanded="true" />
+                <element signature="e#1224#1225#0" expanded="true" />
+                <element signature="e#1256#1257#0" expanded="true" />
+                <element signature="e#1301#1302#0" expanded="true" />
+                <element signature="e#1331#1332#0" expanded="true" />
+                <element signature="e#1887#1888#0" expanded="true" />
+                <element signature="e#1914#1915#0" expanded="true" />
+                <element signature="e#1974#1975#0" expanded="true" />
+                <element signature="e#2002#2003#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp6601/src/client/Client.java">
+      <file leaf-file-name="TutorialComponent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorialComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+            <state relative-caret-position="550">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserAccountType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp6601/src/client/UserAccountType.java">
+      <file leaf-file-name="Tutorial.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comp6601/src/server/Tutorial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-181">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1325">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding>
+                <element signature="e#1017#1018#0" expanded="true" />
+                <element signature="e#1050#1051#0" expanded="true" />
+                <element signature="e#1089#1090#0" expanded="true" />
+                <element signature="e#1124#1125#0" expanded="true" />
+                <element signature="e#1160#1161#0" expanded="true" />
+                <element signature="e#1192#1193#0" expanded="true" />
+                <element signature="e#1231#1232#0" expanded="true" />
+                <element signature="e#1266#1267#0" expanded="true" />
+                <element signature="e#1302#1303#0" expanded="true" />
+                <element signature="e#1336#1337#0" expanded="true" />
+                <element signature="e#1401#1402#0" expanded="true" />
+                <element signature="e#1434#1435#0" expanded="true" />
+                <element signature="e#1556#1557#0" expanded="true" />
+                <element signature="e#1604#1605#0" expanded="true" />
+                <element signature="e#1654#1655#0" expanded="true" />
+                <element signature="e#1696#1697#0" expanded="true" />
+                <element signature="e#1752#1753#0" expanded="true" />
+                <element signature="e#1800#1801#0" expanded="true" />
+                <element signature="e#1851#1852#0" expanded="true" />
+                <element signature="e#1890#1891#0" expanded="true" />
+                <element signature="e#1970#1971#0" expanded="true" />
+                <element signature="e#2014#2015#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentAccountType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp6601/src/client/StudentAccountType.java">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comp6601/src/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-100">
+              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TutorPlusUserFunctionIntf.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp6601/src/client/TutorPlusUserFunctionIntf.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-631">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp6601/src/client/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp6601/src/server/UserManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="81" column="49" lean-forward="true" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TutorPlusApplication.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TutorPlusApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+              <caret line="40" column="50" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
               <folding>
                 <element signature="docComment;class#TutorPlusApplication#0" expanded="false" />
-                <element signature="method#TutorPlusApplication#0;class#TutorPlusApplication#0" expanded="false" />
                 <element signature="method#login#0;class#TutorPlusApplication#0" expanded="false" />
                 <element signature="method#logout#0;class#TutorPlusApplication#0" expanded="false" />
                 <element signature="method#registerUser#0;class#TutorPlusApplication#0" expanded="false" />
@@ -139,19 +137,22 @@
                 <element signature="docComment;method#nextSessionId#0;class#TutorPlusApplication#0" expanded="false" />
                 <element signature="method#nextSessionId#0;class#TutorPlusApplication#0" expanded="false" />
                 <element signature="docComment;method#getHashedPassword#0;class#TutorPlusApplication#0" expanded="false" />
-                <element signature="method#getHashedPassword#0;class#TutorPlusApplication#0" expanded="false" />
-                <element signature="e#3751#3850#0" expanded="false" />
+                <element signature="e#3856#3955#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comp6601/src/server/Login.java">
+      <file leaf-file-name="TutorialManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorialManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="25" column="79" lean-forward="false" selection-start-line="25" selection-start-column="79" selection-end-line="25" selection-end-column="79" />
-              <folding />
+            <state relative-caret-position="750">
+              <caret line="30" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#332#333#0" expanded="true" />
+                <element signature="e#367#368#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,12 +177,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/comp6601/src/server/TutorialComponent.java" />
-        <option value="$PROJECT_DIR$/comp6601/src/server/CourseComponent.java" />
         <option value="$PROJECT_DIR$/comp6601/src/server/Priviledge.java" />
         <option value="$PROJECT_DIR$/comp6601/src/server/UserAccount.java" />
         <option value="$PROJECT_DIR$/comp6601/src/utils/JDBCConnection.java" />
-        <option value="$PROJECT_DIR$/comp6601/src/server/TutorialManager.java" />
         <option value="$PROJECT_DIR$/comp6601/src/server/TutorPlusUserInterface.java" />
         <option value="$PROJECT_DIR$/comp6601/src/client/Privilege.java" />
         <option value="$PROJECT_DIR$/comp6601/src/server/Client.java" />
@@ -207,15 +205,20 @@
         <option value="$PROJECT_DIR$/comp6601/src/utils/UserFactory.java" />
         <option value="$PROJECT_DIR$/comp6601/src/client/Client.java" />
         <option value="$PROJECT_DIR$/comp6601/src/server/Login.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/CourseComponent.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/TutorialComponent.java" />
         <option value="$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/ComponentManager.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/Tutorial.java" />
+        <option value="$PROJECT_DIR$/comp6601/src/server/TutorialManager.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-11" />
-    <option name="y" value="49" />
-    <option name="width" value="2182" />
-    <option name="height" value="1402" />
+    <option name="x" value="1046" />
+    <option name="y" value="60" />
+    <option name="width" value="1124" />
+    <option name="height" value="1390" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -339,9 +342,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -648,13 +651,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="49" width="2182" height="1402" extended-state="6" />
+    <frame x="1046" y="60" width="1124" height="1390" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.333053" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -667,8 +670,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24235182" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972524" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41005802" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -680,6 +682,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972524" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -727,7 +730,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="68" column="25" lean-forward="true" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="docComment;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="method#TutorPlusApplication#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="method#login#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="method#logout#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="method#registerUser#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="method#createTutorial#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="method#editTutorial#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="method#submitTutorial#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="method#getTutorialList#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="docComment;method#nextSessionId#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="method#nextSessionId#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="docComment;method#getHashedPassword#0;class#TutorPlusApplication#0" expanded="false" />
+            <element signature="e#3856#3955#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -756,10 +773,6 @@
     <entry file="file://$PROJECT_DIR$/Login.form" />
     <entry file="file://$PROJECT_DIR$/CreateCourse.java" />
     <entry file="file://$PROJECT_DIR$/comp6601/src/comp6601/Comp6601.java" />
-    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorialComponent.java" />
-    <entry file="file://$PROJECT_DIR$/comp6601/src/server/CourseComponent.java" />
-    <entry file="file://$PROJECT_DIR$/comp6601/src/server/ComponentManager.java" />
-    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorialManager.java" />
     <entry file="file://$PROJECT_DIR$/comp6601/src/client/Privilege.java" />
     <entry file="file://$PROJECT_DIR$/comp6601/src/utils/UserSession.java" />
     <entry file="file://$PROJECT_DIR$/comp6601/src/server/Tutor.java" />
@@ -771,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -779,14 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1077">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Tutorial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -807,26 +811,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/comp6601/src/server/StudentAccountType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusUserFunctionIntf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -926,13 +914,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusUserFunctionIntf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/CourseComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding>
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#1048#1049#0" expanded="true" />
+            <element signature="e#1083#1084#0" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1224#1225#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+            <element signature="e#1331#1332#0" expanded="true" />
+            <element signature="e#1887#1888#0" expanded="true" />
+            <element signature="e#1914#1915#0" expanded="true" />
+            <element signature="e#1974#1975#0" expanded="true" />
+            <element signature="e#2002#2003#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorialComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/Tutorial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1325">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1089#1090#0" expanded="true" />
+            <element signature="e#1124#1125#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1192#1193#0" expanded="true" />
+            <element signature="e#1231#1232#0" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1302#1303#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+            <element signature="e#1401#1402#0" expanded="true" />
+            <element signature="e#1434#1435#0" expanded="true" />
+            <element signature="e#1556#1557#0" expanded="true" />
+            <element signature="e#1604#1605#0" expanded="true" />
+            <element signature="e#1654#1655#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+            <element signature="e#1752#1753#0" expanded="true" />
+            <element signature="e#1800#1801#0" expanded="true" />
+            <element signature="e#1851#1852#0" expanded="true" />
+            <element signature="e#1890#1891#0" expanded="true" />
+            <element signature="e#1970#1971#0" expanded="true" />
+            <element signature="e#2014#2015#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/ComponentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorPlusApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <caret line="40" column="50" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
           <folding>
             <element signature="docComment;class#TutorPlusApplication#0" expanded="false" />
-            <element signature="method#TutorPlusApplication#0;class#TutorPlusApplication#0" expanded="false" />
             <element signature="method#login#0;class#TutorPlusApplication#0" expanded="false" />
             <element signature="method#logout#0;class#TutorPlusApplication#0" expanded="false" />
             <element signature="method#registerUser#0;class#TutorPlusApplication#0" expanded="false" />
@@ -943,8 +1024,19 @@
             <element signature="docComment;method#nextSessionId#0;class#TutorPlusApplication#0" expanded="false" />
             <element signature="method#nextSessionId#0;class#TutorPlusApplication#0" expanded="false" />
             <element signature="docComment;method#getHashedPassword#0;class#TutorPlusApplication#0" expanded="false" />
-            <element signature="method#getHashedPassword#0;class#TutorPlusApplication#0" expanded="false" />
-            <element signature="e#3751#3850#0" expanded="false" />
+            <element signature="e#3856#3955#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp6601/src/server/TutorialManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
           </folding>
         </state>
       </provider>
