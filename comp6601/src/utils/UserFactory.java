@@ -1,4 +1,4 @@
-package comp6601.src.serverUtils;
+package comp6601.src.utils;
 
 import comp6601.src.server.*;
 
@@ -14,6 +14,12 @@ public class UserFactory {
         return new User();
 
     }
+    public static User getNewInstance(String  userId, String fisrtName, String lastName, String email, UserRole userRole,
+                                      String username, String password){
+
+        return new User(userId,fisrtName,lastName,email,userRole,username,password);
+
+    }
 
     /**
      * Gets a speciifed tutor plus user
@@ -26,7 +32,7 @@ public class UserFactory {
 
 //        System.out.println(userData.toString());
         if (userData.size() > 0) {
-            int userId = (int) userData.get("userId");
+            String userId =  (String) userData.get("userId");
             String firstName = (String) userData.get("firstName");
             String lastName = (String) userData.get("lastName");
             String accountName = (String) userData.get("accountName");

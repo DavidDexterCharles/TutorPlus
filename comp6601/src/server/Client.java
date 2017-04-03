@@ -1,7 +1,6 @@
-package comp6601.src.client;
+package comp6601.src.server;
 
 
-import comp6601.src.server.*;
 import comp6601.src.utils.TutorialMgmtException;
 import comp6601.src.utils.UserMgmtException;
 
@@ -12,7 +11,6 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-
 
 /**
  * Created by jason on 29/03/2017.
@@ -100,7 +98,7 @@ public class Client {
                                     tutorialMgmtPermissions = (TutorialMgmtPermission) tutorPlusPermissionList.get("tutorialMgmtPermissions");
                                     userMgmtPermissions = (UserMgmtPermission) tutorPlusPermissionList.get("userMgmtPermissions");
 
-//                                    currentUser.setUserRole();
+//                                    userMgmtPermissions.
 
 
                                     UserRole accountType = currentUser.getUserRole();
@@ -136,8 +134,8 @@ public class Client {
                                                     ArrayList<String> components = new ArrayList<>();
                                                     components.add("courses");
 
-                                                    tutorPlusUserFunctionIntf.createTutorial(tutorialName,tutorialType,
-                                                            isPublished,components,currentUser);
+//                                                    tutorPlusUserFunctionIntf.createTutorial(tutorialName,tutorialType,
+//                                                            isPublished,components,currentUser);
 
 
                                                     break;
@@ -157,8 +155,6 @@ public class Client {
                                             }
                                         }
                                     } catch (UserMgmtException e) {
-                                        System.out.println(e.getMessage());
-                                    } catch (TutorialMgmtException e) {
                                         System.out.println(e.getMessage());
                                     }
                                     //==============================End of User Menu===========================

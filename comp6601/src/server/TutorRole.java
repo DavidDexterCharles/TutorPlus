@@ -1,6 +1,5 @@
 package comp6601.src.server;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -21,7 +20,7 @@ public class TutorRole extends UserRole {
         boolean canLogin = true;
         boolean canSuspendUser = true;
 
-        UserPermission userPermissions = new UserPermission(canCreateUser,canEditUser,canDeleteUser,canEditSelf,
+        UserMgmtPermission userMgmtPermissions = new UserMgmtPermission(canCreateUser,canEditUser,canDeleteUser,canEditSelf,
                 canLogin,canSuspendUser);
 
         boolean canView = true;
@@ -32,13 +31,13 @@ public class TutorRole extends UserRole {
         boolean canDeleteTutorial = true;
         boolean canEditTutorial = true;
 
-        TutorialPermission tutorialPermissions = new TutorialPermission(canCreateTutorial,canEditTutorial,
+        TutorialMgmtPermission tutorialMgmtPermissions = new TutorialMgmtPermission(canCreateTutorial,canEditTutorial,
                 canDeleteTutorial,canView,canPublish,canStart,canEnd);
 
 
 
-        permissions.put("userMgntPermissions",userPermissions);
-        permissions.put("tutorialMgntPermissions",tutorialPermissions);
+        permissions.put("userMgmtPermissions", userMgmtPermissions);
+        permissions.put("tutorialMgmtPermissions", tutorialMgmtPermissions);
         this.rolePermissions = permissions;
         this.userRoleName = "tutor";
     }

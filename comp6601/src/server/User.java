@@ -1,5 +1,7 @@
 package comp6601.src.server;
 
+import comp6601.src.utils.UserMgmtException;
+
 import java.io.Serializable;
 
 /**
@@ -7,7 +9,7 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
 
-    protected int userId;
+    protected String userId;
     protected String firstName;
     protected String lastName;
     protected String otherName;
@@ -17,7 +19,7 @@ public class User implements Serializable {
     protected String userSessionId;
     public Login login;
 
-    public User(int userId, String firstName, String lastName, String email, UserRole userRole,
+    public User(String userId, String firstName, String lastName, String email, UserRole userRole,
                    String username, String password){
 
         this.userId = userId;
@@ -28,8 +30,6 @@ public class User implements Serializable {
         this.userRole = userRole;
 
         this.login = new Login(username,password);
-//        this.userPrivileges = new Privilege(true,true,)
-//        this.userPrivileges.
 
     }
 
@@ -41,7 +41,7 @@ public class User implements Serializable {
     }
 
     //getters
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
@@ -76,36 +76,58 @@ public class User implements Serializable {
 
 
     //setters
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+
+    public void setFirstName(String firstName, User user) throws UserMgmtException {
+        UserMgmtPermission userMgmtPermission =
+                (UserMgmtPermission) user.getUserRole().getRolePermissions().get("userMgmtPermissions");
+        if (userMgmtPermission.isCanEdit() || (userMgmtPermission.isCanEditSelf() && user.getUserId() == this.userId))
+            this.firstName = firstName;
+        else throw new UserMgmtException(UserMgmtException.EDIT_USER);
+
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastName(String lastName, User user) throws UserMgmtException {
+        UserMgmtPermission userMgmtPermission =
+                (UserMgmtPermission) user.getUserRole().getRolePermissions().get("userMgmtPermissions");
+        if (userMgmtPermission.isCanEdit() || (userMgmtPermission.isCanEditSelf() && user.getUserId() == this.userId))
+            this.lastName = lastName;
+        else throw new UserMgmtException(UserMgmtException.EDIT_USER);
+
     }
 
     public void setOtherName(String otherName) {
         this.otherName = otherName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email, User user) throws UserMgmtException {
+        UserMgmtPermission userMgmtPermission =
+                (UserMgmtPermission) user.getUserRole().getRolePermissions().get("userMgmtPermissions");
+        if (userMgmtPermission.isCanEdit() || (userMgmtPermission.isCanEditSelf() && user.getUserId() == this.userId))
+            this.email = email;
+        else throw new UserMgmtException(UserMgmtException.EDIT_USER);
+
     }
 
-    public void setUserRole(UserRole userRole) {
-        this.userRole = userRole;
+    public void setUserRole(UserRole userRole, User user) throws UserMgmtException {
+        UserMgmtPermission userMgmtPermission =
+                (UserMgmtPermission) user.getUserRole().getRolePermissions().get("userMgmtPermissions");
+        if (userMgmtPermission.isCanEdit() || (userMgmtPermission.isCanEditSelf() && user.getUserId() == this.userId))
+            this.userRole = userRole;
+        else throw new UserMgmtException(UserMgmtException.EDIT_USER);
+
     }
 
-    public void setEnabled(boolean enabled) {
-        isEnabled = enabled;
+    public void setEnabled(boolean enabled, User user) throws UserMgmtException {
+        UserMgmtPermission userMgmtPermission =
+                (UserMgmtPermission) user.getUserRole().getRolePermissions().get("userMgmtPermissions");
+        if (userMgmtPermission.isCanEdit() || (userMgmtPermission.isCanEditSelf() && user.getUserId() == this.userId))
+            isEnabled = enabled;
+        else throw new UserMgmtException(UserMgmtException.EDIT_USER);
+
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
-    public void setUserSessionId(String userSessionId) {
-        this.userSessionId = userSessionId;
-    }
+
+
 
 }

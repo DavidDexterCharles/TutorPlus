@@ -1,4 +1,4 @@
-package comp6601.src.serverUtils;
+package comp6601.src.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

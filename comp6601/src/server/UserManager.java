@@ -1,6 +1,6 @@
 package comp6601.src.server;
 
-import comp6601.src.serverUtils.UserFactory;
+import comp6601.src.utils.UserFactory;
 
 import java.util.HashMap;
 
@@ -38,24 +38,30 @@ public  class UserManager {
        return user;
     }
 
-    public User createUser(HashMap userDetails) {
-
-
-        User user = UserFactory.getNewInstance();
-        user.setFirstName((String) userDetails.get("firstName"));
-        user.setLastName((String) userDetails.get("lastName"));
-        user.setEmail((String) userDetails.get("email"));
-        user.login.setUsername((String) userDetails.get("username"));
-        user.login.setPassword((String)userDetails.get("password"));
-        String accountType = (String) userDetails.get("userRole");
+    /**
+     * Creates a new user in Tutor Plus
+     * @param firstName
+     * @param lastName
+     * @param email
+     * @param username
+     * @param password
+     * @param userRoleType
+     * @return
+     */
+    public User createUser(String firstName, String lastName, String email, String username, String password, int userRoleType) {
 
         UserRole userRole;
-        if (accountType.equalsIgnoreCase("student")) {
+        if (userRoleType == 1) {
             userRole = new StudentRole();
-        } else {
+        } else  {
             userRole = new TutorRole();
         }
-        user.setUserRole(userRole);
+        TutorPlusApplication.numberOfUsers++;
+        String userId = "tpu_"+TutorPlusApplication.numberOfUsers;
+        User user = UserFactory.getNewInstance(userId,firstName,lastName,email,userRole,username,password);
+
+//        user.login.setUsername(username);
+//        user.login.setPassword(password);
 
         userList.put(user.login.getUsername(), user);
 

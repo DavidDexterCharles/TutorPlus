@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Created by jason on 02/04/2017.
  */
-public class TutorialPermission extends TutorPlusPermission {
+public class TutorialMgmtPermission extends TutorPlusPermission {
 
     private static HashMap<String,Boolean>permissions;
 
@@ -15,8 +15,8 @@ public class TutorialPermission extends TutorPlusPermission {
     private boolean canEnd = false;
 
 
-    public TutorialPermission(boolean canCreate, boolean canEdit, boolean canDelete,
-                              boolean canView, boolean canPublish, boolean canStart, boolean canEnd) {
+    public TutorialMgmtPermission(boolean canCreate, boolean canEdit, boolean canDelete,
+                                  boolean canView, boolean canPublish, boolean canStart, boolean canEnd) {
 
         this.canCreate = canCreate;
         this.canEdit = canEdit;
@@ -52,7 +52,7 @@ public class TutorialPermission extends TutorPlusPermission {
 
     @Override
     public String toString() {
-        return "TutorialPermission{" +
+        return "TutorialMgmtPermission{" +
                 "canView=" + canView +
                 ", canCreate=" + canCreate+
                 ", canEdit=" + canEdit+

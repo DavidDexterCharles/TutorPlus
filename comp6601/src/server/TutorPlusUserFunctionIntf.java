@@ -1,10 +1,9 @@
 package comp6601.src.server;
-import comp6601.src.serverUtils.TutorialException;
+import comp6601.src.utils.TutorialMgmtException;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by jason on 29/03/2017.
@@ -25,10 +24,17 @@ public interface TutorPlusUserFunctionIntf  extends Remote {
     public void logout (String username) throws RemoteException;
 
     /**
-     * Creates a new tutorplus user
+     *  Creates a new user in Tutor Plus
+     * @param firstName
+     * @param lastName
+     * @param email
+     * @param username
+     * @param password
+     * @param userRoleType
      * @throws RemoteException
      */
-    public void registerUser(HashMap userData) throws RemoteException;
+    public void registerUser(String firstName, String lastName, String email,
+                             String username, String password, int userRoleType) throws RemoteException;
 
     /**
      * Creates a new tutorial
@@ -38,9 +44,10 @@ public interface TutorPlusUserFunctionIntf  extends Remote {
      * @param tutorialComponents
      * @throws RemoteException
      */
+
     public void createTutorial(String tutorialName,
                                String tutorialType,boolean isPublished,
-                               ArrayList<String> tutorialComponents, User user) throws RemoteException, TutorialException;
+                               ArrayList<String> tutorialComponents, User user) throws RemoteException, TutorialMgmtException;
 
     /**
      * Modify the contents a tutorial

@@ -1,9 +1,9 @@
 package comp6601.src.server;
 
-import comp6601.src.serverUtils.DbHelper;
-import comp6601.src.serverUtils.TutorialException;
-import comp6601.src.serverUtils.UserFactory;
-import comp6601.src.serverUtils.UserSession;
+import comp6601.src.utils.DbHelper;
+import comp6601.src.utils.TutorialMgmtException;
+import comp6601.src.utils.UserFactory;
+import comp6601.src.utils.UserSession;
 
 import java.math.BigInteger;
 import java.rmi.RemoteException;
@@ -27,13 +27,15 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     public static UserSession userSession;
     public static ComponentManager componentManager;
     public static TutorialManager tutorialManager;
+    public static int numberOfUsers;
 
-    String saltStr = "#$%&@abcd";
-    byte[] salt = new byte[16];
+//    String saltStr = "#$%&@abcd";
+//    byte[] salt = new byte[16];
 
     public TutorPlusApplication() throws RemoteException{
 
         dbHelper = new DbHelper();
+        this.numberOfUsers =  dbHelper.getNumberOfUsers();
         userFactory = new UserFactory();
         userSession = new UserSession();
         userManager = new UserManager();
@@ -56,9 +58,8 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
                 if (result) {
 
                     String sessionId = this.nextSessionId();
-                    user.setUserSessionId(sessionId);
+                    user.userSessionId = sessionId;
                     userSession.addUserToSessionList(username, sessionId);
-//                    System.out.println(userSession.getUserSessionId(username));
 
 
                     return user;
@@ -83,14 +84,15 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     }
 
     @Override
-    public void registerUser(HashMap userData) throws RemoteException {
+    public void registerUser(String firstName, String lastName, String email, String username,
+                             String password, int userRoleType) throws RemoteException {
 
         try {
-            String password = (String) userData.get("password");
+//            String password = (String) userData.get("password");
             password = this.getHashedPassword(password);
 
-            userData.put("password",password);
-            userManager.createUser(userData);
+//            userData.put("password",password);
+            userManager.createUser(firstName,lastName,email,username,password,userRoleType);
 
 
         } catch (NoSuchAlgorithmException e) {
@@ -102,16 +104,17 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     @Override
     public void createTutorial(String tutorialName,
                                String tutorialType, boolean isPublished,
-                               ArrayList<String> tutorialComponents, User user) throws RemoteException, TutorialException {
+                               ArrayList<String> tutorialComponents, User user) throws RemoteException, TutorialMgmtException {
 
         //look up tutorial permissions from user
         HashMap<String, TutorPlusPermission> tutorPlusPermissionList = user.getUserRole().rolePermissions;
-        TutorialPermission tutorialPermissions = (TutorialPermission) tutorPlusPermissionList.get("tutorialMgntPermissions");
+        TutorialMgmtPermission tutorialMgmtPermissions = (TutorialMgmtPermission) tutorPlusPermissionList.get("tutorialMgmtPermissions");
 
-        if (tutorialPermissions.isCanCreate()){
+        if (tutorialMgmtPermissions.isCanCreate()){
             System.out.println("valid pass");
+
         }
-        else throw new TutorialException(TutorialException.CREATE_TUTORIAL);
+        else throw new TutorialMgmtException(TutorialMgmtException.CREATE_TUTORIAL);
 
     }
 
@@ -142,7 +145,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     }
 
     /**
-     * Hashes a passoword
+     * Hashes a password
      * @param password
      * @return A hashed password
      * @throws NoSuchAlgorithmException

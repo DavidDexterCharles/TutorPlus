@@ -1,4 +1,4 @@
-package comp6601.src.serverUtils;
+package comp6601.src.utils;
 
 import comp6601.src.server.User;
 
@@ -69,7 +69,7 @@ public class DbHelper {
                     "where tu.username = '"+username+"'";
             ResultSet rs = statement.executeQuery(sql);
             if (rs.next()){
-                userData.put("userId",rs.getInt(1));
+                userData.put("userId",rs.getString(1));
                 userData.put("firstName",rs.getString(2));
                 userData.put("lastName",rs.getString(3));
                 userData.put("accountName",rs.getString(4));
@@ -97,14 +97,14 @@ public class DbHelper {
     public void saveUser(User user){
         try {
 
-            int nextSeqVal = 0;
-            Statement statement = conn.createStatement();
-            String sql = "select user_seq.nextval from dual\n";
-
-            ResultSet rs = statement.executeQuery(sql);
-            if (rs.next()) {
-                nextSeqVal = rs.getInt(1);
-            }
+//            int nextSeqVal = 0;
+//            Statement statement = conn.createStatement();
+//            String sql = "select user_seq.nextval from dual\n";
+//
+//            ResultSet rs = statement.executeQuery(sql);
+//            if (rs.next()) {
+//                nextSeqVal = rs.getInt(1);
+//            }
 
             //System.out.println(nextSeqVal);
             //System.out.println(user.getLastName());
@@ -121,7 +121,7 @@ public class DbHelper {
                     "VALUES (?,?,?,?,?,?,?,?)\n";
 
             PreparedStatement saveUser = conn.prepareStatement(saveUserSql);
-            saveUser.setInt(1, nextSeqVal);
+            saveUser.setString(1, user.getUserId());
             saveUser.setInt(2, userAccountId);
             saveUser.setString(3, user.getFirstName());
             saveUser.setString(4, user.getLastName());
@@ -139,6 +139,24 @@ public class DbHelper {
 
         }
 
+    }
+
+    public int getNumberOfUsers(){
+
+        try {
+            int numberOfUsers = 0;
+            Statement statement = conn.createStatement();
+            String sql = "select count(*) from t_user\n";
+
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()) {
+                numberOfUsers = rs.getInt(1);
+            }
+            return numberOfUsers;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
 }
