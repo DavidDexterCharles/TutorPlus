@@ -1,13 +1,18 @@
 package comp6601.src.client;
 
+import comp6601.src.server.TutorPlusPermission;
 import comp6601.src.server.TutorPlusUserFunctionIntf;
+import comp6601.src.server.TutorialPermission;
 import comp6601.src.server.User;
-import comp6601.src.server.UserAccountType;
+import comp6601.src.server.UserPermission;
+import comp6601.src.server.UserRole;
+import comp6601.src.serverUtils.TutorialException;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -21,6 +26,9 @@ public class Client {
     public final static String OUTPUT_FILE = "output.out";
     public static User currentUser;
     public static String username;
+    public static TutorialPermission tutorialMgntPermissions;
+    public static UserPermission userMgntPermissions;
+
     public static String[] tutorMenuOptionList = {
             "\nChoose option from menu below\n",
             "1. Manage Tutorials\n",
@@ -85,9 +93,17 @@ public class Client {
                             if (!input.equalsIgnoreCase("-1")) {
 
                                  currentUser = tutorPlusUserFunctionIntf.login(username, password);
+                                HashMap<String, TutorPlusPermission>
+                                        tutorPlusPermissionList =currentUser.getUserRole().getRolePermissions();
+
+                                    tutorialMgntPermissions = (TutorialPermission) tutorPlusPermissionList.get("tutorialMgntPermissions");
+                                    userMgntPermissions = (UserPermission) tutorPlusPermissionList.get("userMgntPermissions");
+
+//                                    userMgntPermissions.
+
                                 if (currentUser != null) {
 
-                                    UserAccountType accountType = currentUser.getAccountType();
+                                    UserRole accountType = currentUser.getUserRole();
 //                                    System.out.println(currentUser.getFirstName());
 //                                    System.out.println(currentUser.getEmail());
                                     try {
@@ -95,7 +111,7 @@ public class Client {
                                         while (currentUser != null) {
                                             option = -2;
                                             String[] menuOptionList = {};
-                                            if (accountType.getAccountTypeName().equalsIgnoreCase("student")) {
+                                            if (accountType.getUserRoleName().equalsIgnoreCase("student")) {
                                                 menuOptionList = studentMenuOptionList;
                                             } else menuOptionList = tutorMenuOptionList;
                                             for (String menuOption : menuOptionList) {
@@ -114,6 +130,15 @@ public class Client {
 
                                                 case 1:
 //                                                    System.out.println(currentUser.getUserSessionId());
+                                                    String tutorialName = "My Math";
+                                                    String tutorialType = "Math";
+                                                    boolean isPublished = true;
+                                                    ArrayList<String> components = new ArrayList<>();
+                                                    components.add("courses");
+
+                                                    tutorPlusUserFunctionIntf.createTutorial(tutorialName,tutorialType,
+                                                            isPublished,components,currentUser);
+
 
                                                     break;
                                                 case 2:
@@ -129,8 +154,8 @@ public class Client {
                                                     break;
                                             }
                                         }
-                                    } catch (Exception e) {
-
+                                    } catch (TutorialException e) {
+                                        System.out.println("Exception: "+e.getMessage());
                                     }
                                     //==============================End of User Menu===========================
 
@@ -173,7 +198,7 @@ public class Client {
                                             userDetails.put("firstName",firstName);
                                             userDetails.put("lastName",lastName);
                                             userDetails.put("email",email);
-                                            userDetails.put("accountType",accountType);
+                                            userDetails.put("userRole",accountType);
                                             tutorPlusUserFunctionIntf.registerUser(userDetails);
                                         }
                                     }

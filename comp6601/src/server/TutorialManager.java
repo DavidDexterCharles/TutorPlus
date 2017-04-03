@@ -39,4 +39,10 @@ public class TutorialManager {
 
 
     }
+    public Tutorial getAllTutorials (){
+
+        return null;
+    }
+
+
 }

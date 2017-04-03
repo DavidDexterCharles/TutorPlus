@@ -13,12 +13,11 @@ public class User implements Serializable {
     protected String otherName;
     protected String email;
     protected boolean isEnabled;
-    protected UserAccountType accountType;
+    protected UserRole userRole;
     protected String userSessionId;
-    protected Privilege userPrivileges;
     public Login login;
 
-    public User(int userId, String firstName, String lastName, String email, UserAccountType accountType,
+    public User(int userId, String firstName, String lastName, String email, UserRole userRole,
                    String username, String password){
 
         this.userId = userId;
@@ -26,7 +25,7 @@ public class User implements Serializable {
         this.lastName = lastName;
         this.email = email;
         this.isEnabled = true;
-        this.accountType = accountType;
+        this.userRole = userRole;
 
         this.login = new Login(username,password);
 //        this.userPrivileges = new Privilege(true,true,)
@@ -40,7 +39,6 @@ public class User implements Serializable {
         this.isEnabled = true;
 
     }
-
 
     //getters
     public int getUserId() {
@@ -67,17 +65,14 @@ public class User implements Serializable {
         return isEnabled;
     }
 
-    public UserAccountType getAccountType() {
-        return accountType;
+    public UserRole getUserRole() {
+        return userRole;
     }
 
     public String getUserSessionId() {
         return userSessionId;
     }
 
-    public Privilege getUserPrivileges() {
-        return userPrivileges;
-    }
 
 
     //setters
@@ -97,8 +92,8 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public void setAccountType(UserAccountType accountType) {
-        this.accountType = accountType;
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 
     public void setEnabled(boolean enabled) {
@@ -113,7 +108,4 @@ public class User implements Serializable {
         this.userSessionId = userSessionId;
     }
 
-    public void setUserPrivileges(Privilege userPrivileges) {
-        this.userPrivileges = userPrivileges;
-    }
 }

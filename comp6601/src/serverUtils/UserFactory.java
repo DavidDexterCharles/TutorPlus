@@ -1,8 +1,7 @@
-package comp6601.src.utils;
+package comp6601.src.serverUtils;
 
 import comp6601.src.server.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -33,25 +32,25 @@ public class UserFactory {
             String accountName = (String) userData.get("accountName");
             String email = (String) userData.get("email");
             String password = (String) userData.get("password");
-            ArrayList<String> privileges = (ArrayList<String>) userData.get("privileges");
+//            ArrayList<String> privileges = (ArrayList<String>) userData.get("privileges");
 
-            UserAccountType userAccountType;
+            UserRole userRole;
             if (accountName.equalsIgnoreCase("student")){
-                 userAccountType = new StudentAccountType();
-                userAccountType.addPrivileges(privileges);
+                 userRole = new StudentRole();
+//                userRole.addPermissions(privileges);
             }
             else{
-                userAccountType = new TutorAccountType();
-                userAccountType.addPrivileges(privileges);
+                userRole = new TutorRole();
+//                userRole.addPermissions(privileges);
             }
-//            UserAccountType userAccountType = new UserAccountType(accountName, privileges);
-//            System.out.println("accountType: " + userAccountType.getAccountTypeName());
+//            UserRole userRole = new UserRole(accountName, privileges);
+//            System.out.println("userRole: " + userRole.getUserRoleName());
 
 //            if (accountName.equalsIgnoreCase("student")){
-                return new User (userId,firstName, lastName, email, userAccountType,username,password);
+                return new User (userId,firstName, lastName, email, userRole,username,password);
 //            }
 //            if (accountName.equalsIgnoreCase("tutor")) {
-//                return new Tutor(userId,firstName, lastName, email, userAccountType,username,password);
+//                return new Tutor(userId,firstName, lastName, email, userRole,username,password);
 
 //            }
 

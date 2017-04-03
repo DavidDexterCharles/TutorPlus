@@ -1,15 +1,8 @@
 package comp6601.src.server;
 
-import comp6601.src.utils.UserFactory;
+import comp6601.src.serverUtils.UserFactory;
 
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
-import java.util.Base64;
 import java.util.HashMap;
-import java.util.Random;
 
 
 /**
@@ -54,15 +47,15 @@ public  class UserManager {
         user.setEmail((String) userDetails.get("email"));
         user.login.setUsername((String) userDetails.get("username"));
         user.login.setPassword((String)userDetails.get("password"));
-        String accountType = (String) userDetails.get("accountType");
+        String accountType = (String) userDetails.get("userRole");
 
-        UserAccountType userAccountType;
+        UserRole userRole;
         if (accountType.equalsIgnoreCase("student")) {
-            userAccountType = new StudentAccountType();
+            userRole = new StudentRole();
         } else {
-            userAccountType = new TutorAccountType();
+            userRole = new TutorRole();
         }
-        user.setAccountType(userAccountType);
+        user.setUserRole(userRole);
 
         userList.put(user.login.getUsername(), user);
 

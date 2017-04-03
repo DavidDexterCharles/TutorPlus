@@ -1,4 +1,4 @@
-package comp6601.src.utils;
+package comp6601.src.serverUtils;
 
 import comp6601.src.server.User;
 
@@ -111,7 +111,7 @@ public class DbHelper {
 
 
             int userAccountId;
-            if (user.getAccountType().getAccountTypeName().equalsIgnoreCase("student")){
+            if (user.getUserRole().getUserRoleName().equalsIgnoreCase("student")){
                 userAccountId = 1;
             }
             else {

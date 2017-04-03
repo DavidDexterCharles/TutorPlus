@@ -70,12 +70,12 @@ public class CourseComponent extends TutorialComponent {
 
     @Override
     public String getComponentName() {
-        return null;
+        return "courses";
     }
 
     @Override
     public boolean isRegisteredComponent() {
-        return false;
+        return true;
     }
 
 

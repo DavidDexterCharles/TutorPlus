@@ -1,4 +1,6 @@
 package comp6601.src.server;
+import comp6601.src.serverUtils.TutorialException;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -30,9 +32,15 @@ public interface TutorPlusUserFunctionIntf  extends Remote {
 
     /**
      * Creates a new tutorial
+     * @param tutorialName
+     * @param tutorialType
+     * @param isPublished
+     * @param tutorialComponents
      * @throws RemoteException
      */
-    public void createTutorial() throws RemoteException;
+    public void createTutorial(String tutorialName,
+                               String tutorialType,boolean isPublished,
+                               ArrayList<String> tutorialComponents, User user) throws RemoteException, TutorialException;
 
     /**
      * Modify the contents a tutorial

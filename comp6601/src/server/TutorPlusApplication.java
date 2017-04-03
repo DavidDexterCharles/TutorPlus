@@ -1,12 +1,10 @@
 package comp6601.src.server;
 
-import comp6601.src.utils.DbHelper;
-import comp6601.src.utils.UserFactory;
-import comp6601.src.utils.UserSession;
+import comp6601.src.serverUtils.DbHelper;
+import comp6601.src.serverUtils.TutorialException;
+import comp6601.src.serverUtils.UserFactory;
+import comp6601.src.serverUtils.UserSession;
 
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -28,6 +26,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     public static UserFactory userFactory;
     public static UserSession userSession;
     public static ComponentManager componentManager;
+    public static TutorialManager tutorialManager;
 
     String saltStr = "#$%&@abcd";
     byte[] salt = new byte[16];
@@ -39,6 +38,8 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
         userSession = new UserSession();
         userManager = new UserManager();
         componentManager = new ComponentManager();
+        tutorialManager = new TutorialManager();
+
     }
 
     @Override
@@ -99,7 +100,18 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     }
 
     @Override
-    public void createTutorial() throws RemoteException {
+    public void createTutorial(String tutorialName,
+                               String tutorialType, boolean isPublished,
+                               ArrayList<String> tutorialComponents, User user) throws RemoteException, TutorialException {
+
+        //look up tutorial permissions from user
+        HashMap<String, TutorPlusPermission> tutorPlusPermissionList = user.getUserRole().rolePermissions;
+        TutorialPermission tutorialPermissions = (TutorialPermission) tutorPlusPermissionList.get("tutorialMgntPermissions");
+
+        if (tutorialPermissions.isCanCreate()){
+            System.out.println("valid pass");
+        }
+        else throw new TutorialException(TutorialException.CREATE_TUTORIAL);
 
     }
 

@@ -1,6 +1,4 @@
-package comp6601.src.utils;
-
-import comp6601.src.server.User;
+package comp6601.src.serverUtils;
 
 import java.util.HashMap;
 
