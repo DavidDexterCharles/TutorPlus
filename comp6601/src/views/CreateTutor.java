@@ -1,16 +1,22 @@
-package comp6601.src.client.views;
+package comp6601.src.views;
 
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
  * @author elleb
  */
-public class EditTutor extends javax.swing.JFrame {
+public class CreateTutor extends javax.swing.JFrame {
 
     /**
-     * Creates new form EditTutor
+     * Creates new form CreateTutor
      */
-    public EditTutor() {
+    public CreateTutor() {
         initComponents();
     }
 
@@ -44,19 +50,17 @@ public class EditTutor extends javax.swing.JFrame {
         DepartmentJLabel = new javax.swing.JLabel();
         TutorEmail = new javax.swing.JTextField();
         TutorDept = new javax.swing.JComboBox<>();
-        UpdateTutor = new javax.swing.JButton();
+        CreateTutor = new javax.swing.JButton();
         CoursesJLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TutorCourses = new javax.swing.JList<>();
-        PasswordJLabel = new javax.swing.JLabel();
-        TutorPassword = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         TutursJLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Tutors = new javax.swing.JList<>();
         EditTutor = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        PageLabel2 = new javax.swing.JLabel();
+        PageName = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
         MyDashboardMenu = new javax.swing.JMenu();
         Exit = new javax.swing.JMenu();
@@ -139,7 +143,7 @@ public class EditTutor extends javax.swing.JFrame {
                 .addComponent(ManageCourses)
                 .addGap(18, 18, 18)
                 .addComponent(ManageTutorials)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -159,8 +163,8 @@ public class EditTutor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(MyProfileJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -176,16 +180,11 @@ public class EditTutor extends javax.swing.JFrame {
         DepartmentJLabel.setText("Department");
 
         TutorDept.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        TutorDept.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TutorDeptActionPerformed(evt);
-            }
-        });
 
-        UpdateTutor.setText("Update Tutor");
-        UpdateTutor.addActionListener(new java.awt.event.ActionListener() {
+        CreateTutor.setText("Create Tutor");
+        CreateTutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateTutorActionPerformed(evt);
+                CreateTutorActionPerformed(evt);
             }
         });
 
@@ -198,41 +197,32 @@ public class EditTutor extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TutorCourses);
 
-        PasswordJLabel.setText("Password");
-
-        TutorPassword.setText("jPasswordField1");
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TutorEmailJLabel)
-                            .addComponent(PasswordJLabel))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(TutorEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                            .addComponent(TutorPassword, javax.swing.GroupLayout.Alignment.LEADING)))
-                    .addComponent(UpdateTutor)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TutorFirstNameJLabel)
-                            .addComponent(TutorLastNameJLabel)
-                            .addComponent(TutorMiddleNamejLabel)
-                            .addComponent(DepartmentJLabel)
-                            .addComponent(CoursesJLabel))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(TutorMN, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TutorLN, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TutorFN, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addComponent(TutorDept, javax.swing.GroupLayout.Alignment.LEADING, 0, 306, Short.MAX_VALUE))))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TutorFirstNameJLabel)
+                    .addComponent(TutorLastNameJLabel)
+                    .addComponent(TutorMiddleNamejLabel)
+                    .addComponent(TutorEmailJLabel)
+                    .addComponent(DepartmentJLabel)
+                    .addComponent(CoursesJLabel))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(TutorDept, javax.swing.GroupLayout.Alignment.LEADING, 0, 306, Short.MAX_VALUE)
+                    .addComponent(TutorEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TutorMN, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TutorLN, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TutorFN, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1))
                 .addContainerGap(17, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CreateTutor)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,24 +240,20 @@ public class EditTutor extends javax.swing.JFrame {
                     .addComponent(TutorMiddleNamejLabel)
                     .addComponent(TutorMN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TutorEmailJLabel)
+                    .addComponent(TutorEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DepartmentJLabel)
                     .addComponent(TutorDept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CoursesJLabel)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TutorEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TutorEmailJLabel))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PasswordJLabel)
-                    .addComponent(TutorPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(UpdateTutor)
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(CreateTutor)
+                .addGap(31, 31, 31))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -300,7 +286,7 @@ public class EditTutor extends javax.swing.JFrame {
                         .addComponent(TutursJLabel)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 114, Short.MAX_VALUE)
+                        .addGap(0, 111, Short.MAX_VALUE)
                         .addComponent(EditTutor)))
                 .addContainerGap())
         );
@@ -310,14 +296,14 @@ public class EditTutor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(TutursJLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addComponent(EditTutor)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PageLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        PageLabel2.setText("Edit Tutor");
+        PageName.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        PageName.setText("Create Tutor Profile");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -325,15 +311,15 @@ public class EditTutor extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PageLabel2)
+                .addComponent(PageName)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PageLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PageName)
+                .addContainerGap())
         );
 
         MyDashboardMenu.setText("My Dashboard");
@@ -363,33 +349,33 @@ public class EditTutor extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(40, 40, 40))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ManageSudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageSudentsActionPerformed
+    private void CreateTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateTutorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ManageSudentsActionPerformed
-
-    private void UpdateTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTutorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateTutorActionPerformed
+    }//GEN-LAST:event_CreateTutorActionPerformed
 
     private void EditTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTutorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EditTutorActionPerformed
 
-    private void TutorDeptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TutorDeptActionPerformed
+    private void ManageSudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageSudentsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TutorDeptActionPerformed
+    }//GEN-LAST:event_ManageSudentsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -407,21 +393,28 @@ public class EditTutor extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EditTutor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(CreateTutor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(CreateTutor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(CreateTutor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(CreateTutor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new EditTutor().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new CreateTutor().setVisible(true);
+            }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CoursesJLabel;
+    private javax.swing.JButton CreateTutor;
     private javax.swing.JLabel DepartmentJLabel;
     private javax.swing.JButton EditTutor;
     private javax.swing.JMenu Exit;
@@ -432,8 +425,7 @@ public class EditTutor extends javax.swing.JFrame {
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MyDashboardMenu;
     private javax.swing.JPanel MyProfileJPanel;
-    private javax.swing.JLabel PageLabel2;
-    private javax.swing.JLabel PasswordJLabel;
+    private javax.swing.JLabel PageName;
     private javax.swing.JList<String> TutorCourses;
     private javax.swing.JComboBox<String> TutorDept;
     private javax.swing.JTextField TutorEmail;
@@ -444,10 +436,8 @@ public class EditTutor extends javax.swing.JFrame {
     private javax.swing.JLabel TutorLastNameJLabel;
     private javax.swing.JTextField TutorMN;
     private javax.swing.JLabel TutorMiddleNamejLabel;
-    private javax.swing.JPasswordField TutorPassword;
     private javax.swing.JList<String> Tutors;
     private javax.swing.JLabel TutursJLabel;
-    private javax.swing.JButton UpdateTutor;
     private javax.swing.JButton ViewTutorInfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

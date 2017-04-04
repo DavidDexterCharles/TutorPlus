@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package comp6601.src.client.controllers;
+package comp6601.src.controllers;
 
 import comp6601.src.application_core.TutorPlusApplicationIntf;
 

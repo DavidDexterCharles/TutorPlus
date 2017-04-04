@@ -1,4 +1,4 @@
-package comp6601.src.client.views;
+package comp6601.src.views;
 
 
 /**

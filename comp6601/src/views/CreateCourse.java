@@ -1,4 +1,6 @@
-package comp6601.src.client.views;
+package comp6601.src.views;
+
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -10,12 +12,12 @@ package comp6601.src.client.views;
  *
  * @author elleb
  */
-public class CreateTutorial extends javax.swing.JFrame {
+public class CreateCourse extends javax.swing.JFrame {
 
     /**
-     * Creates new form CreateTutorial
+     * Creates new form CreateCourse
      */
-    public CreateTutorial() {
+    public CreateCourse() {
         initComponents();
     }
 
@@ -76,20 +78,20 @@ public class CreateTutorial extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreateTutorial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreateTutorial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreateTutorial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreateTutorial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CreateTutorial().setVisible(true);
+                new CreateCourse().setVisible(true);
             }
         });
     }

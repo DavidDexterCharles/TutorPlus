@@ -1,4 +1,4 @@
-package comp6601.src.client.controllers;
+package comp6601.src.controllers;
 
 
 import comp6601.src.application_core.TutorPlusApplicationIntf;
