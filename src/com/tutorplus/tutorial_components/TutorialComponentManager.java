@@ -1,5 +1,4 @@
- package com.tutorplus.tutorial_components;
-
+package com.tutorplus.tutorial_components;
 
 import java.util.HashMap;
 
@@ -12,11 +11,14 @@ public class TutorialComponentManager {
 
     public TutorialComponentManager() {
         this.registeredComponents = new HashMap<String,TutorialComponent>();
+        this.registerSystemComponents();
     }
 
     //initializes instances of tutorial tutorial_components
     public void registerSystemComponents(){
 
+        CourseTutorialComponent courseTutorialComponent =  new CourseTutorialComponent();
+        this.registeredComponents.put(courseTutorialComponent.getComponentName(),courseTutorialComponent);
     }
 
     /**

@@ -1,10 +1,10 @@
 package com.tutorplus.application_core;
 
-
 import com.tutorplus.roles.StudentRole;
 import com.tutorplus.roles.TutorRole;
 import com.tutorplus.roles.UserRole;
 import com.tutorplus.utils.UserFactory;
+
 import java.util.HashMap;
 
 
@@ -88,9 +88,8 @@ public  class UserManager {
         } else  {
             userRole = new TutorRole();
         }
-        TutorPlusApplication.numberOfUsers++;
-        String userId = "tpu_"+TutorPlusApplication.numberOfUsers;
-        User user = UserFactory.getNewInstance(userId,firstName,lastName,email,userRole,username,password);
+
+        User user = UserFactory.getNewInstance(firstName,lastName,email,userRole,username,password);
 
 //        user.login.setUsername(username);
 //        user.login.setPassword(password);

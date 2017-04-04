@@ -1,16 +1,12 @@
 package com.tutorplus.application_core;
 
 
-
-import com.tutorplus.tutorial_components.TutorialComponentManager;
 import com.tutorplus.permissions.TutorPlusPermission;
 import com.tutorplus.permissions.TutorialMgmtPermission;
 import com.tutorplus.permissions.UserMgmtPermission;
-import com.tutorplus.utils.DbHelper;
-import com.tutorplus.utils.TutorialMgmtException;
-import com.tutorplus.utils.UserFactory;
-import com.tutorplus.utils.UserMgmtException;
-import com.tutorplus.utils.UserSession;
+import com.tutorplus.tutorial_components.TutorialComponentManager;
+import com.tutorplus.utils.*;
+
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -30,10 +26,12 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
     public static DbHelper dbHelper;
     public static UserManager userManager;
     public static UserFactory userFactory;
+    public static TutorialFactory tutorialFactory;
     public static UserSession userSession;
     public static TutorialComponentManager tutorialComponentManager;
     public static TutorialManager tutorialManager;
-    public static int numberOfUsers;
+    public static int nextAvailUserId;
+    public static int nextAvailTutorialId;
 
 //    String saltStr = "#$%&@abcd";
 //    byte[] salt = new byte[16];
@@ -41,7 +39,10 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
     public TutorPlusApplication() throws RemoteException{
 
         dbHelper = new DbHelper();
-        this.numberOfUsers =  dbHelper.getNumberOfUsers();
+        this.nextAvailUserId =  dbHelper.getNumberOfUsers();
+        this.nextAvailUserId++;
+        this.nextAvailTutorialId =  dbHelper.getNumberOfTutorials();
+        this.nextAvailTutorialId++;
         userFactory = new UserFactory();
         userSession = new UserSession();
         userManager = new UserManager();
@@ -136,14 +137,20 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
                                String userSessionId) throws RemoteException, TutorialMgmtException, UserMgmtException {
 
 
+        //validates if user in logged in
         String username = TutorPlusApplication.userSession.getUsername(userSessionId);
+
         if (username != null) {
+
             User user = TutorPlusApplication.userManager.findUser(username);
             HashMap<String, TutorPlusPermission> tutorPlusPermissionList = user.getUserRole().getRolePermissions();
             TutorialMgmtPermission tutorialMgmtPermissions = (TutorialMgmtPermission) tutorPlusPermissionList.get("tutorialMgmtPermissions");
 
-            if (tutorialMgmtPermissions.isCanCreate()) {
+            if (tutorialMgmtPermissions.isCanCreate()) {//checks for tutorial create permissions on user.
+
                 System.out.println("valid pass");
+                tutorialManager.createTutorial(tutorialName,tutorialType,isPublished,tutorialComponents,user);
+
 
             } else throw new TutorialMgmtException(TutorialMgmtException.CREATE_TUTORIAL);
         }
@@ -151,15 +158,6 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
 
     }
 
-    @Override
-    public void updateTutorial(HashMap<String, Object> tutorialDetails, String tutorialId, String userSessionId) throws RemoteException, UserMgmtException {
-
-        String username = TutorPlusApplication.userSession.getUsername(userSessionId);
-        if (username != null) {
-
-        }
-        else throw new UserMgmtException(UserMgmtException.LOGIN);
-    }
 
     @Override
     public void submitTutorial(Tutorial tutorial, String userSessionId) throws RemoteException, UserMgmtException {
@@ -183,7 +181,23 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
     }
 
     @Override
-    public HashMap<String, Object> getComponentRegisteredList(String userSessionId) {
+    public void updateATutorial(HashMap<String, Object> tutorialDetails,
+                                String userSessionId, String tutorialId) throws RemoteException{
+
+    }
+
+    @Override
+    public void removeATutorial(String tutorialId, String userSessionId) throws RemoteException {
+
+    }
+
+    @Override
+    public boolean publishAtutorial(String tutorialid, String userSessionId) throws RemoteException {
+        return false;
+    }
+
+    @Override
+    public HashMap<String, Object> getComponentRegisteredList(String userSessionId) throws RemoteException {
         return null;
     }
 

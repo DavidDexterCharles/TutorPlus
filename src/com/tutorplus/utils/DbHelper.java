@@ -1,7 +1,8 @@
 package com.tutorplus.utils;
 
-
+import com.tutorplus.application_core.Tutorial;
 import com.tutorplus.application_core.User;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +15,7 @@ public class DbHelper {
 
     public  DbHelper(){
 
-        String user = "comp6601";
+        String user = "tutorplus";
         String password = "adm1n123";
 
         JDBCConnection jdbcConnection = new JDBCConnection(user, password);
@@ -97,19 +98,6 @@ public class DbHelper {
     public void saveUser(User user){
         try {
 
-//            int nextSeqVal = 0;
-//            Statement statement = conn.createStatement();
-//            String sql = "select user_seq.nextval from dual\n";
-//
-//            ResultSet rs = statement.executeQuery(sql);
-//            if (rs.next()) {
-//                nextSeqVal = rs.getInt(1);
-//            }
-
-            //System.out.println(nextSeqVal);
-            //System.out.println(user.getLastName());
-
-
             int userAccountId;
             if (user.getUserRole().getUserRoleName().equalsIgnoreCase("student")){
                 userAccountId = 1;
@@ -157,6 +145,28 @@ public class DbHelper {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    public int getNumberOfTutorials(){
+
+        try {
+            int numberOfUsers = 0;
+            Statement statement = conn.createStatement();
+            String sql = "select count(*) from tutorial\n";
+
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()) {
+                numberOfUsers = rs.getInt(1);
+            }
+            return numberOfUsers;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public void saveTutorial(Tutorial tutorial){
+
     }
 
 }

@@ -1,8 +1,7 @@
 package com.tutorplus.application_core;
-
-
 import com.tutorplus.utils.TutorialMgmtException;
 import com.tutorplus.utils.UserMgmtException;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -24,7 +23,7 @@ public interface TutorPlusApplicationIntf extends Remote {
     /**
      * Allows a user to terminate a session in tutorplus
      */
-    public void logout (String userSessionId) throws RemoteException;
+    public void logout(String userSessionId) throws RemoteException;
 
     /**
      *  Creates a new user in Tutor Plus
@@ -46,8 +45,8 @@ public interface TutorPlusApplicationIntf extends Remote {
      * @param usernameToUpdate
      * @throws RemoteException
      */
-    public void updateUser(HashMap<String,Object> userDetails,
-                           String userSessionId ,String usernameToUpdate) throws RemoteException, UserMgmtException;
+    public void updateUser(HashMap<String, Object> userDetails,
+                           String userSessionId, String usernameToUpdate) throws RemoteException, UserMgmtException;
 
     /**
      * Creates a new tutorial
@@ -59,21 +58,9 @@ public interface TutorPlusApplicationIntf extends Remote {
      */
 
     public void createTutorial(String tutorialName,
-                               String tutorialType,boolean isPublished,
+                               String tutorialType, boolean isPublished,
                                ArrayList<String> tutorialComponents,
                                String userSessionId) throws RemoteException, TutorialMgmtException, UserMgmtException;
-
-    /**
-     * Modify the contents a tutorial
-     * @throws RemoteException
-     */
-    public void updateTutorial(HashMap<String, Object> tutorialDetails,
-                               String  tutorialId, String userSessionId) throws RemoteException, UserMgmtException;
-    /**
-     * Submits a tutorial
-     * @throws RemoteException
-     */
-    public void submitTutorial(Tutorial tutorial, String userSessionId) throws RemoteException, UserMgmtException;
 
 
     /**
@@ -81,6 +68,37 @@ public interface TutorPlusApplicationIntf extends Remote {
      * @throws RemoteException
      */
     public ArrayList<Tutorial> getTutorialList(String userSessionId) throws RemoteException, UserMgmtException;
+
+    /**
+     * Update the details of tutorial
+     * @param tutorialDetails
+     * @param userSessionId
+     * @param tutorialId
+     */
+    public  void updateATutorial(HashMap<String, Object> tutorialDetails,
+                                 String userSessionId, String tutorialId) throws RemoteException;
+
+    /**
+     * Removes a tutorial
+     * @param tutorialId
+     */
+    public  void removeATutorial (String tutorialId,String userSessionId) throws RemoteException;
+
+    /**
+     * Makes a tutorial available to do
+     * @param tutorialid
+     * @param userSessionId
+     * @return
+     */
+    public  boolean publishAtutorial (String tutorialid, String userSessionId) throws RemoteException;
+
+    /**
+     * Submits a tutorial
+     * @throws RemoteException
+     */
+    public void submitTutorial(Tutorial tutorial, String userSessionId) throws RemoteException, UserMgmtException;
+
+
 
     /**
      * Gets a list of all the registered tutorial_components on in

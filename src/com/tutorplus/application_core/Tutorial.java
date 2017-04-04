@@ -1,10 +1,9 @@
 package com.tutorplus.application_core;
 
-
-
 import com.tutorplus.permissions.TutorialMgmtPermission;
 import com.tutorplus.tutorial_components.TutorialComponent;
 import com.tutorplus.utils.TutorialMgmtException;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
@@ -14,15 +13,15 @@ import java.util.HashMap;
  */
 public class Tutorial implements Serializable{
 
-    private String tutorialId;
-    private String tutorialName;
-    private String createdBy;
-    private String updatedBy;
-    private String tutorialType;
-    private boolean isPublished;
-    private Date createdDate;
-    private Date publishedDate;
-    private HashMap<String,TutorialComponent> components;
+    protected String tutorialId;
+    protected String tutorialName;
+    protected String createdBy;
+    protected String updatedBy;
+    protected String tutorialType;
+    protected boolean isPublished;
+    protected Date createdDate;
+    protected Date publishedDate;
+    protected HashMap<String,TutorialComponent> components;
 
     public Tutorial(String tutorialId, String tutorialName, String createdBy,
                     String tutorialType, boolean isPublished,String componentName,
@@ -37,7 +36,11 @@ public class Tutorial implements Serializable{
         this.components.put(componentName,tutorialComponent);
     }
 
-    public Tutorial() {
+    public Tutorial(String tutorialId) {
+        this.tutorialId = tutorialId;
+    }
+    public Tutorial(){
+
     }
 
     //=======================getters====================
@@ -80,36 +83,36 @@ public class Tutorial implements Serializable{
 
     //==========================Setters=========================
 
-    public void setTutorialName(String tutorialName, User user) throws TutorialMgmtException {
-        TutorialMgmtPermission tutorialMgmtPermissions =
-                (TutorialMgmtPermission) user.getUserRole().getRolePermissions().get("tutorialMgmtPermissions");
-      if (tutorialMgmtPermissions.isCanEdit())  this.tutorialName = tutorialName;
-      else throw new TutorialMgmtException(TutorialMgmtException.EDIT_TUTORIAL);
-    }
-
-    public void setTutorialType(String tutorialType, User user) throws TutorialMgmtException {
-        TutorialMgmtPermission tutorialMgmtPermissions =
-                (TutorialMgmtPermission) user.getUserRole().getRolePermissions().get("tutorialMgmtPermissions");
-        if (tutorialMgmtPermissions.isCanEdit()) this.tutorialType = tutorialType;
-        else throw new TutorialMgmtException(TutorialMgmtException.EDIT_TUTORIAL);
-
-    }
-
-    public void setPublished(boolean published, User user) throws TutorialMgmtException {
-        TutorialMgmtPermission tutorialMgmtPermissions =
-                (TutorialMgmtPermission) user.getUserRole().getRolePermissions().get("tutorialMgmtPermissions");
-        if (tutorialMgmtPermissions.isCanEdit()) isPublished = published;
-        else throw new TutorialMgmtException(TutorialMgmtException.EDIT_TUTORIAL);
-
-    }
-
-    public void setComponents(HashMap<String, TutorialComponent> components, User user) throws TutorialMgmtException {
-        TutorialMgmtPermission tutorialMgmtPermissions =
-                (TutorialMgmtPermission) user.getUserRole().getRolePermissions().get("tutorialMgmtPermissions");
-        if (tutorialMgmtPermissions.isCanEdit()) this.components = components;
-        else throw new TutorialMgmtException(TutorialMgmtException.EDIT_TUTORIAL);
-
-    }
+//    public void setTutorialName(String tutorialName, User user) throws TutorialMgmtException {
+//        TutorialMgmtPermission tutorialMgmtPermissions =
+//                (TutorialMgmtPermission) user.getUserRole().getRolePermissions().get("tutorialMgmtPermissions");
+//      if (tutorialMgmtPermissions.isCanEdit())  this.tutorialName = tutorialName;
+//      else throw new TutorialMgmtException(TutorialMgmtException.EDIT_TUTORIAL);
+//    }
+//
+//    public void setTutorialType(String tutorialType, User user) throws TutorialMgmtException {
+//        TutorialMgmtPermission tutorialMgmtPermissions =
+//                (TutorialMgmtPermission) user.getUserRole().getRolePermissions().get("tutorialMgmtPermissions");
+//        if (tutorialMgmtPermissions.isCanEdit()) this.tutorialType = tutorialType;
+//        else throw new TutorialMgmtException(TutorialMgmtException.EDIT_TUTORIAL);
+//
+//    }
+//
+//    public void setPublished(boolean published, User user) throws TutorialMgmtException {
+//        TutorialMgmtPermission tutorialMgmtPermissions =
+//                (TutorialMgmtPermission) user.getUserRole().getRolePermissions().get("tutorialMgmtPermissions");
+//        if (tutorialMgmtPermissions.isCanEdit()) isPublished = published;
+//        else throw new TutorialMgmtException(TutorialMgmtException.EDIT_TUTORIAL);
+//
+//    }
+//
+//    public void setComponents(HashMap<String, TutorialComponent> components, User user) throws TutorialMgmtException {
+//        TutorialMgmtPermission tutorialMgmtPermissions =
+//                (TutorialMgmtPermission) user.getUserRole().getRolePermissions().get("tutorialMgmtPermissions");
+//        if (tutorialMgmtPermissions.isCanEdit()) this.components = components;
+//        else throw new TutorialMgmtException(TutorialMgmtException.EDIT_TUTORIAL);
+//
+//    }
 
     @Override
     public String toString() {
@@ -126,22 +129,22 @@ public class Tutorial implements Serializable{
      * Put additional tutorial_components in this tutorial
      * @param componentName
      */
-    public void addComponents(String componentName) throws Exception {
+//    public void addComponents(String componentName) throws Exception {
 //
 //        TutorialComponent tutorialComponent = TutorPlusApplication.tutorialComponentManager.getATutorialComponent(componentName);
 //        if (tutorialComponent != null) this.tutorial_components.put(componentName,tutorialComponent);
 //        else throw new Exception("Tutorial Component not available to add");
-    }
+//    }
     /**
      * Remove a component from this tutorial
      * @param componentName
      */
-    public void removeComponent(String componentName) throws Exception {
+//    public void removeComponent(String componentName) throws Exception {
 //        TutorialComponent tutorialComponent = this.tutorial_components.get(componentName);
 //        if (tutorialComponent != null) this.tutorial_components.remove(componentName);
 //        else throw new Exception("Tutorial Component not available to remove");
-
-    }
+//
+//    }
 
 
 }

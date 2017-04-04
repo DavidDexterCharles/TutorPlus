@@ -1,7 +1,7 @@
 package com.tutorplus.application_core;
 
-
 import com.tutorplus.roles.UserRole;
+
 import java.io.Serializable;
 
 /**
@@ -37,6 +37,13 @@ public class User implements Serializable {
 
         this.login = new Login();
         this.isEnabled = true;
+
+    }
+    public User (String userId){
+
+        this.login = new Login();
+        this.isEnabled = true;
+        this.userId = userId;
 
     }
 

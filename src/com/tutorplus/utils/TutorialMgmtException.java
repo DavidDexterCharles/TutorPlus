@@ -9,6 +9,7 @@ public class TutorialMgmtException extends Exception {
 
 
 
+        public final static String MISSING_TUTORIAL_COMP = "One or more components request is not available";
         public final static String CREATE_TUTORIAL = "User not allowed to create tutorials";
         public final static String EDIT_TUTORIAL = "User not allowed to edit tutorials";
 

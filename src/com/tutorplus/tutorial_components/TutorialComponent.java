@@ -1,4 +1,4 @@
- package com.tutorplus.tutorial_components;
+package com.tutorplus.tutorial_components;
 
 /**
  * Created by jason on 29/03/2017.
@@ -11,7 +11,7 @@ public abstract class TutorialComponent {
      * Get the name of a component
      * @return
      */
-    public abstract String getComponentName();
+public abstract String getComponentName();
 
     /**
      * Verifies if a component is registered

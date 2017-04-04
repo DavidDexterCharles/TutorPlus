@@ -10,21 +10,21 @@ public class Login implements Serializable {
     private String username;
     private String password;
 
-    public Login(String username, String password){
+    public Login(String username, String password) {
 
         this.username = username;
         this.password = password;
     }
 
-    public Login(){
+    public Login() {
 
     }
 
-    public boolean validate(String username, String password){
+    public boolean validate(String username, String password) {
         boolean result = false;
 
-        System.out.println("storedpw: "+ this.password + "sentpw: "+ password);
-        if (this.username.equalsIgnoreCase(username) && this.password.equalsIgnoreCase(password)){
+        System.out.println("storedpw: " + this.password + "sentpw: " + password);
+        if (this.username.equalsIgnoreCase(username) && this.password.equalsIgnoreCase(password)) {
 
             result = true;
         }
