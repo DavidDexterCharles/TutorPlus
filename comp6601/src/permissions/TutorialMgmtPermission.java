@@ -1,4 +1,4 @@
-package comp6601.src.application;
+package comp6601.src.permissions;
 
 import java.util.HashMap;
 

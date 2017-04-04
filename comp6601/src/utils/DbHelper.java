@@ -1,6 +1,6 @@
 package comp6601.src.utils;
 
-import comp6601.src.server.User;
+import comp6601.src.application_core.User;
 
 import java.sql.*;
 import java.util.ArrayList;

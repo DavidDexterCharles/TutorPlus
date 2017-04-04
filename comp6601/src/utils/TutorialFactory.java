@@ -1,6 +1,6 @@
 package comp6601.src.utils;
 
-import comp6601.src.server.Tutorial;
+import comp6601.src.application_core.Tutorial;
 
 /**
  * Created by jason on 03/04/2017.

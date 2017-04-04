@@ -1,7 +1,8 @@
-package comp6601.src.application;
+package comp6601.src.application_core;
 
 
 
+import comp6601.src.tutorial_components.TutorialComponentManager;
 import comp6601.src.permissions.TutorPlusPermission;
 import comp6601.src.permissions.TutorialMgmtPermission;
 import comp6601.src.permissions.UserMgmtPermission;
@@ -19,14 +20,14 @@ import java.util.HashMap;
 /**
  * Created by jason on 29/03/2017.
  */
-public class TutorPlusApplication extends UnicastRemoteObject implements TutorPlusUserFunctionIntf {
+public class TutorPlusApplication extends UnicastRemoteObject implements TutorPlusApplicationIntf {
 
 
     public static DbHelper dbHelper;
     public static UserManager userManager;
     public static UserFactory userFactory;
     public static UserSession userSession;
-    public static ComponentManager componentManager;
+    public static TutorialComponentManager tutorialComponentManager;
     public static TutorialManager tutorialManager;
     public static int numberOfUsers;
 
@@ -40,7 +41,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
         userFactory = new UserFactory();
         userSession = new UserSession();
         userManager = new UserManager();
-        componentManager = new ComponentManager();
+        tutorialComponentManager = new TutorialComponentManager();
         tutorialManager = new TutorialManager();
 
     }

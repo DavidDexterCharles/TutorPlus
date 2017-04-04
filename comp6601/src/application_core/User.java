@@ -1,4 +1,4 @@
-package comp6601.src.application;
+package comp6601.src.application_core;
 
 import comp6601.src.roles.UserRole;
 

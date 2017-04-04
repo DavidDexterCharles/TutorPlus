@@ -1,11 +1,11 @@
-package comp6601.src.components;
+package comp6601.src.tutorial_components;
 
 import java.util.ArrayList;
 
 /**
  * Created by jason on 29/03/2017.
  */
-public class CourseComponent extends TutorialComponent {
+public class CourseTutorialComponent extends TutorialComponent {
 
     private String courseNumber;
     private String courseName;
@@ -14,9 +14,9 @@ public class CourseComponent extends TutorialComponent {
     private ArrayList<String> questions;
     private ArrayList<String> options;
 
-    public CourseComponent(String courseNumber, String courseName,
-                           int courseLevel, String topic,
-                           ArrayList<String> questions, ArrayList<String> options) {
+    public CourseTutorialComponent(String courseNumber, String courseName,
+                                   int courseLevel, String topic,
+                                   ArrayList<String> questions, ArrayList<String> options) {
 
         this.courseNumber = courseNumber;
         this.courseName = courseName;
@@ -26,7 +26,7 @@ public class CourseComponent extends TutorialComponent {
         this.options = options;
     }
 
-    public CourseComponent() {
+    public CourseTutorialComponent() {
     }
     //================================getters=============================
 
@@ -58,7 +58,7 @@ public class CourseComponent extends TutorialComponent {
 
     @Override
     public String toString() {
-        return "CourseComponent{" +
+        return "CourseTutorialComponent{" +
                 "courseNumber='" + courseNumber + '\'' +
                 ", courseName='" + courseName + '\'' +
                 ", courseLevel=" + courseLevel +

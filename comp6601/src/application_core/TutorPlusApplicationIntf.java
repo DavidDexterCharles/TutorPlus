@@ -1,4 +1,4 @@
-package comp6601.src.application;
+package comp6601.src.application_core;
 import comp6601.src.utils.TutorialMgmtException;
 import comp6601.src.utils.UserMgmtException;
 
@@ -10,7 +10,7 @@ import java.util.HashMap;
 /**
  * Created by jason on 29/03/2017.
  */
-public interface TutorPlusUserFunctionIntf  extends Remote {
+public interface TutorPlusApplicationIntf extends Remote {
 
     /**
      * Allows a user to initiate a session in tutorplus
@@ -82,9 +82,9 @@ public interface TutorPlusUserFunctionIntf  extends Remote {
     public ArrayList<Tutorial> getTutorialList(String userSessionId) throws RemoteException, UserMgmtException;
 
     /**
-     * Gets a list of all the registered components on in
+     * Gets a list of all the registered tutorial_components on in
      * @param userSessionId
-     * @return A list of all registered components
+     * @return A list of all registered tutorial_components
      */
     public HashMap<String,Object> getComponentRegisteredList(String userSessionId)throws RemoteException;
 

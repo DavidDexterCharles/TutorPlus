@@ -16,19 +16,19 @@ public class UserSession {
 
     public void addUserToSessionList(String username, String usersessionId){
 
-        this.userSessionIdList.put(username,usersessionId);
+        this.userSessionIdList.put(usersessionId,username);
     }
 
-    public void removeUserFromSessionList (String username){
+    public void removeUserFromSessionList (String sessionId){
 
-        this.userSessionIdList.remove(username);
+        this.userSessionIdList.remove(sessionId);
 
 
     }
 
-    public String getUserSessionId(String username){
+    public String getUsername(String userSessionId){
 
-        return this.userSessionIdList.get(username);
+        return this.userSessionIdList.get(userSessionId);
     }
 
 

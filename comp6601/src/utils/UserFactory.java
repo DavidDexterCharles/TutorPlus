@@ -1,6 +1,9 @@
 package comp6601.src.utils;
 
-import comp6601.src.server.*;
+import comp6601.src.application_core.*;
+import comp6601.src.roles.StudentRole;
+import comp6601.src.roles.TutorRole;
+import comp6601.src.roles.UserRole;
 
 import java.util.HashMap;
 

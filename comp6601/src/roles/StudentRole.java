@@ -1,4 +1,4 @@
-package comp6601.src.application;
+package comp6601.src.roles;
 
 import comp6601.src.permissions.TutorPlusPermission;
 import comp6601.src.permissions.TutorialMgmtPermission;

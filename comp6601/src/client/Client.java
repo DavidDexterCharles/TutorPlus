@@ -1,7 +1,11 @@
 package comp6601.src.client;
 
 
-import comp6601.src.server.*;
+import comp6601.src.application_core.*;
+import comp6601.src.permissions.TutorPlusPermission;
+import comp6601.src.permissions.TutorialMgmtPermission;
+import comp6601.src.permissions.UserMgmtPermission;
+import comp6601.src.roles.UserRole;
 import comp6601.src.utils.TutorialMgmtException;
 import comp6601.src.utils.UserMgmtException;
 
@@ -19,7 +23,7 @@ import java.util.Scanner;
  */
 public class Client {
 
-    public static TutorPlusUserFunctionIntf tutorPlusUserFunctionIntf;
+    public static TutorPlusApplicationIntf tutorPlusApplicationIntf;
     public static Scanner keyboardInput;
     public final static String OUTPUT_FILE = "output.out";
     public static User currentUser;
@@ -29,15 +33,16 @@ public class Client {
 
     public static String[] tutorMenuOptionList = {
             "\nChoose option from menu below\n",
-            "1. Manage Tutorials\n",
-            "2. Manage Users\n",
+            "1. Create a Tutorial\n",
+            "2. Edit a Tutorial\n",
             "3. logout\n",
             "-1. Exit\n"};
 
     public static String[] studentMenuOptionList = {
             "\nChoose option from menu below\n",
-            "1. View Tutorial List\n",
-            "2. Manage My Account\n",
+            "4. View Tutorial List\n",
+            "5. View My Account\n",
+            "6. Edit My Account\n",
             "3  Logout\n",
             "-1. Exit\n"};
 
@@ -54,10 +59,10 @@ public class Client {
             keyboardInput = new Scanner(System.in);
 
             if (args.length == 0) {
-                tutorPlusUserFunctionIntf = (TutorPlusUserFunctionIntf) Naming.lookup("rmi://localhost/TutorPlusApplication");
+                tutorPlusApplicationIntf = (TutorPlusApplicationIntf) Naming.lookup("rmi://localhost/TutorPlusApplication");
 
             } else {
-                tutorPlusUserFunctionIntf = (TutorPlusUserFunctionIntf) Naming.lookup("rmi://" + args[0] + "/TutorPlusApplication");
+                tutorPlusApplicationIntf = (TutorPlusApplicationIntf) Naming.lookup("rmi://" + args[0] + "/TutorPlusApplication");
             }
 
             while (true) {
@@ -90,7 +95,7 @@ public class Client {
                             String password = input;
                             if (!input.equalsIgnoreCase("-1")) {
 
-                                 currentUser = tutorPlusUserFunctionIntf.login(username, password);
+                                 currentUser = tutorPlusApplicationIntf.login(username, password);
 
                                 if (currentUser != null) {
 
@@ -129,29 +134,41 @@ public class Client {
                                             switch (option) {
 
                                                 case 1:
-//                                                    System.out.println(currentUser.getUserSessionId());
+//                                                    System.out.println(currentUser.getUsername());
                                                     String tutorialName = "My Math";
                                                     String tutorialType = "Math";
                                                     boolean isPublished = true;
                                                     ArrayList<String> components = new ArrayList<>();
                                                     components.add("courses");
 
-                                                    tutorPlusUserFunctionIntf.createTutorial(tutorialName,tutorialType,
-                                                            isPublished,components,currentUser);
+                                                    tutorPlusApplicationIntf.createTutorial(tutorialName,tutorialType,
+                                                            isPublished,components,currentUser.getUserSessionId());
 
 
                                                     break;
                                                 case 2:
-                                                    System.out.println(currentUser.getEmail());
-                                                    currentUser.setEmail("taatataes@gmail.com",currentUser);
+                                                    System.out.println(currentUser.toString());
+
 
                                                     break;
                                                 case 3:
-                                                    tutorPlusUserFunctionIntf.logout(username);
+                                                    tutorPlusApplicationIntf.logout(currentUser.getUserSessionId());
                                                     currentUser = null;
                                                     break;
+                                                case 4:
+                                                    System.out.println(currentUser.toString());
+
+                                                    break;
+                                                case 5:
+                                                    System.out.println(currentUser.toString());
+
+                                                    break;
+                                                case 6:
+//                                                    currentUser
+
+                                                    break;
                                                 case -1:
-                                                    tutorPlusUserFunctionIntf.logout(username);
+                                                    tutorPlusApplicationIntf.logout(username);
                                                     System.exit(0);
                                                     break;
                                             }
@@ -200,7 +217,7 @@ public class Client {
                                             }
                                             int userRoleType = keyboardInput.nextInt();
 
-                                            tutorPlusUserFunctionIntf.registerUser(firstName,lastName,email,username,password,userRoleType);
+                                            tutorPlusApplicationIntf.registerUser(firstName,lastName,email,username,password,userRoleType);
                                         }
                                     }
                                 }

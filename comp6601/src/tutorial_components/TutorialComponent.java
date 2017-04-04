@@ -1,4 +1,4 @@
-package comp6601.src.components;
+package comp6601.src.tutorial_components;
 
 /**
  * Created by jason on 29/03/2017.

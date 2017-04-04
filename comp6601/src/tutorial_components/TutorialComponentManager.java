@@ -1,26 +1,26 @@
-package comp6601.src.components;
+package comp6601.src.tutorial_components;
 
 import java.util.HashMap;
 
 /**
  * Created by jason on 29/03/2017.
  */
-public class ComponentManager {
+public class TutorialComponentManager {
 
     private HashMap<String,TutorialComponent> registeredComponents;
 
-    public ComponentManager() {
+    public TutorialComponentManager() {
         this.registeredComponents = new HashMap<String,TutorialComponent>();
     }
 
-    //initializes instances of tutorial components
+    //initializes instances of tutorial tutorial_components
     public void registerSystemComponents(){
 
     }
 
     /**
-     * Gets the list of registered tutorial components
-     * @return The list of tutorial components that are registered in the system.
+     * Gets the list of registered tutorial tutorial_components
+     * @return The list of tutorial tutorial_components that are registered in the system.
      */
     public HashMap<String, TutorialComponent> getRegisteredComponents() {
         return registeredComponents;

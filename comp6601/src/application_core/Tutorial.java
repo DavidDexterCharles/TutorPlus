@@ -1,5 +1,6 @@
-package comp6601.src.application;
+package comp6601.src.application_core;
 
+import comp6601.src.tutorial_components.TutorialComponent;
 import comp6601.src.permissions.TutorialMgmtPermission;
 import comp6601.src.utils.TutorialMgmtException;
 
@@ -121,13 +122,13 @@ public class Tutorial implements Serializable{
     }
 
     /**
-     * Put additional components in this tutorial
+     * Put additional tutorial_components in this tutorial
      * @param componentName
      */
     public void addComponents(String componentName) throws Exception {
 //
-//        TutorialComponent tutorialComponent = TutorPlusApplication.componentManager.getATutorialComponent(componentName);
-//        if (tutorialComponent != null) this.components.put(componentName,tutorialComponent);
+//        TutorialComponent tutorialComponent = TutorPlusApplication.tutorialComponentManager.getATutorialComponent(componentName);
+//        if (tutorialComponent != null) this.tutorial_components.put(componentName,tutorialComponent);
 //        else throw new Exception("Tutorial Component not available to add");
     }
     /**
@@ -135,8 +136,8 @@ public class Tutorial implements Serializable{
      * @param componentName
      */
     public void removeComponent(String componentName) throws Exception {
-//        TutorialComponent tutorialComponent = this.components.get(componentName);
-//        if (tutorialComponent != null) this.components.remove(componentName);
+//        TutorialComponent tutorialComponent = this.tutorial_components.get(componentName);
+//        if (tutorialComponent != null) this.tutorial_components.remove(componentName);
 //        else throw new Exception("Tutorial Component not available to remove");
 
     }

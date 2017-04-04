@@ -10,6 +10,7 @@ public class UserMgmtException extends Exception {
 
     public final static String CREATE_USER = "User not allowed to create users";
     public final static String EDIT_USER = "User not allowed to edit users";
+    public final static String LOGIN = "User not not logged in.";
 
     public UserMgmtException(String message) {
         super(message);

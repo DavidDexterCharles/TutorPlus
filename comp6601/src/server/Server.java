@@ -1,13 +1,9 @@
 package comp6601.src.server;
 
-import java.beans.Statement;
+import comp6601.src.application_core.TutorPlusApplication;
+
 import java.rmi.Naming;
-import java.rmi.NoSuchObjectException;
 import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import java.rmi.server.UnicastRemoteObject;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 
 /**
