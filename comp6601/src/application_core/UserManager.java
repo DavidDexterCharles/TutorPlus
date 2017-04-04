@@ -1,5 +1,8 @@
-package comp6601.src.server;
+package comp6601.src.application;
 
+import comp6601.src.roles.StudentRole;
+import comp6601.src.roles.TutorRole;
+import comp6601.src.roles.UserRole;
 import comp6601.src.utils.UserFactory;
 
 import java.util.HashMap;
@@ -38,6 +41,34 @@ public  class UserManager {
        return user;
     }
 
+    /**updates
+     * @param user
+     * @param userDetails
+     */
+    public void updateUser(User user, HashMap<String,Object> userDetails){
+
+        String fistName = (String)userDetails.get("firstName");
+        String lastName = (String)userDetails.get("lastName");
+        String email = (String)userDetails.get("email");
+        String otherName = (String)userDetails.get("otherName");
+
+        if (fistName != null) user.firstName = fistName;
+        if (lastName != null) user.firstName = lastName;
+        if (email != null) user.firstName = email;
+        if (otherName != null) user.firstName = otherName;
+
+    }
+
+    /**
+     * Enable or disable a user
+     * @param user
+     * @param isEnabled
+     */
+    public void setIsEnabled (User user,boolean isEnabled){
+
+        user.isEnabled = user.isEnabled;
+    }
+
     /**
      * Creates a new user in Tutor Plus
      * @param firstName
@@ -48,7 +79,8 @@ public  class UserManager {
      * @param userRoleType
      * @return
      */
-    public User createUser(String firstName, String lastName, String email, String username, String password, int userRoleType) {
+    public User createUser(String firstName, String lastName, String email,
+                           String username, String password, int userRoleType) {
 
         UserRole userRole;
         if (userRoleType == 1) {

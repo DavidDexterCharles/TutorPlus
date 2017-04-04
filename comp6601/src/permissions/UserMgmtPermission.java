@@ -1,6 +1,5 @@
-package comp6601.src.server;
+package comp6601.src.application;
 
-import java.io.Serializable;
 import java.util.HashMap;
 
 /**

@@ -1,7 +1,8 @@
-package comp6601.src.server;
+package comp6601.src.application;
+
+import comp6601.src.permissions.TutorPlusPermission;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**

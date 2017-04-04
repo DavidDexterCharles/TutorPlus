@@ -1,9 +1,11 @@
-package comp6601.src.server;
+package comp6601.src.application;
 import comp6601.src.utils.TutorialMgmtException;
+import comp6601.src.utils.UserMgmtException;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by jason on 29/03/2017.
@@ -21,7 +23,7 @@ public interface TutorPlusUserFunctionIntf  extends Remote {
     /**
      * Allows a user to terminate a session in tutorplus
      */
-    public void logout (String username) throws RemoteException;
+    public void logout (String userSessionId) throws RemoteException;
 
     /**
      *  Creates a new user in Tutor Plus
@@ -37,6 +39,16 @@ public interface TutorPlusUserFunctionIntf  extends Remote {
                              String username, String password, int userRoleType) throws RemoteException;
 
     /**
+     * Updates the details of a user
+     * @param userDetails
+     * @param userSessionId
+     * @param usernameToUpdate
+     * @throws RemoteException
+     */
+    public void updateUser(HashMap<String,Object> userDetails,
+                           String userSessionId ,String usernameToUpdate) throws RemoteException, UserMgmtException;
+
+    /**
      * Creates a new tutorial
      * @param tutorialName
      * @param tutorialType
@@ -47,24 +59,36 @@ public interface TutorPlusUserFunctionIntf  extends Remote {
 
     public void createTutorial(String tutorialName,
                                String tutorialType,boolean isPublished,
-                               ArrayList<String> tutorialComponents, User user) throws RemoteException, TutorialMgmtException;
+                               ArrayList<String> tutorialComponents,
+                               String userSessionId) throws RemoteException, TutorialMgmtException, UserMgmtException;
 
     /**
      * Modify the contents a tutorial
      * @throws RemoteException
      */
-    public void editTutorial(Tutorial tutorial) throws RemoteException;
+    public void updateTutorial(HashMap<String, Object> tutorialDetails,
+                               String  tutorialId, String userSessionId) throws RemoteException, UserMgmtException;
     /**
      * Submits a tutorial
      * @throws RemoteException
      */
-    public void submitTutorial(Tutorial tutorial) throws RemoteException;
+    public void submitTutorial(Tutorial tutorial, String userSessionId) throws RemoteException, UserMgmtException;
+
 
     /**
      * Get a list of tutorials
      * @throws RemoteException
      */
-    public ArrayList<Tutorial> getTutorialList() throws RemoteException;
+    public ArrayList<Tutorial> getTutorialList(String userSessionId) throws RemoteException, UserMgmtException;
+
+    /**
+     * Gets a list of all the registered components on in
+     * @param userSessionId
+     * @return A list of all registered components
+     */
+    public HashMap<String,Object> getComponentRegisteredList(String userSessionId)throws RemoteException;
+
+
 
 
 }

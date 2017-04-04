@@ -1,7 +1,6 @@
-package comp6601.src.server;
+package comp6601.src.components;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by jason on 29/03/2017.

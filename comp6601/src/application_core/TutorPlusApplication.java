@@ -1,10 +1,11 @@
-package comp6601.src.server;
+package comp6601.src.application;
 
-import comp6601.src.utils.DbHelper;
-import comp6601.src.utils.TutorialMgmtException;
-import comp6601.src.utils.UserFactory;
-import comp6601.src.utils.UserSession;
 
+
+import comp6601.src.permissions.TutorPlusPermission;
+import comp6601.src.permissions.TutorialMgmtPermission;
+import comp6601.src.permissions.UserMgmtPermission;
+import comp6601.src.utils.*;
 import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 /**
  * Created by jason on 29/03/2017.
  */
-public class TutorPlusApplication extends UnicastRemoteObject implements comp6601.src.server.TutorPlusUserFunctionIntf {
+public class TutorPlusApplication extends UnicastRemoteObject implements TutorPlusUserFunctionIntf {
 
 
     public static DbHelper dbHelper;
@@ -72,14 +73,15 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     }
 
     @Override
-    public void logout(String username) throws RemoteException {
+    public void logout(String userSessionId) throws RemoteException {
 
+        String username = TutorPlusApplication.userSession.getUsername(userSessionId);
         User user = userManager.findUser(username);
 
 //       System.out.println(user.getFirstName());
 
         if (user != null){
-            userSession.removeUserFromSessionList(username);
+            userSession.removeUserFromSessionList(userSessionId);
         }
     }
 
@@ -102,34 +104,81 @@ public class TutorPlusApplication extends UnicastRemoteObject implements comp660
     }
 
     @Override
-    public void createTutorial(String tutorialName,
-                               String tutorialType, boolean isPublished,
-                               ArrayList<String> tutorialComponents, User user) throws RemoteException, TutorialMgmtException {
+    public void updateUser(HashMap<String, Object> userDetails, String userSessionId,
+                           String usernameToUpdate) throws RemoteException, UserMgmtException {
 
-        //look up tutorial permissions from user
-        HashMap<String, TutorPlusPermission> tutorPlusPermissionList = user.getUserRole().rolePermissions;
-        TutorialMgmtPermission tutorialMgmtPermissions = (TutorialMgmtPermission) tutorPlusPermissionList.get("tutorialMgmtPermissions");
+        String username = TutorPlusApplication.userSession.getUsername(userSessionId);
+        if (username != null) {
+            User userToCarryOutUpdate = TutorPlusApplication.userManager.findUser(username);
+            User userToUpdate = TutorPlusApplication.userManager.findUser(usernameToUpdate);
 
-        if (tutorialMgmtPermissions.isCanCreate()){
-            System.out.println("valid pass");
+            UserMgmtPermission userMgmtPermission =
+                    (UserMgmtPermission) userToCarryOutUpdate.getUserRole().getRolePermissions().get("userMgmtPermissions");
+            if (userMgmtPermission.isCanEdit() || (userMgmtPermission.isCanEditSelf() && userToCarryOutUpdate.userId == userToUpdate.userId)){
+
+                TutorPlusApplication.userManager.updateUser(userToUpdate,userDetails);
+            }
 
         }
-        else throw new TutorialMgmtException(TutorialMgmtException.CREATE_TUTORIAL);
+        else throw new UserMgmtException(UserMgmtException.LOGIN);
 
     }
 
     @Override
-    public void editTutorial(Tutorial tutorial) throws RemoteException {
+    public void createTutorial(String tutorialName,
+                               String tutorialType,boolean isPublished,
+                               ArrayList<String> tutorialComponents,
+                               String userSessionId) throws RemoteException, TutorialMgmtException, UserMgmtException {
+
+
+        String username = TutorPlusApplication.userSession.getUsername(userSessionId);
+        if (username != null) {
+            User user = TutorPlusApplication.userManager.findUser(username);
+            HashMap<String, TutorPlusPermission> tutorPlusPermissionList = user.getUserRole().getRolePermissions();
+            TutorialMgmtPermission tutorialMgmtPermissions = (TutorialMgmtPermission) tutorPlusPermissionList.get("tutorialMgmtPermissions");
+
+            if (tutorialMgmtPermissions.isCanCreate()) {
+                System.out.println("valid pass");
+
+            } else throw new TutorialMgmtException(TutorialMgmtException.CREATE_TUTORIAL);
+        }
+        else throw new UserMgmtException(UserMgmtException.LOGIN);
 
     }
 
     @Override
-    public void submitTutorial(Tutorial tutorial) throws RemoteException {
+    public void updateTutorial(HashMap<String, Object> tutorialDetails, String tutorialId, String userSessionId) throws RemoteException, UserMgmtException {
 
+        String username = TutorPlusApplication.userSession.getUsername(userSessionId);
+        if (username != null) {
+
+        }
+        else throw new UserMgmtException(UserMgmtException.LOGIN);
     }
 
     @Override
-    public ArrayList<Tutorial> getTutorialList() throws RemoteException {
+    public void submitTutorial(Tutorial tutorial, String userSessionId) throws RemoteException, UserMgmtException {
+        String username = TutorPlusApplication.userSession.getUsername(userSessionId);
+        if (username != null) {
+
+
+        }
+        else throw new UserMgmtException(UserMgmtException.LOGIN);
+    }
+
+    @Override
+    public ArrayList<Tutorial> getTutorialList(String userSessionId) throws RemoteException, UserMgmtException {
+        String username = TutorPlusApplication.userSession.getUsername(userSessionId);
+        if (username != null) {
+
+            return null;
+
+        }
+        else throw new UserMgmtException(UserMgmtException.LOGIN);
+    }
+
+    @Override
+    public HashMap<String, Object> getComponentRegisteredList(String userSessionId) {
         return null;
     }
 

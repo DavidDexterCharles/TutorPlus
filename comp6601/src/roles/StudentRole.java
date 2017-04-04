@@ -1,16 +1,21 @@
-package comp6601.src.server;
+package comp6601.src.application;
+
+import comp6601.src.permissions.TutorPlusPermission;
+import comp6601.src.permissions.TutorialMgmtPermission;
+import comp6601.src.permissions.UserMgmtPermission;
 
 import java.util.HashMap;
 
 /**
  * Created by jason on 31/03/2017.
  */
-public class TutorRole extends UserRole {
+public class StudentRole extends UserRole {
 
-    public TutorRole() {
+    public StudentRole( ){
 
         this.rolePermissions = new HashMap<String, TutorPlusPermission>();
         HashMap<String, TutorPlusPermission> permissions = new HashMap<>();
+
 
         //Customize permissions for the tutor role
         boolean canCreateUser = false;
@@ -18,7 +23,7 @@ public class TutorRole extends UserRole {
         boolean canDeleteUser = false;
         boolean canEditSelf = true;
         boolean canLogin = true;
-        boolean canSuspendUser = true;
+        boolean canSuspendUser = false;
 
         UserMgmtPermission userMgmtPermissions = new UserMgmtPermission(canCreateUser,canEditUser,canDeleteUser,canEditSelf,
                 canLogin,canSuspendUser);
@@ -26,19 +31,20 @@ public class TutorRole extends UserRole {
         boolean canView = true;
         boolean canStart = true;
         boolean canEnd = true;
-        boolean canPublish = true;
-        boolean canCreateTutorial = true;
-        boolean canDeleteTutorial = true;
-        boolean canEditTutorial = true;
+        boolean canPublish = false;
+        boolean canCreateTutorial = false;
+        boolean canDeleteTutorial = false;
+        boolean canEditTutorial = false;
 
         TutorialMgmtPermission tutorialMgmtPermissions = new TutorialMgmtPermission(canCreateTutorial,canEditTutorial,
                 canDeleteTutorial,canView,canPublish,canStart,canEnd);
 
 
-
         permissions.put("userMgmtPermissions", userMgmtPermissions);
         permissions.put("tutorialMgmtPermissions", tutorialMgmtPermissions);
         this.rolePermissions = permissions;
-        this.userRoleName = "tutor";
+        this.userRoleName = "student";
+
     }
+
 }

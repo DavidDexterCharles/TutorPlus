@@ -1,4 +1,4 @@
-package comp6601.src.server;
+package comp6601.src.components;
 
 import java.util.ArrayList;
 

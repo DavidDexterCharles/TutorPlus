@@ -1,5 +1,6 @@
-package comp6601.src.server;
+package comp6601.src.application;
 
+import comp6601.src.permissions.TutorialMgmtPermission;
 import comp6601.src.utils.TutorialMgmtException;
 
 import java.io.Serializable;
