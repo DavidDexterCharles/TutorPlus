@@ -60,8 +60,9 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
     public User login(String username, String password) throws RemoteException{
 
         try {
+            
             password = this.getHashedPassword(password);
-
+            
             User user = userManager.findUser(username);
 
             if (user != null) {
@@ -93,6 +94,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
 
         if (user != null){
             userSession.removeUserFromSessionList(userSessionId);
+            System.out.println(username + "user has logged out");
         }
     }
 
@@ -208,7 +210,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
 
     //=======================================Helpers==========================================
     /**
-     * Gets a new session token for an authenticated userr
+     * Gets a new session token for an authenticated user
      * @return A randomly generated string token
      */
     private String nextSessionId() {
@@ -245,7 +247,10 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
             stringBuffer.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
         }
 
-        return stringBuffer.toString();
+//        return stringBuffer.toString();
+           
+            //todo: change return statement to hashed password
+          return password;
 
 
 

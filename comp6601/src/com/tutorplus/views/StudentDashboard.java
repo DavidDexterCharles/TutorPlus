@@ -1,5 +1,10 @@
 package com.tutorplus.views;
 
+import com.tutorplus.application_core.TutorPlusApplicationIntf;
+import com.tutorplus.controllers.TutorialClient;
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -8,12 +13,21 @@ import javax.swing.JOptionPane;
  * @author elleb
  */
 public class StudentDashboard extends javax.swing.JFrame {
+    TutorialClient client;
+    TutorPlusApplicationIntf loginInterface;
 
     /**
      * Creates new form StudentDashboard
      */
     public StudentDashboard() {
         initComponents();
+        
+//        SwingUtilities.invokeLater(new Runnable() {
+//            public void run() {
+                 client=new TutorialClient();
+                 loginInterface=client.tutorplusIntf;
+//            }
+//        });
     }
 
     /**
@@ -358,12 +372,23 @@ public class StudentDashboard extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_ViewStudentInfoMouseClicked
 
-    private void LogOutStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutStudentMouseClicked
+    private void LogOutStudentMouseClicked(java.awt.event.MouseEvent evt) {
+        
+        
+        try {
+        //GEN-FIRST:event_LogOutStudentMouseClicked
+        
+        TutorialClient.tutorplusIntf.logout(TutorialClient.userSession);
         // TODO add your handling code here:
         Login regFace =new Login();
         regFace.setVisible(true);
         dispose();
-    }//GEN-LAST:event_LogOutStudentMouseClicked
+        
+        } //GEN-LAST:event_LogOutStudentMouseClicked
+        catch (RemoteException ex) {
+            Logger.getLogger(StudentDashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     private void UnregiesterCourseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UnregiesterCourseMouseClicked
         // TODO add your handling code here:

@@ -20,13 +20,14 @@ public class User implements Serializable {
     public Login login;
 
     public User(String userId, String firstName, String lastName, String email, UserRole userRole,
-                   String username, String password){
+                   String username, String password, String status){
 
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.isEnabled = true;
+        if (status.equalsIgnoreCase("A"))this.isEnabled = true;
+        else this.isEnabled = false;
         this.userRole = userRole;
 
         this.login = new Login(username,password);

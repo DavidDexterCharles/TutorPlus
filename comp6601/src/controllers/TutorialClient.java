@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class TutorialClient {
     
-    private  TutorPlusUserFunctionIntf tutorplusIntf;
+    private static TutorPlusUserFunctionIntf tutorplusIntf;
     private final String tutorialyServerURL= "rmi://" + "localhost" + "/TutorPlusApplicaions";;
 
     public TutorialClient() throws RemoteException {

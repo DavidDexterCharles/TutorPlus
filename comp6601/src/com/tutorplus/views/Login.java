@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
 
 
 
@@ -17,16 +18,18 @@ public class Login extends javax.swing.JFrame {
     TutorPlusApplicationIntf loginInterface;
 
     public Login() {
-        
- 
+//        
+// 
         initComponents();
-//        SwingUtilities.invokeLater(new Runnable() {
-//            public void run() {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
                  client=new TutorialClient();
                  loginInterface=client.tutorplusIntf;
-//            }
-//        });
+            }
+        });
     }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -315,40 +318,64 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
      
         try {
-             System.out.println("Some value output 0");
+//             System.out.println("Some value output 0");
 
              /*JASON this is the user object function, to get back the user object*/
             
-            TutorialClient.user=loginInterface.login("jpeters@gmail.com","test123");
-            //TutorialClient.user=loginInterface.login(SI_Username.getText(),SI_Password.getText());
+//            TutorialClient.user=loginInterface.login("jpeters@gmail.com","jpters");
+//            TutorialClient.user=loginInterface.login(SI_Username.getText(),SI_Password.getText());
+            TutorialClient.user= loginInterface.login(SI_Username.getText(),SI_Password.getText());
            
             /*JASON this is a test method that I added to TutorPlusApplication and TutorPlusApplicationIntf*/
-            int val=loginInterface.testlop();
+//            int val=loginInterface.testlop();
             
             
-            System.out.println("The Val returned= "+val);
-              System.out.println("Some value output 1");
-//             if(TutorialClient.user != null)
-            if(val==200) 
+//            System.out.println("The Val returned= "+val);
+//              System.out.println("Some value output 1");
+            if(TutorialClient.user != null)
+//            if(val==200) 
+
             {
-                System.out.println("Some value output 2");
-                StudentDashboard regFace =new StudentDashboard();
-                regFace.setVisible(true);
-                dispose();
+                String userRole = TutorialClient.user.getUserRole().getUserRoleName();
+                TutorialClient.userSession =  TutorialClient.user.getUserSessionId();
+
+                 //Student is  able to login
+                 if(userRole.equalsIgnoreCase("student")){
+//                        System.out.println("Some value output 2");
+                        StudentDashboard regFace =new StudentDashboard();
+                        regFace.setVisible(true);
+                        dispose();
+                 }
+                 else if (userRole.equalsIgnoreCase("tutor")){
+                      TutorDashboard regFace =new TutorDashboard();
+                      regFace.setVisible(true);
+                      dispose();
+                 }
+                 else {
+                     //Todo: Should we have a Admin dashboard?????
+                 }
+//               
             }
-            else if(SI_Username.getText().equals("1234") && SI_Password.getText().equals("1234")) 
-            {
-                TutorDashboard regFace =new TutorDashboard();
-                regFace.setVisible(true);
-                dispose();
-            }        
-            else 
-            {
-                JOptionPane.showMessageDialog(null,"Wrong Password / Username");
-                SI_Username.setText("");
-                SI_Password.setText("");
-                SI_Username.requestFocus();
+            else {
+                
+                    JOptionPane.showMessageDialog(null,"Wrong Password / Username");
+                    SI_Username.setText("");
+                    SI_Password.setText("");
+                    SI_Username.requestFocus();  
             }
+//            else if(SI_Username.getText().equals("1234") && SI_Password.getText().equals("1234")) 
+//            {
+//                TutorDashboard regFace =new TutorDashboard();
+//                regFace.setVisible(true);
+//                dispose();
+//            }        
+//            else 
+//            {
+//                JOptionPane.showMessageDialog(null,"Wrong Password / Username");
+//                SI_Username.setText("");
+//                SI_Password.setText("");
+//                SI_Username.requestFocus();
+//            }
         
             
       } 

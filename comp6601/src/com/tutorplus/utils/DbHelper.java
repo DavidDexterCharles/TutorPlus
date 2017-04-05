@@ -68,23 +68,24 @@ public class DbHelper {
 //                    "join users tu on ucp.account_id = tu.account_id\n" +
 //                    "where tu.username = '"+username+"'";
             
-            String sql = "select tu.userid,tu.firstname, tu.lastname, a.account_id,tu.password,tu.email" +
-                        "from account a, users tu" +
-                        "where a.account_id = tu.account_id" +
-                        "and tu.email = 'jpeters@gmail.com'";
+            String sql = "select u.userid, u.account_id, u.firstname, "
+                    + "u.lastname, u.email, u.status_id, u.password\n" +
+                            "from users u\n" +
+                            "where u.email = '"+username+"'";
             
             ResultSet rs = statement.executeQuery(sql);
             if (rs.next()){
-                userData.put("userid",rs.getString(1));
-                userData.put("firstname",rs.getString(2));
-                userData.put("lastname",rs.getString(3));
-                userData.put("account_id",rs.getString(4));
-                userData.put("password",rs.getString(6));
-                userData.put("email",rs.getString(8));
+                userData.put("userId",rs.getString(1));
+                userData.put("accountType",rs.getString(2));
+                userData.put("firstName",rs.getString(3));
+                userData.put("lastName",rs.getString(4));
+                userData.put("email",rs.getString(5));
+                userData.put("status",rs.getString(6));
+                userData.put("password",rs.getString(7));
 
-                userPrivilegeTypes.add(rs.getString(5));
-
-                while (rs.next()) userPrivilegeTypes.add(rs.getString(5));
+//                userPrivilegeTypes.add(rs.getString(5));
+//
+//                while (rs.next()) userPrivilegeTypes.add(rs.getString(5));
 
 //                userData.put("privileges",userPrivilegeTypes);
             }

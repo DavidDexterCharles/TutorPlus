@@ -32,7 +32,7 @@ public  class UserManager {
 
        if (user == null){
 
-         if (addUserFromDb(username)){
+         if (this.addUserFromDb(username)){
              return userList.get(username);
          }
          return  null;
