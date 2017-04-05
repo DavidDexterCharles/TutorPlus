@@ -12,9 +12,6 @@
               <Font name="Arial" size="15" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MyDashboardMenuMouseClicked"/>
-          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="Exit">
           <Properties>
@@ -23,9 +20,6 @@
               <Font name="Arial" size="15" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ExitMouseClicked"/>
-          </Events>
         </Menu>
       </SubComponents>
     </Menu>

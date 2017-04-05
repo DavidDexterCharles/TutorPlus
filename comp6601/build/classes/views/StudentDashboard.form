@@ -12,9 +12,6 @@
               <Font name="Arial" size="15" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MyDashboardMenuMouseClicked"/>
-          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="Exit">
           <Properties>
@@ -23,9 +20,6 @@
               <Font name="Arial" size="15" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ExitMouseClicked"/>
-          </Events>
         </Menu>
       </SubComponents>
     </Menu>
@@ -177,17 +171,11 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="View my information"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ViewStudentInfoMouseClicked"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="LogOutStudent">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Log Out"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LogOutStudentMouseClicked"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -257,9 +245,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Unregister for course"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="UnregiesterCourseMouseClicked"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -390,16 +375,13 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Register for course"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="RegisterCourseMouseClicked"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="ViewCourseInfo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Course Information"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ViewCourseInfoMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ViewCourseInfoActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -408,7 +390,7 @@
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Tutorial Overview"/>
+                <TitledBorder title="Course Overview"/>
               </Border>
             </Property>
           </Properties>
@@ -416,15 +398,9 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane2" alignment="0" pref="428" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="OpenStudentTutorial" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="jScrollPane2" pref="428" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -433,9 +409,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="400" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="OpenStudentTutorial" min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -449,14 +423,14 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="StudentTutorialMainListPrintout">
+                <Component class="javax.swing.JList" name="StudentCourseMainListPrintout">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="f0" green="f0" red="f0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="Print out of all tutorials registered for"/>
+                        <StringItem index="0" value="Print out of all courses registered for"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -466,14 +440,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="OpenStudentTutorial">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Open Tutorial"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="OpenStudentTutorialMouseClicked"/>
-              </Events>
-            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
