@@ -1,5 +1,7 @@
 package views;
 
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -32,7 +34,6 @@ public class EditStudent extends javax.swing.JFrame {
         MyProfileJPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        ViewTutorInfo = new javax.swing.JButton();
         LogOutTutor = new javax.swing.JButton();
         StudentCoursesJPanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -66,9 +67,12 @@ public class EditStudent extends javax.swing.JFrame {
 
         jLabel1.setText("Welcome");
 
-        ViewTutorInfo.setText("View my information");
-
         LogOutTutor.setText("Log Out");
+        LogOutTutor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogOutTutorMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout MyProfileJPanelLayout = new javax.swing.GroupLayout(MyProfileJPanel);
         MyProfileJPanel.setLayout(MyProfileJPanelLayout);
@@ -81,9 +85,7 @@ public class EditStudent extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel2))
-                    .addGroup(MyProfileJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(LogOutTutor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ViewTutorInfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(LogOutTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MyProfileJPanelLayout.setVerticalGroup(
@@ -94,10 +96,8 @@ public class EditStudent extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addComponent(ViewTutorInfo)
-                .addGap(18, 18, 18)
                 .addComponent(LogOutTutor)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         StudentCoursesJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("My Courses"));
@@ -112,6 +112,11 @@ public class EditStudent extends javax.swing.JFrame {
         jScrollPane3.setViewportView(StudentCourseListPrintout);
 
         UnregiesterCourse.setText("Unregister for course");
+        UnregiesterCourse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UnregiesterCourseMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout StudentCoursesJPanelLayout = new javax.swing.GroupLayout(StudentCoursesJPanel);
         StudentCoursesJPanel.setLayout(StudentCoursesJPanelLayout);
@@ -168,9 +173,9 @@ public class EditStudent extends javax.swing.JFrame {
         TutorMiddleNamejLabel.setText("Middle Name");
 
         UpdateStudent.setText("Update Profile");
-        UpdateStudent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateStudentActionPerformed(evt);
+        UpdateStudent.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UpdateStudentMouseClicked(evt);
             }
         });
 
@@ -257,10 +262,20 @@ public class EditStudent extends javax.swing.JFrame {
         MyDashboardMenu.setText("My Dashboard");
         MyDashboardMenu.setActionCommand("");
         MyDashboardMenu.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        MyDashboardMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MyDashboardMenuMouseClicked(evt);
+            }
+        });
         MenuBar.add(MyDashboardMenu);
 
         Exit.setText("Exit");
         Exit.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ExitMouseClicked(evt);
+            }
+        });
         MenuBar.add(Exit);
 
         setJMenuBar(MenuBar);
@@ -288,9 +303,36 @@ public class EditStudent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void UpdateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateStudentActionPerformed
+    private void LogOutTutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutTutorMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateStudentActionPerformed
+        Login regFace =new Login();
+        regFace.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_LogOutTutorMouseClicked
+
+    private void UnregiesterCourseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UnregiesterCourseMouseClicked
+        // TODO add your handling code here:
+        if (!"".equals(StudentCourseListPrintout.getSelectedValue())){
+          JOptionPane.showMessageDialog(null,"You have just unregistered for "+StudentCourseListPrintout.getSelectedValue());  
+        } 
+    }//GEN-LAST:event_UnregiesterCourseMouseClicked
+
+    private void MyDashboardMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MyDashboardMenuMouseClicked
+        // TODO add your handling code here:
+        StudentDashboard regFace =new StudentDashboard();
+        regFace.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_MyDashboardMenuMouseClicked
+
+    private void UpdateStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateStudentMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"You're profile has been updated."); 
+    }//GEN-LAST:event_UpdateStudentMouseClicked
+
+    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_ExitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -342,7 +384,6 @@ public class EditStudent extends javax.swing.JFrame {
     private javax.swing.JLabel TutorMiddleNamejLabel;
     private javax.swing.JButton UnregiesterCourse;
     private javax.swing.JButton UpdateStudent;
-    private javax.swing.JButton ViewTutorInfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -350,4 +391,8 @@ public class EditStudent extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
+
+    private void Exit(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

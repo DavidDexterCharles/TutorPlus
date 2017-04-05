@@ -38,6 +38,8 @@ public class Login extends javax.swing.JFrame {
         SI_Username = new javax.swing.JTextField();
         SI_Password = new javax.swing.JPasswordField();
         SI_Button = new javax.swing.JButton();
+        userTypeList = new javax.swing.JComboBox<>();
+        UserTypeLabel = new javax.swing.JLabel();
         SU_JPanel = new javax.swing.JPanel();
         SU_FNLabel = new javax.swing.JLabel();
         SU_LNLabel = new javax.swing.JLabel();
@@ -85,24 +87,30 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        userTypeList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Tutor", "Admin" }));
+
+        UserTypeLabel.setText("User Type");
+
         javax.swing.GroupLayout SI_JPanelLayout = new javax.swing.GroupLayout(SI_JPanel);
         SI_JPanel.setLayout(SI_JPanelLayout);
         SI_JPanelLayout.setHorizontalGroup(
             SI_JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SI_JPanelLayout.createSequentialGroup()
+                .addContainerGap(172, Short.MAX_VALUE)
+                .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(SI_JPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(SI_JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SI_UNLabel)
-                    .addComponent(SI_PasswordLabel))
+                    .addComponent(SI_PasswordLabel)
+                    .addComponent(UserTypeLabel))
                 .addGap(18, 18, 18)
                 .addGroup(SI_JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(SI_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                    .addComponent(SI_Username))
+                    .addComponent(SI_Username)
+                    .addComponent(userTypeList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SI_JPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SI_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         SI_JPanelLayout.setVerticalGroup(
             SI_JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +124,11 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(SI_PasswordLabel)
                     .addComponent(SI_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SI_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(SI_JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(userTypeList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UserTypeLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(SI_Button)
                 .addContainerGap())
         );
 
@@ -240,9 +252,11 @@ public class Login extends javax.swing.JFrame {
             .addGroup(Welcome_JPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Welcome_JPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TP_Icon)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Welcome_JPanelLayout.createSequentialGroup()
+                        .addComponent(TP_Icon)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
         );
 
         Login_Exit.setBackground(new java.awt.Color(255, 255, 255));
@@ -267,20 +281,20 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(Login_Exit, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                     .addComponent(SI_JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SU_JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 21, Short.MAX_VALUE))
+                .addGap(0, 78, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Welcome_JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(SI_JPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SI_JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(SU_JPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(Login_Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SU_JPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Login_Exit))
+                    .addComponent(Welcome_JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -294,18 +308,24 @@ public class Login extends javax.swing.JFrame {
 
     private void SI_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SI_ButtonMouseClicked
         // TODO add your handling code here:
-        if(SI_Username.getText().equals("123") && SI_Password.getText().equals("123")) 
+        if(SI_Username.getText().equals("123") && SI_Password.getText().equals("123") && userTypeList.getSelectedItem().equals("Student")) 
         {
             StudentDashboard regFace =new StudentDashboard();
             regFace.setVisible(true);
             dispose();
         }
-        else if(SI_Username.getText().equals("1234") && SI_Password.getText().equals("1234")) 
+        else if(SI_Username.getText().equals("123") && SI_Password.getText().equals("123") && userTypeList.getSelectedItem().equals("Tutor"))
         {
             TutorDashboard regFace =new TutorDashboard();
             regFace.setVisible(true);
             dispose();
-        }        
+        }  
+        else if(SI_Username.getText().equals("123") && SI_Password.getText().equals("123") && userTypeList.getSelectedItem().equals("Admin"))
+        {
+            AdminDashboard regFace =new AdminDashboard();
+            regFace.setVisible(true);
+            dispose();
+        } 
         else 
         {
             JOptionPane.showMessageDialog(null,"Wrong Password / Username");
@@ -372,8 +392,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel SU_PWLabel;
     private javax.swing.JTextArea TP_Description;
     private javax.swing.JLabel TP_Icon;
+    private javax.swing.JLabel UserTypeLabel;
     private javax.swing.JPanel Welcome_JPanel;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> userTypeList;
     // End of variables declaration//GEN-END:variables
 
     private void Exit(int i) {

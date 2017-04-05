@@ -12,6 +12,9 @@
               <Font name="Arial" size="15" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MyDashboardMenuMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="Exit">
           <Properties>
@@ -20,6 +23,9 @@
               <Font name="Arial" size="15" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ExitMouseClicked"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>
@@ -297,10 +303,19 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="CourseNameLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="CourseNameInput" max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="CourseLevelLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="CourseLevelTextField" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="CourseSemesterLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="Department" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -310,37 +325,28 @@
                                   <Component id="SemesterComboBox" max="32767" attributes="0"/>
                                   <Component id="DepartmentComboBox" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane2" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="UpdatePublishCourse" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="DeleteCourse" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="CourseDescriptionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="CourseNameLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="CourseNameInput" max="32767" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="CourseTypeLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="UpdatePublishCourse" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="CourseTypeComboBox" min="-2" pref="108" max="-2" attributes="0"/>
+                                      <Component id="DeleteCourse" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="CourseDescriptionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="ComponentsLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="313" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -350,11 +356,15 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="CourseNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CourseTypeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="CourseNameInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CourseTypeComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CourseLevelLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CourseLevelTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="ComponentsLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" min="-2" pref="97" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="CourseDescriptionLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="129" max="-2" attributes="0"/>
@@ -368,13 +378,13 @@
                           <Component id="Department" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="DepartmentComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="UpdatePublishCourse" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="DeleteCourse" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -411,11 +421,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdatePublishCourseActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="CourseTypeLabel">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Course Type"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="CourseSemesterLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Course Semester"/>
@@ -430,21 +435,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CourseNameInputActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="CourseTypeComboBox">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
               <AuxValues>
@@ -490,6 +480,46 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="CourseLevelTextField">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="CourseLevelLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Course Level"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="ComponentsListing">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="5">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                        <StringItem index="4" value="Item 5"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="ComponentsLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Course Components"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
