@@ -1,4 +1,4 @@
-package com.tutorplus.views;
+package views;
 
 
 /**
@@ -247,20 +247,10 @@ public class ViewTutorial extends javax.swing.JFrame {
         MyDashboardMenu.setText("My Dashboard");
         MyDashboardMenu.setActionCommand("");
         MyDashboardMenu.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        MyDashboardMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MyDashboardMenuMouseClicked(evt);
-            }
-        });
         MenuBar.add(MyDashboardMenu);
 
         Exit.setText("Exit");
         Exit.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ExitMouseClicked(evt);
-            }
-        });
         MenuBar.add(Exit);
 
         setJMenuBar(MenuBar);
@@ -297,18 +287,6 @@ public class ViewTutorial extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ManageSudentsActionPerformed
 
-    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_ExitMouseClicked
-
-    private void MyDashboardMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MyDashboardMenuMouseClicked
-        // TODO add your handling code here:
-        TutorDashboard regFace =new TutorDashboard();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_MyDashboardMenuMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -328,7 +306,6 @@ public class ViewTutorial extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ViewTutorial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
         
         //</editor-fold>

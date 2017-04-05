@@ -1,4 +1,4 @@
-package com.tutorplus.views;
+package views;
 
 
 /*
@@ -35,6 +35,10 @@ public class CreateTutor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         ViewTutorInfo = new javax.swing.JButton();
         LogOutTutor = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        ManageSudents = new javax.swing.JButton();
+        ManageCourses = new javax.swing.JButton();
+        ManageTutorials = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         TutorFirstNameJLabel = new javax.swing.JLabel();
         TutorLastNameJLabel = new javax.swing.JLabel();
@@ -54,7 +58,7 @@ public class CreateTutor extends javax.swing.JFrame {
         TutursJLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Tutors = new javax.swing.JList<>();
-        ViewTutor = new javax.swing.JButton();
+        EditTutor = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         PageName = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
@@ -105,13 +109,52 @@ public class CreateTutor extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Options"));
+
+        ManageSudents.setText("Manage Sudents");
+        ManageSudents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManageSudentsActionPerformed(evt);
+            }
+        });
+
+        ManageCourses.setText("Manage Courses");
+
+        ManageTutorials.setText("Manage Tutorials");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ManageSudents, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageCourses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ManageTutorials, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ManageSudents)
+                .addGap(18, 18, 18)
+                .addComponent(ManageCourses)
+                .addGap(18, 18, 18)
+                .addComponent(ManageTutorials)
+                .addContainerGap(212, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MyProfileJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(MyProfileJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -119,6 +162,8 @@ public class CreateTutor extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(MyProfileJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -204,11 +249,9 @@ public class CreateTutor extends javax.swing.JFrame {
                     .addComponent(TutorDept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(CoursesJLabel)
-                        .addGap(0, 201, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
-                .addGap(18, 18, 18)
+                    .addComponent(CoursesJLabel)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(CreateTutor)
                 .addGap(31, 31, 31))
         );
@@ -224,10 +267,10 @@ public class CreateTutor extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(Tutors);
 
-        ViewTutor.setText("View Tutor");
-        ViewTutor.addActionListener(new java.awt.event.ActionListener() {
+        EditTutor.setText("Edit Tutor");
+        EditTutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewTutorActionPerformed(evt);
+                EditTutorActionPerformed(evt);
             }
         });
 
@@ -243,8 +286,8 @@ public class CreateTutor extends javax.swing.JFrame {
                         .addComponent(TutursJLabel)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 105, Short.MAX_VALUE)
-                        .addComponent(ViewTutor)))
+                        .addGap(0, 111, Short.MAX_VALUE)
+                        .addComponent(EditTutor)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -253,10 +296,10 @@ public class CreateTutor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(TutursJLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2)
-                .addGap(18, 18, 18)
-                .addComponent(ViewTutor)
-                .addGap(32, 32, 32))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(EditTutor)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PageName.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -286,11 +329,6 @@ public class CreateTutor extends javax.swing.JFrame {
 
         Exit.setText("Exit");
         Exit.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ExitMouseClicked(evt);
-            }
-        });
         MenuBar.add(Exit);
 
         setJMenuBar(MenuBar);
@@ -331,14 +369,13 @@ public class CreateTutor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CreateTutorActionPerformed
 
-    private void ViewTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewTutorActionPerformed
+    private void EditTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTutorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ViewTutorActionPerformed
+    }//GEN-LAST:event_EditTutorActionPerformed
 
-    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
+    private void ManageSudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageSudentsActionPerformed
         // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_ExitMouseClicked
+    }//GEN-LAST:event_ManageSudentsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -366,11 +403,12 @@ public class CreateTutor extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(CreateTutor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new CreateTutor().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new CreateTutor().setVisible(true);
+            }
         });
     }
 
@@ -378,8 +416,12 @@ public class CreateTutor extends javax.swing.JFrame {
     private javax.swing.JLabel CoursesJLabel;
     private javax.swing.JButton CreateTutor;
     private javax.swing.JLabel DepartmentJLabel;
+    private javax.swing.JButton EditTutor;
     private javax.swing.JMenu Exit;
     private javax.swing.JButton LogOutTutor;
+    private javax.swing.JButton ManageCourses;
+    private javax.swing.JButton ManageSudents;
+    private javax.swing.JButton ManageTutorials;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MyDashboardMenu;
     private javax.swing.JPanel MyProfileJPanel;
@@ -396,12 +438,12 @@ public class CreateTutor extends javax.swing.JFrame {
     private javax.swing.JLabel TutorMiddleNamejLabel;
     private javax.swing.JList<String> Tutors;
     private javax.swing.JLabel TutursJLabel;
-    private javax.swing.JButton ViewTutor;
     private javax.swing.JButton ViewTutorInfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;

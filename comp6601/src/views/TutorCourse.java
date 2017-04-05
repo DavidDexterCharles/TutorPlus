@@ -1,4 +1,4 @@
-package com.tutorplus.views;
+package views;
 
 
 /*
@@ -46,18 +46,15 @@ public class TutorCourse extends javax.swing.JFrame {
         CourseNameLabel = new javax.swing.JLabel();
         CourseDescriptionLabel = new javax.swing.JLabel();
         UpdatePublishCourse = new javax.swing.JButton();
+        CourseTypeLabel = new javax.swing.JLabel();
         CourseSemesterLabel = new javax.swing.JLabel();
         Department = new javax.swing.JLabel();
         CourseNameInput = new javax.swing.JTextField();
+        CourseTypeComboBox = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         CourseDescriptionText = new javax.swing.JTextArea();
         SemesterComboBox = new javax.swing.JComboBox<>();
         DepartmentComboBox = new javax.swing.JComboBox<>();
-        CourseLevelTextField = new javax.swing.JTextField();
-        CourseLevelLabel = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        ComponentsListing = new javax.swing.JList<>();
-        ComponentsLabel = new javax.swing.JLabel();
         CourseTutorialJPanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         TutorialPrintout = new javax.swing.JList<>();
@@ -195,6 +192,8 @@ public class TutorCourse extends javax.swing.JFrame {
             }
         });
 
+        CourseTypeLabel.setText("Course Type");
+
         CourseSemesterLabel.setText("Course Semester");
 
         Department.setText("Department");
@@ -205,6 +204,8 @@ public class TutorCourse extends javax.swing.JFrame {
             }
         });
 
+        CourseTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         CourseDescriptionText.setColumns(20);
         CourseDescriptionText.setRows(5);
         jScrollPane2.setViewportView(CourseDescriptionText);
@@ -212,19 +213,6 @@ public class TutorCourse extends javax.swing.JFrame {
         SemesterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         DepartmentComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        CourseLevelTextField.setEditable(false);
-
-        CourseLevelLabel.setText("Course Level");
-
-        ComponentsListing.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(ComponentsListing);
-
-        ComponentsLabel.setText("Course Components");
 
         javax.swing.GroupLayout CourseOverviewJPanelLayout = new javax.swing.GroupLayout(CourseOverviewJPanel);
         CourseOverviewJPanel.setLayout(CourseOverviewJPanelLayout);
@@ -234,37 +222,36 @@ public class TutorCourse extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
-                        .addComponent(CourseNameLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CourseNameInput)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CourseLevelLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(CourseLevelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
                         .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CourseSemesterLabel)
                             .addComponent(Department))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(SemesterComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(DepartmentComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane2)
+                            .addComponent(DepartmentComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(12, 12, 12))
                     .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
                         .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2)
                             .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
+                                        .addComponent(jButton1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(UpdatePublishCourse)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(DeleteCourse))
+                                    .addComponent(CourseDescriptionLabel))
+                                .addGap(0, 25, Short.MAX_VALUE))
+                            .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
+                                .addComponent(CourseNameLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(UpdatePublishCourse)
+                                .addComponent(CourseNameInput)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CourseTypeLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(DeleteCourse))
-                            .addComponent(CourseDescriptionLabel))
-                        .addGap(0, 25, Short.MAX_VALUE))
-                    .addComponent(jScrollPane4)
-                    .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
-                        .addComponent(ComponentsLabel)
-                        .addGap(313, 313, 313)))
-                .addContainerGap())
+                                .addComponent(CourseTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
         );
         CourseOverviewJPanelLayout.setVerticalGroup(
             CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,14 +259,10 @@ public class TutorCourse extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CourseNameLabel)
+                    .addComponent(CourseTypeLabel)
                     .addComponent(CourseNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CourseLevelLabel)
-                    .addComponent(CourseLevelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CourseTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(ComponentsLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(CourseDescriptionLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,12 +274,12 @@ public class TutorCourse extends javax.swing.JFrame {
                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Department)
                     .addComponent(DepartmentComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(UpdatePublishCourse)
                     .addComponent(DeleteCourse))
-                .addContainerGap())
+                .addGap(60, 60, 60))
         );
 
         CourseTutorialJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Course Search"));
@@ -378,20 +361,10 @@ public class TutorCourse extends javax.swing.JFrame {
         MyDashboardMenu.setText("My Dashboard");
         MyDashboardMenu.setActionCommand("");
         MyDashboardMenu.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        MyDashboardMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MyDashboardMenuMouseClicked(evt);
-            }
-        });
         MenuBar.add(MyDashboardMenu);
 
         Exit.setText("Exit");
         Exit.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ExitMouseClicked(evt);
-            }
-        });
         MenuBar.add(Exit);
 
         setJMenuBar(MenuBar);
@@ -431,18 +404,6 @@ public class TutorCourse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CourseNameInputActionPerformed
 
-    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_ExitMouseClicked
-
-    private void MyDashboardMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MyDashboardMenuMouseClicked
-        // TODO add your handling code here:
-        TutorDashboard regFace =new TutorDashboard();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_MyDashboardMenuMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -463,7 +424,6 @@ public class TutorCourse extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TutorCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
         
         //</editor-fold>
 
@@ -474,17 +434,15 @@ public class TutorCourse extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ComponentsLabel;
-    private javax.swing.JList<String> ComponentsListing;
     private javax.swing.JLabel CourseDescriptionLabel;
     private javax.swing.JTextArea CourseDescriptionText;
-    private javax.swing.JLabel CourseLevelLabel;
-    private javax.swing.JTextField CourseLevelTextField;
     private javax.swing.JTextField CourseNameInput;
     private javax.swing.JLabel CourseNameLabel;
     private javax.swing.JPanel CourseOverviewJPanel;
     private javax.swing.JLabel CourseSemesterLabel;
     private javax.swing.JPanel CourseTutorialJPanel;
+    private javax.swing.JComboBox<String> CourseTypeComboBox;
+    private javax.swing.JLabel CourseTypeLabel;
     private javax.swing.JButton DeleteCourse;
     private javax.swing.JLabel Department;
     private javax.swing.JComboBox<String> DepartmentComboBox;
@@ -511,6 +469,5 @@ public class TutorCourse extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     // End of variables declaration//GEN-END:variables
 }

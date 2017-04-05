@@ -19,9 +19,9 @@ public class Server {
 
         try {
             System.out.println("Server starting...");
-            Thread.sleep(500);
+            //Thread.sleep(500);
             System.out.println("Starting RMI Registry...");
-            Thread.sleep(500);
+            //Thread.sleep(500);
 
 //            Registry registry = LocateRegistry.getRegistry(SERVER_PORT);
 //            if (registry == null){
@@ -29,14 +29,14 @@ public class Server {
 
 //            }
             System.out.println("Done!");
-            Thread.sleep(500);
+           // Thread.sleep(500);
             System.out.println("Instantiating classes...");
-            Thread.sleep(500);
+           // Thread.sleep(500);
             tutorPlusApplication = new TutorPlusApplication();
             System.out.println("Done!");
-            Thread.sleep(500);
+            //Thread.sleep(500);
             System.out.printf("Binding the tutorplus user functions to RMI registry at port: %s ...\n",SERVER_PORT);
-            Thread.sleep(500);
+         //   Thread.sleep(500);
             System.out.println("Binding complete!");
             Naming.rebind("//"+ SERVER_ADDR +":"+SERVER_PORT+"/TutorPlusApplication", tutorPlusApplication);
 

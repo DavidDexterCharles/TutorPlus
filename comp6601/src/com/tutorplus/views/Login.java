@@ -9,25 +9,26 @@ import com.tutorplus.controllers.login;
 import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
 
 
 
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
-    
-    //login l;
+ 
     TutorialClient client;
     TutorPlusApplicationIntf loginInterface;
 
     public Login() {
         
-      //  l=new login(client.gettutorplusIntf());
+ 
         initComponents();
-//         client=new TutorialClient();
-//         loginInterface=client.tutorplusIntf;
+//        SwingUtilities.invokeLater(new Runnable() {
+//            public void run() {
+                 client=new TutorialClient();
+                 loginInterface=client.tutorplusIntf;
+//            }
+//        });
     }
 
     /**
@@ -316,15 +317,19 @@ public class Login extends javax.swing.JFrame {
     private void SI_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SI_ButtonMouseClicked
         // TODO add your handling code here:
      
-        //try {
+        try {
              System.out.println("Some value output 0");
-//            client=new TutorialClient();
-//         loginInterface=client.tutorplusIntf;
-           // l.setUser(SI_Username.getText(),SI_Password.getText());
+
+             /*JASON this is the user object function, to get back the user object*/
             
-          //  TutorialClient.user=loginInterface.login(SI_Username.getText(),SI_Password.getText());
-            int val=200;//loginInterface.testlop();
+            TutorialClient.user=loginInterface.login("jpeters@gmail.com","test123");
+            //TutorialClient.user=loginInterface.login(SI_Username.getText(),SI_Password.getText());
+           
+            /*JASON this is a test method that I added to TutorPlusApplication and TutorPlusApplicationIntf*/
+            int val=loginInterface.testlop();
             
+            
+            System.out.println("The Val returned= "+val);
               System.out.println("Some value output 1");
 //             if(TutorialClient.user != null)
             if(val==200) 
@@ -349,10 +354,10 @@ public class Login extends javax.swing.JFrame {
             }
         
             
-      //} 
-//catch (RemoteException ex) {
-//            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        //}
+      } 
+catch (RemoteException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
 //        if(SI_Username.getText().equals("123") && SI_Password.getText().equals("123")) 
        

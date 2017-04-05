@@ -15,7 +15,7 @@ public class TutorialClient {
     
     public static User user;
     public static TutorPlusApplicationIntf tutorplusIntf;
-    private final String tutorialServerURL= "rmi://" + "localhost" + "/TutorPlusApplicaions";
+    private final String tutorialServerURL= "rmi://" + "localhost" + "/TutorPlusApplication";
 
     public TutorialClient(){
         try {

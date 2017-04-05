@@ -18,8 +18,8 @@ public class TutorialClient {
             Logger.getLogger(TutorialClient.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public TutorPlusUserFunctionIntf gettutorplusIntf(){
-    return this.tutorplusIntf;
-    }
+//    public TutorPlusUserFunctionIntf gettutorplusIntf(){
+//    return this.tutorplusIntf;
+//    }
          
 }

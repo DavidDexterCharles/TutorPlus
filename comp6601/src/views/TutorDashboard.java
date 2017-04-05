@@ -1,4 +1,4 @@
-package com.tutorplus.views;
+package views;
 
 
 /*
@@ -68,18 +68,8 @@ public class TutorDashboard extends javax.swing.JFrame {
         jLabel1.setText("Welcome");
 
         ViewTutorInfo.setText("View my information");
-        ViewTutorInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ViewTutorInfoMouseClicked(evt);
-            }
-        });
 
         LogOutTutor.setText("Log Out");
-        LogOutTutor.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LogOutTutorMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout MyProfileJPanelLayout = new javax.swing.GroupLayout(MyProfileJPanel);
         MyProfileJPanel.setLayout(MyProfileJPanelLayout);
@@ -299,20 +289,10 @@ public class TutorDashboard extends javax.swing.JFrame {
         MyDashboardMenu.setText("My Dashboard");
         MyDashboardMenu.setActionCommand("");
         MyDashboardMenu.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        MyDashboardMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MyDashboardMenuMouseClicked(evt);
-            }
-        });
         MenuBar.add(MyDashboardMenu);
 
         Exit.setText("Exit");
         Exit.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ExitMouseClicked(evt);
-            }
-        });
         MenuBar.add(Exit);
 
         setJMenuBar(MenuBar);
@@ -344,32 +324,6 @@ public class TutorDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchCourseInputActionPerformed
 
-    private void ViewTutorInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewTutorInfoMouseClicked
-        // TODO add your handling code here:
-        EditTutor regFace =new EditTutor();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_ViewTutorInfoMouseClicked
-
-    private void LogOutTutorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutTutorMouseClicked
-        // TODO add your handling code here:
-        Login regFace =new Login();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_LogOutTutorMouseClicked
-
-    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_ExitMouseClicked
-
-    private void MyDashboardMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MyDashboardMenuMouseClicked
-        // TODO add your handling code here:
-        TutorDashboard regFace =new TutorDashboard();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_MyDashboardMenuMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -389,7 +343,6 @@ public class TutorDashboard extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TutorDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
         
         //</editor-fold>

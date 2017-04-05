@@ -1,6 +1,4 @@
-package com.tutorplus.views;
-
-import javax.swing.JOptionPane;
+package views;
 
 
 
@@ -36,35 +34,28 @@ public class StudenCourse extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         StudentCourseListPrintout = new javax.swing.JList<>();
         UnregiesterCourse = new javax.swing.JButton();
-        ViewCourseInfo = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         CourseSearchJPanel = new javax.swing.JPanel();
         SearchCourseInput = new javax.swing.JTextField();
         SearchCourse = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         SearchCoursePrintout = new javax.swing.JList<>();
-        ViewSearchCourseInfo = new javax.swing.JButton();
+        RegisterCourse = new javax.swing.JButton();
+        ViewCourseInfo = new javax.swing.JButton();
         CourseOverviewJPanel = new javax.swing.JPanel();
         CourseNameLabel = new javax.swing.JLabel();
-        CourseLevelLabel = new javax.swing.JLabel();
+        CourseTypeLabel = new javax.swing.JLabel();
         CourseDescriptionLabel = new javax.swing.JLabel();
         CourseSemesterLabel = new javax.swing.JLabel();
         Department = new javax.swing.JLabel();
         TutorLabel = new javax.swing.JLabel();
         CourseNameTextField = new javax.swing.JTextField();
-        CourseLevelTextField = new javax.swing.JTextField();
+        CourseTypeTextField = new javax.swing.JTextField();
         CourseSemesterTextField = new javax.swing.JTextField();
         DepartmentTextField = new javax.swing.JTextField();
         TutorTextField = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         CourseDescriptionTextArea = new javax.swing.JTextArea();
-        ComponentsLabel = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        ComponentsListing = new javax.swing.JList<>();
-        TutorialJPanel = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        CourseTutorialList = new javax.swing.JList<>();
-        OpenTutorial = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         PageLabel = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
@@ -83,18 +74,8 @@ public class StudenCourse extends javax.swing.JFrame {
         jLabel2.setText("UserName of logged in user");
 
         ViewStudentInfo.setText("View my information");
-        ViewStudentInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ViewStudentInfoMouseClicked(evt);
-            }
-        });
 
         LogOutStudent.setText("Log Out");
-        LogOutStudent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LogOutStudentMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout MyProfileJPanelLayout = new javax.swing.GroupLayout(MyProfileJPanel);
         MyProfileJPanel.setLayout(MyProfileJPanelLayout);
@@ -138,18 +119,6 @@ public class StudenCourse extends javax.swing.JFrame {
         jScrollPane1.setViewportView(StudentCourseListPrintout);
 
         UnregiesterCourse.setText("Unregister for course");
-        UnregiesterCourse.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                UnregiesterCourseMouseClicked(evt);
-            }
-        });
-
-        ViewCourseInfo.setText("View Course Information");
-        ViewCourseInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ViewCourseInfoMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout StudentCoursesJPanelLayout = new javax.swing.GroupLayout(StudentCoursesJPanel);
         StudentCoursesJPanel.setLayout(StudentCoursesJPanelLayout);
@@ -160,9 +129,7 @@ public class StudenCourse extends javax.swing.JFrame {
                 .addGroup(StudentCoursesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(StudentCoursesJPanelLayout.createSequentialGroup()
-                        .addGroup(StudentCoursesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ViewCourseInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(UnregiesterCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(UnregiesterCourse)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -170,10 +137,8 @@ public class StudenCourse extends javax.swing.JFrame {
             StudentCoursesJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(StudentCoursesJPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(ViewCourseInfo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(UnregiesterCourse)
                 .addContainerGap())
         );
@@ -210,11 +175,6 @@ public class StudenCourse extends javax.swing.JFrame {
         });
 
         SearchCourse.setText("Search for course");
-        SearchCourse.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SearchCourseMouseClicked(evt);
-            }
-        });
 
         SearchCoursePrintout.setBackground(new java.awt.Color(240, 240, 240));
         SearchCoursePrintout.setModel(new javax.swing.AbstractListModel<String>() {
@@ -225,10 +185,17 @@ public class StudenCourse extends javax.swing.JFrame {
         SearchCoursePrintout.setMaximumSize(new java.awt.Dimension(500, 18));
         jScrollPane3.setViewportView(SearchCoursePrintout);
 
-        ViewSearchCourseInfo.setText("View Course Information");
-        ViewSearchCourseInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ViewSearchCourseInfoMouseClicked(evt);
+        RegisterCourse.setText("Register for course");
+        RegisterCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterCourseActionPerformed(evt);
+            }
+        });
+
+        ViewCourseInfo.setText("View Course Information");
+        ViewCourseInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewCourseInfoActionPerformed(evt);
             }
         });
 
@@ -242,31 +209,34 @@ public class StudenCourse extends javax.swing.JFrame {
                     .addComponent(jScrollPane3)
                     .addComponent(SearchCourseInput)
                     .addGroup(CourseSearchJPanelLayout.createSequentialGroup()
-                        .addGroup(CourseSearchJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(CourseSearchJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(SearchCourse)
-                            .addComponent(ViewSearchCourseInfo))
+                            .addComponent(ViewCourseInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RegisterCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         CourseSearchJPanelLayout.setVerticalGroup(
             CourseSearchJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CourseSearchJPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(SearchCourseInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SearchCourse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ViewSearchCourseInfo)
-                .addGap(7, 7, 7))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ViewCourseInfo)
+                .addGap(18, 18, 18)
+                .addComponent(RegisterCourse)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         CourseOverviewJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Course Details"));
 
         CourseNameLabel.setText("Course Name");
 
-        CourseLevelLabel.setText("Course Level");
+        CourseTypeLabel.setText("Course Type");
 
         CourseDescriptionLabel.setText("Course Description");
 
@@ -278,7 +248,7 @@ public class StudenCourse extends javax.swing.JFrame {
 
         CourseNameTextField.setEditable(false);
 
-        CourseLevelTextField.setEditable(false);
+        CourseTypeTextField.setEditable(false);
 
         CourseSemesterTextField.setEditable(false);
 
@@ -291,15 +261,6 @@ public class StudenCourse extends javax.swing.JFrame {
         CourseDescriptionTextArea.setRows(5);
         jScrollPane2.setViewportView(CourseDescriptionTextArea);
 
-        ComponentsLabel.setText("Course Components");
-
-        ComponentsListing.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(ComponentsListing);
-
         javax.swing.GroupLayout CourseOverviewJPanelLayout = new javax.swing.GroupLayout(CourseOverviewJPanel);
         CourseOverviewJPanel.setLayout(CourseOverviewJPanelLayout);
         CourseOverviewJPanelLayout.setHorizontalGroup(
@@ -307,9 +268,6 @@ public class StudenCourse extends javax.swing.JFrame {
             .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane4)
-                        .addContainerGap())
                     .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
                         .addComponent(jScrollPane2)
                         .addContainerGap())
@@ -320,25 +278,21 @@ public class StudenCourse extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(CourseNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
-                                .addComponent(CourseLevelLabel)
+                                .addComponent(CourseTypeLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(CourseLevelTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
+                                .addComponent(CourseTypeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
                             .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
                                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(CourseSemesterLabel)
+                                    .addComponent(CourseDescriptionLabel)
                                     .addComponent(Department)
                                     .addComponent(TutorLabel))
-                                .addGap(26, 26, 26)
+                                .addGap(18, 18, 18)
                                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(CourseSemesterTextField)
                                     .addComponent(DepartmentTextField)
                                     .addComponent(TutorTextField))))
-                        .addGap(12, 12, 12))
-                    .addGroup(CourseOverviewJPanelLayout.createSequentialGroup()
-                        .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ComponentsLabel)
-                            .addComponent(CourseDescriptionLabel))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(12, 12, 12))))
         );
         CourseOverviewJPanelLayout.setVerticalGroup(
             CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,68 +300,25 @@ public class StudenCourse extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CourseNameLabel)
-                    .addComponent(CourseLevelLabel)
+                    .addComponent(CourseTypeLabel)
                     .addComponent(CourseNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CourseLevelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CourseTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(ComponentsLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CourseDescriptionLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CourseSemesterLabel)
                     .addComponent(CourseSemesterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Department)
                     .addComponent(DepartmentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(CourseOverviewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TutorLabel)
                     .addComponent(TutorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23))
-        );
-
-        TutorialJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Course Tutorials"));
-
-        CourseTutorialList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane5.setViewportView(CourseTutorialList);
-
-        OpenTutorial.setText("Open Tutorial");
-        OpenTutorial.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OpenTutorialMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout TutorialJPanelLayout = new javax.swing.GroupLayout(TutorialJPanel);
-        TutorialJPanel.setLayout(TutorialJPanelLayout);
-        TutorialJPanelLayout.setHorizontalGroup(
-            TutorialJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TutorialJPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TutorialJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5)
-                    .addGroup(TutorialJPanelLayout.createSequentialGroup()
-                        .addComponent(OpenTutorial, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 23, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        TutorialJPanelLayout.setVerticalGroup(
-            TutorialJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TutorialJPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(OpenTutorial)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -417,11 +328,9 @@ public class StudenCourse extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(CourseOverviewJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TutorialJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CourseSearchJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(CourseOverviewJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CourseSearchJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -430,10 +339,7 @@ public class StudenCourse extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CourseOverviewJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(TutorialJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CourseSearchJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(CourseSearchJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -460,20 +366,10 @@ public class StudenCourse extends javax.swing.JFrame {
         MyDashboardMenu.setText("My Dashboard");
         MyDashboardMenu.setActionCommand("");
         MyDashboardMenu.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        MyDashboardMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MyDashboardMenuMouseClicked(evt);
-            }
-        });
         MenuBar.add(MyDashboardMenu);
 
         Exit.setText("Exit");
         Exit.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ExitMouseClicked(evt);
-            }
-        });
         MenuBar.add(Exit);
 
         setJMenuBar(MenuBar);
@@ -505,63 +401,13 @@ public class StudenCourse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchCourseInputActionPerformed
 
-    private void ViewStudentInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewStudentInfoMouseClicked
+    private void ViewCourseInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewCourseInfoActionPerformed
         // TODO add your handling code here:
-        EditStudent regFace =new EditStudent();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_ViewStudentInfoMouseClicked
+    }//GEN-LAST:event_ViewCourseInfoActionPerformed
 
-    private void LogOutStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutStudentMouseClicked
+    private void RegisterCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterCourseActionPerformed
         // TODO add your handling code here:
-        Login regFace =new Login();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_LogOutStudentMouseClicked
-
-    private void UnregiesterCourseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UnregiesterCourseMouseClicked
-        // TODO add your handling code here:
-        if (!"".equals(StudentCourseListPrintout.getSelectedValue())){
-          JOptionPane.showMessageDialog(null,"You have just unregistered for "+StudentCourseListPrintout.getSelectedValue());  
-        } 
-    }//GEN-LAST:event_UnregiesterCourseMouseClicked
-
-    private void SearchCourseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchCourseMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchCourseMouseClicked
-
-    private void ViewSearchCourseInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewSearchCourseInfoMouseClicked
-        // TODO add your handling code here:
-        StudenCourse regFace =new StudenCourse();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_ViewSearchCourseInfoMouseClicked
-
-    private void MyDashboardMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MyDashboardMenuMouseClicked
-        // TODO add your handling code here:
-        StudentDashboard regFace =new StudentDashboard();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_MyDashboardMenuMouseClicked
-
-    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_ExitMouseClicked
-
-    private void ViewCourseInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewCourseInfoMouseClicked
-        // TODO add your handling code here:
-        StudenCourse regFace =new StudenCourse();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_ViewCourseInfoMouseClicked
-
-    private void OpenTutorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OpenTutorialMouseClicked
-        // TODO add your handling code here:
-        StudentTutorial regFace =new StudentTutorial();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_OpenTutorialMouseClicked
+    }//GEN-LAST:event_RegisterCourseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -583,7 +429,6 @@ public class StudenCourse extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(StudenCourse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
         
         //</editor-fold>
 
@@ -594,19 +439,16 @@ public class StudenCourse extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ComponentsLabel;
-    private javax.swing.JList<String> ComponentsListing;
     private javax.swing.JLabel CourseDescriptionLabel;
     private javax.swing.JTextArea CourseDescriptionTextArea;
-    private javax.swing.JLabel CourseLevelLabel;
-    private javax.swing.JTextField CourseLevelTextField;
     private javax.swing.JLabel CourseNameLabel;
     private javax.swing.JTextField CourseNameTextField;
     private javax.swing.JPanel CourseOverviewJPanel;
     private javax.swing.JPanel CourseSearchJPanel;
     private javax.swing.JLabel CourseSemesterLabel;
     private javax.swing.JTextField CourseSemesterTextField;
-    private javax.swing.JList<String> CourseTutorialList;
+    private javax.swing.JLabel CourseTypeLabel;
+    private javax.swing.JTextField CourseTypeTextField;
     private javax.swing.JLabel Department;
     private javax.swing.JTextField DepartmentTextField;
     private javax.swing.JMenu Exit;
@@ -614,8 +456,8 @@ public class StudenCourse extends javax.swing.JFrame {
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MyDashboardMenu;
     private javax.swing.JPanel MyProfileJPanel;
-    private javax.swing.JButton OpenTutorial;
     private javax.swing.JLabel PageLabel;
+    private javax.swing.JButton RegisterCourse;
     private javax.swing.JButton SearchCourse;
     private javax.swing.JTextField SearchCourseInput;
     private javax.swing.JList<String> SearchCoursePrintout;
@@ -623,10 +465,8 @@ public class StudenCourse extends javax.swing.JFrame {
     private javax.swing.JPanel StudentCoursesJPanel;
     private javax.swing.JLabel TutorLabel;
     private javax.swing.JTextField TutorTextField;
-    private javax.swing.JPanel TutorialJPanel;
     private javax.swing.JButton UnregiesterCourse;
     private javax.swing.JButton ViewCourseInfo;
-    private javax.swing.JButton ViewSearchCourseInfo;
     private javax.swing.JButton ViewStudentInfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -636,11 +476,5 @@ public class StudenCourse extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     // End of variables declaration//GEN-END:variables
-
-    private void Exit(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
