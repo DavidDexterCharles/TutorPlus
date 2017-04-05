@@ -2,14 +2,11 @@ package com.tutorplus.views;
 
 
 import com.tutorplus.application_core.TutorPlusApplicationIntf;
-import javax.swing.JOptionPane;
 import com.tutorplus.controllers.TutorialClient;
 import javax.swing.JOptionPane;
-import com.tutorplus.controllers.login;
 import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.SwingUtilities;
 
 
 

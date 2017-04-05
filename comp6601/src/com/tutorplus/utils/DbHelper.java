@@ -13,8 +13,10 @@ public class DbHelper {
 
     public  DbHelper(){
 
-        String user = "system";//"tutorplus";
-        String password ="Flowerz*27"; //"adm1n123";
+//        String user = "system";//"tutorplus";
+//        String password ="Flowerz*27"; //"adm1n123";
+        String user = "tplus";//"tutorplus";
+        String password ="tplus1234"; //"adm1n123";
 
         JDBCConnection jdbcConnection = new JDBCConnection(user, password);
         conn = jdbcConnection.conn;
