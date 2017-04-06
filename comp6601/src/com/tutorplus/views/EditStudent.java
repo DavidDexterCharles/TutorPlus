@@ -1,5 +1,6 @@
 package com.tutorplus.views;
 
+import com.tutorplus.controllers.TutorialClient;
 import javax.swing.JOptionPane;
 
 /*
@@ -63,9 +64,18 @@ public class EditStudent extends javax.swing.JFrame {
 
         MyProfileJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("My Profile"));
 
-        jLabel2.setText("UserName of logged in user");
+        
 
         jLabel1.setText("Welcome");
+        
+        //load user data
+        if (TutorialClient.user !=  null) {
+            
+            jLabel2.setText(TutorialClient.user.getFirstName()+ " " + TutorialClient.user.getLastName());
+            StudentFN.setText(TutorialClient.user.getFirstName());
+            StudentLN.setText(TutorialClient.user.getLastName());
+            StudentEmail.setText(TutorialClient.user.getEmail());
+        }
 
         LogOutTutor.setText("Log Out");
         LogOutTutor.addMouseListener(new java.awt.event.MouseAdapter() {

@@ -13,8 +13,8 @@ import javax.swing.JOptionPane;
  * @author elleb
  */
 public class StudentDashboard extends javax.swing.JFrame {
-    TutorialClient client;
-    TutorPlusApplicationIntf loginInterface;
+//    TutorialClient client;
+//    TutorPlusApplicationIntf loginInterface;
 
     /**
      * Creates new form StudentDashboard
@@ -24,8 +24,8 @@ public class StudentDashboard extends javax.swing.JFrame {
         
 //        SwingUtilities.invokeLater(new Runnable() {
 //            public void run() {
-                 client=new TutorialClient();
-                 loginInterface=client.tutorplusIntf;
+//                 client=new TutorialClient();
+//                 loginInterface=client.tutorplusIntf;
 //            }
 //        });
     }
@@ -75,7 +75,8 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         jLabel1.setText("Welcome");
 
-        jLabel2.setText("UserName of logged in user");
+//        jLabel2.setText("UserName of logged in user");
+          jLabel2.setText(TutorialClient.user.getFirstName()+ " " + TutorialClient.user.getLastName());
 
         ViewStudentInfo.setText("View my information");
         ViewStudentInfo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -364,7 +365,7 @@ public class StudentDashboard extends javax.swing.JFrame {
     private void SearchCourseInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCourseInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchCourseInputActionPerformed
-
+    
     private void ViewStudentInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewStudentInfoMouseClicked
         // TODO add your handling code here:
         EditStudent regFace =new EditStudent();

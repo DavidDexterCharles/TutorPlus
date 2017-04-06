@@ -1,5 +1,7 @@
 package com.tutorplus.views;
 
+import com.tutorplus.controllers.TutorialClient;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -63,7 +65,7 @@ public class TutorDashboard extends javax.swing.JFrame {
 
         MyProfileJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("My Profile"));
 
-        jLabel2.setText("UserName of logged in user");
+         jLabel2.setText(TutorialClient.user.getFirstName()+ " " + TutorialClient.user.getLastName());
 
         jLabel1.setText("Welcome");
 

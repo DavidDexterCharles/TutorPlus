@@ -90,7 +90,7 @@ public  class UserManager {
         }
 
         User user = UserFactory.getNewInstance(firstName,lastName,email,userRole,username,password);
-
+          
 //        user.login.setUsername(username);
 //        user.login.setPassword(password);
 

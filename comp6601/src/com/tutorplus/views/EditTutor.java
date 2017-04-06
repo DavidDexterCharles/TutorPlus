@@ -1,5 +1,7 @@
 package com.tutorplus.views;
 
+import com.tutorplus.controllers.TutorialClient;
+
 
 /**
  *
@@ -67,7 +69,17 @@ public class EditTutor extends javax.swing.JFrame {
 
         MyProfileJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("My Profile"));
 
-        jLabel2.setText("UserName of logged in user");
+//        jLabel2.setText("UserName of logged in user");
+
+        //load user data
+        if (TutorialClient.user !=  null) {
+            
+            jLabel2.setText(TutorialClient.user.getFirstName()+ " " + TutorialClient.user.getLastName());
+            TutorFN.setText(TutorialClient.user.getFirstName());
+            TutorLN.setText(TutorialClient.user.getLastName());
+            TutorEmail.setText(TutorialClient.user.getEmail());
+        }
+
 
         jLabel1.setText("Welcome");
 
