@@ -9,7 +9,6 @@ import com.tutorplus.permissions.TutorPlusPermission;
 import com.tutorplus.permissions.TutorialMgmtPermission;
 import com.tutorplus.permissions.UserMgmtPermission;
 import com.tutorplus.roles.UserRole;
-import com.tutorplus.utils.TutorialMgmtException;
 import com.tutorplus.utils.UserMgmtException;
 
 import java.net.MalformedURLException;

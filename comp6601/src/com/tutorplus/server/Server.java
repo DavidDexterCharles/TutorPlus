@@ -40,20 +40,6 @@ public class Server {
             System.out.println("Binding complete!");
             Naming.rebind("//"+ SERVER_ADDR +":"+SERVER_PORT+"/TutorPlusApplication", tutorPlusApplication);
 
-//            Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//
-//                    System.out.println("fdsafasfsadfas");
-//                    try {
-//                        UnicastRemoteObject.unexportObject(tutorPlusApplication,true);
-//                    } catch (NoSuchObjectException e) {
-//                        e.printStackTrace();
-//                    }
-//
-//                }
-//            }));
-
 
         } catch(Exception e){
 
