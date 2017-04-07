@@ -13,12 +13,12 @@ public class TutorialFactory {
      * @return
      */
     public static Tutorial getNewInstance(){
+          
+//        String tutorialId = "tut_"+ TutorPlusApplication.nextAvailTutorialId;
+//        TutorPlusApplication.nextAvailTutorialId++;
+//        Tutorial tutorial = new Tutorial(tutorialId);
 
-        String tutorialId = "tut_"+ TutorPlusApplication.nextAvailTutorialId;
-        TutorPlusApplication.nextAvailTutorialId++;
-        Tutorial tutorial = new Tutorial(tutorialId);
-
-        return tutorial;
+        return null;
 
     }
 

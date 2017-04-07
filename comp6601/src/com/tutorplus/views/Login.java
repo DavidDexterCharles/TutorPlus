@@ -315,25 +315,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_Login_ExitMouseClicked
 
     private void SI_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SI_ButtonMouseClicked
-        // TODO add your handling code here:
      
         try {
-//             System.out.println("Some value output 0");
-
-             /*JASON this is the user object function, to get back the user object*/
-            
-//            TutorialClient.user=loginInterface.login("jpeters@gmail.com","jpters");
-//            TutorialClient.user=loginInterface.login(SI_Username.getText(),SI_Password.getText());
             TutorialClient.user= loginInterface.login(SI_Username.getText(),SI_Password.getText());
-           
-            /*JASON this is a test method that I added to TutorPlusApplication and TutorPlusApplicationIntf*/
-//            int val=loginInterface.testlop();
-            
-            
-//            System.out.println("The Val returned= "+val);
-//              System.out.println("Some value output 1");
+    
             if(TutorialClient.user != null)
-//            if(val==200) 
 
             {
                 String userRole = TutorialClient.user.getUserRole().getUserRoleName();
@@ -341,7 +327,6 @@ public class Login extends javax.swing.JFrame {
 
                  //Student is  able to login
                  if(userRole.equalsIgnoreCase("student")){
-//                        System.out.println("Some value output 2");
                         StudentDashboard regFace =new StudentDashboard();
                         regFace.setVisible(true);
                         dispose();
@@ -354,7 +339,6 @@ public class Login extends javax.swing.JFrame {
                  else {
                      //Todo: Should we have a Admin dashboard?????
                  }
-//               
             }
             else {
                 
@@ -363,20 +347,6 @@ public class Login extends javax.swing.JFrame {
                     SI_Password.setText("");
                     SI_Username.requestFocus();  
             }
-//            else if(SI_Username.getText().equals("1234") && SI_Password.getText().equals("1234")) 
-//            {
-//                TutorDashboard regFace =new TutorDashboard();
-//                regFace.setVisible(true);
-//                dispose();
-//            }        
-//            else 
-//            {
-//                JOptionPane.showMessageDialog(null,"Wrong Password / Username");
-//                SI_Username.setText("");
-//                SI_Password.setText("");
-//                SI_Username.requestFocus();
-//            }
-        
             
       } 
 catch (RemoteException ex) {
@@ -388,7 +358,38 @@ catch (RemoteException ex) {
     }//GEN-LAST:event_SI_ButtonMouseClicked
 
     private void SU_ButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SU_ButtonMouseClicked
-        // TODO add your handling code here:
+        
+        String firstName = SU_FName.getText();
+        String lastName = SU_LName.getText();
+        String email = SU_Email.getText();
+        String password = SU_PW.getText();
+        String userName = SU_Email.getText();
+        
+        if (firstName.equals("") ||
+                lastName.equals("") ||
+                        email.equals("")||
+                            password.equals("")){
+            JOptionPane.showMessageDialog(null,"One or more fields are empty. Please review.");   
+        }
+        else {
+            try {
+                boolean result = TutorialClient.tutorplusIntf.registerUser(firstName, lastName, "", email, userName, password, 1);
+                if (result){
+                JOptionPane.showMessageDialog(null,"Registration was successful!");
+                    SU_FName.setText("");
+                    SU_LName.setText("");
+                    SU_Email.setText("");
+                    SU_PW.setText("");
+                    SU_Email.setText("");
+                }
+                else JOptionPane.showMessageDialog(null,"Sorrry, registration cannot be completed at this time!");
+
+
+            } catch (RemoteException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
     }//GEN-LAST:event_SU_ButtonMouseClicked
 
     private void SI_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SI_ButtonActionPerformed

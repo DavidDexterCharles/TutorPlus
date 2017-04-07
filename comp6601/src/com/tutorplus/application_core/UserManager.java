@@ -1,5 +1,6 @@
 package com.tutorplus.application_core;
 
+import com.sun.xml.internal.fastinfoset.util.CharArray;
 import com.tutorplus.roles.StudentRole;
 import com.tutorplus.roles.TutorRole;
 import com.tutorplus.roles.UserRole;
@@ -45,18 +46,28 @@ public  class UserManager {
      * @param user
      * @param userDetails
      */
-    public void updateUser(User user, HashMap<String,Object> userDetails){
+    public boolean updateUser(User user, HashMap<String,Object> userDetails){
 
+        
         String fistName = (String)userDetails.get("firstName");
         String lastName = (String)userDetails.get("lastName");
         String email = (String)userDetails.get("email");
         String otherName = (String)userDetails.get("otherName");
+        char[] password = (char[])userDetails.get("password");
+//        System.out.println(password);
+        String passwordStr = String.valueOf(password);
+//                System.out.println(passwordStr);
 
-        if (fistName != null) user.firstName = fistName;
-        if (lastName != null) user.firstName = lastName;
-        if (email != null) user.firstName = email;
-        if (otherName != null) user.firstName = otherName;
 
+        if (!fistName.equals("")) user.firstName = fistName;
+        if (!lastName.equals("")) user.lastName = lastName;
+        if (!email.equals("")) user.email = email;
+        if (!otherName.equals("")) user.otherName = otherName;
+//        System.out.println(passwordStr);
+        if (!passwordStr.equals("")) user.login.password = passwordStr.replaceAll("\\s+","");
+        
+        return  TutorPlusApplication.dbHelper.updateUser(user);
+       
     }
 
     /**
@@ -79,7 +90,7 @@ public  class UserManager {
      * @param userRoleType
      * @return
      */
-    public User createUser(String firstName, String lastName, String email,
+    public User createUser(String firstName, String lastName,String otherName, String email,
                            String username, String password, int userRoleType) {
 
         UserRole userRole;
@@ -89,16 +100,17 @@ public  class UserManager {
             userRole = new TutorRole();
         }
 
-        User user = UserFactory.getNewInstance(firstName,lastName,email,userRole,username,password);
+        User user = UserFactory.getNewInstance(firstName,lastName,otherName, email,userRole,username,password);
           
 //        user.login.setUsername(username);
 //        user.login.setPassword(password);
 
         userList.put(user.login.getUsername(), user);
 
-        TutorPlusApplication.dbHelper.saveUser(user);
+        boolean result = TutorPlusApplication.dbHelper.saveUser(user);
 
-        return user;
+        if (result )return user;
+        return null;
 
     }
 

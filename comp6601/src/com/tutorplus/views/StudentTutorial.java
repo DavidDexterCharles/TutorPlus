@@ -4,20 +4,111 @@
  * and open the template in the editor.
  */
 package com.tutorplus.views;
+import com.tutorplus.controllers.TutorialClient;
 
+import com.tutorplus.application_core.QuestionOptions;
+import com.tutorplus.application_core.TopicQuestions;
+import java.awt.HeadlessException;
+import java.rmi.RemoteException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import static java.util.Comparator.comparing;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
+import oracle.jdbc.dcn.DatabaseChangeEvent;
 
 /**
  *
  * @author elleb
  */
 public class StudentTutorial extends javax.swing.JFrame {
-
+    
+    protected  String topicId;
+    protected  HashMap<String,TopicQuestions> topicQuestions;
+    protected  HashMap<String,QuestionOptions> questionOptions;
+    private  double numOfQuestions;
+    private  int nextQuestionCounter =1;
+    private  double userScore= 0; 
+    private  TopicQuestions currentQuestion;
+    private  List<String> currentQuestionOptions;
+    private boolean initialized = false;
+    private boolean isRestartTutorial = false;
+    
     /**
      * Creates new form StudentTutorial
      */
     public StudentTutorial() {
         initComponents();
+    }
+    
+    public StudentTutorial(String topicId){
+        
+        try {
+           if (TutorialClient.user != null) {
+                topicId = topicId.toUpperCase();
+                this.topicId = topicId;
+                this.topicQuestions = TutorialClient.tutorplusIntf.getTopicQuestions(topicId);
+                this.questionOptions = TutorialClient.tutorplusIntf.getQuestionOptions(topicId);
+                this.numOfQuestions = this.topicQuestions.size();
+                this.currentQuestionOptions= new ArrayList<>();
+                
+                System.out.println(this.numOfQuestions);
+
+                getNextQuestionAndOptions(topicId);
+            }
+            
+            initComponents();
+        
+        }catch (RemoteException e){
+            e.printStackTrace();
+        }
+        
+    }
+
+    private void getNextQuestionAndOptions(String topicId1) {
+        
+        //get next question
+        this.currentQuestion = this.topicQuestions.get(topicId1 + "_Q" + this.nextQuestionCounter);
+        
+        
+        //get options for next quesiton
+        if (!this.currentQuestionOptions.isEmpty()) this.currentQuestionOptions.clear(); //clear array to load new set of options
+        Iterator iterator = this.questionOptions.entrySet().iterator();
+        while (iterator.hasNext()){
+            
+            Map.Entry pair = (Map.Entry)iterator.next();
+            
+            System.out.println(pair.getKey() + " = " + pair.getValue());
+            
+            QuestionOptions option = (QuestionOptions) pair.getValue();
+            
+            if (option.getQuestionId().equalsIgnoreCase("Q"+this.nextQuestionCounter)){
+                
+                this.currentQuestionOptions.add(option.getOptionId()+") "+option.getOption());
+                
+                Collections.sort(this.currentQuestionOptions, (String optionId1, String optionId2) ->{
+                    return optionId1.compareToIgnoreCase(optionId2);
+                });
+                
+            }
+            
+        }
+        if (this.initialized) {
+            //elements to update
+            AnswerList.clearSelection();
+            AnswerList.setModel(new javax.swing.AbstractListModel<String>() {
+                 
+                public int getSize() { return currentQuestionOptions.size(); }
+                public String getElementAt(int i) { return currentQuestionOptions.get(i); }
+            });
+            
+            Question.setText("Question "+this.nextQuestionCounter+" : "+ this.currentQuestion.getQuestion());
+        }
     }
 
     /**
@@ -28,7 +119,7 @@ public class StudentTutorial extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        this.initialized = true;
         jPanel1 = new javax.swing.JPanel();
         MyProfileJPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -59,7 +150,7 @@ public class StudentTutorial extends javax.swing.JFrame {
 
         jLabel1.setText("Welcome");
 
-        jLabel2.setText("UserName of logged in user");
+        jLabel2.setText(TutorialClient.user.getFirstName() +" "+ TutorialClient.user.getLastName());
 
         ViewStudentInfo.setText("View my information");
         ViewStudentInfo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -172,7 +263,7 @@ public class StudentTutorial extends javax.swing.JFrame {
         );
 
         PageLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        PageLabel.setText("My Tutorial");
+        PageLabel.setText("Tutorial Topic: "+this.currentQuestion.getTopicName());
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -193,13 +284,15 @@ public class StudentTutorial extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Question.setText("Question");
+        Question.setText("Question "+this.nextQuestionCounter+" : "+ this.currentQuestion.getQuestion());
 
         AnswerList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+//            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            
+            public int getSize() { return currentQuestionOptions.size(); }
+            public String getElementAt(int i) { return currentQuestionOptions.get(i); }
         });
+        
         jScrollPane1.setViewportView(AnswerList);
 
         SubmitAnswer.setText("Submit");
@@ -327,17 +420,77 @@ public class StudentTutorial extends javax.swing.JFrame {
 
     private void SubmitAnswerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAnswerMouseClicked
         // TODO add your handling code here:
-        String ans = AnswerList.getSelectedValue(); 
-        
-        if (!"".equals(ans)){
-          JOptionPane.showMessageDialog(null,"Your answer "+ ans + " was correct ");  
+        if (TutorialClient.user != null){
+            if (this.isRestartTutorial != true){
+                String submittedOption = AnswerList.getSelectedValue();
+                if (submittedOption != null){
+                    String submittedAns = submittedOption.substring(0,1);
+
+    //                if (this.nextQuestionCounter != this.numOfQuestions){
+                        if (this.currentQuestion.getAnswer().equalsIgnoreCase(submittedAns)){
+                            this.userScore++;
+                            JOptionPane.showMessageDialog(null,submittedAns + " is correct! ");
+        //                    this.getNextQuestionAndOptions(this.topicId);
+                        }
+                        else {
+                                JOptionPane.showMessageDialog(null, "Sorry, "+submittedAns + " is incorrect ");
+        //                        this.nextQuestionCounter++;
+                        }
+    //                }
+                   if (this.nextQuestionCounter < this.numOfQuestions){
+                        this.nextQuestionCounter++;
+                        if (this.nextQuestionCounter == numOfQuestions) {
+                            this.GoToNextQuestion.setText("End of questions");
+                        }
+
+                        this.getNextQuestionAndOptions(this.topicId);
+                    }
+                    else {
+                        this.isRestartTutorial = true;
+                        this.SubmitAnswer.setEnabled(false);
+                        tallyScoreAndGiveOptionToRestart();
+
+                    }
+                }
+            }
         }
     }//GEN-LAST:event_SubmitAnswerMouseClicked
 
     private void GoToNextQuestionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToNextQuestionMouseClicked
-        // TODO add your handling code here:
+       
+        if (TutorialClient.user != null){
+            
+            if (!this.isRestartTutorial){//go to next question
+                
+                if (this.nextQuestionCounter < this.numOfQuestions){
+                    this.nextQuestionCounter++;
+                    this.getNextQuestionAndOptions(this.topicId);
+
+                }
+                else { //end of tutorial
+//                    this.isRestartTutorial = true;
+//                    tallyScoreAndGiveOptionToRestart();
+                      this.GoToNextQuestion.setText("End of questions");
+
+                }
+            }
+            else {//restart tutorial
+                StudentTutorial regFace =new StudentTutorial(this.topicId);
+                regFace.setVisible(true);
+                dispose();
+            }
+        }
+
         
     }//GEN-LAST:event_GoToNextQuestionMouseClicked
+
+    private void tallyScoreAndGiveOptionToRestart() throws HeadlessException {
+        GoToNextQuestion.setText("Restart Tutorial");
+        DecimalFormat percentageFormat = new DecimalFormat("###.#%");
+        double percentageGained = this.userScore / this.numOfQuestions;
+        
+        JOptionPane.showMessageDialog(null,"You score is:" + percentageFormat.format(percentageGained ));
+    }
 
     /**
      * @param args the command line arguments

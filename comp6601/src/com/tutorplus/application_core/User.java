@@ -19,12 +19,13 @@ public class User implements Serializable {
     protected String userSessionId;
     public Login login;
 
-    public User(String userId, String firstName, String lastName, String email, UserRole userRole,
+    public User(String userId, String firstName, String lastName,String otherName, String email, UserRole userRole,
                    String username, String password, String status){
 
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.otherName = otherName;
         this.email = email;
         if (status.equalsIgnoreCase("A"))this.isEnabled = true;
         else this.isEnabled = false;

@@ -24,13 +24,14 @@ public class UserFactory {
         return user;
 
     }
-    public static User getNewInstance(String fisrtName, String lastName, String email, UserRole userRole,
+    public static User getNewInstance(String fisrtName, String lastName,
+            String otherName, String email, UserRole userRole,
                                       String username, String password){
 
-        String userId = "tpu_"+TutorPlusApplication.nextAvailUserId;
+        String userId = "87"+TutorPlusApplication.nextAvailUserId;
         TutorPlusApplication.nextAvailUserId++;
         String status = "A"; //default is active;
-        return new User(userId,fisrtName,lastName,email,userRole,username,password,status);
+        return new User(userId,fisrtName,lastName,otherName,email,userRole,username,password,status);
 
     }
 
@@ -48,6 +49,7 @@ public class UserFactory {
             String userId =  (String) userData.get("userId");
             String firstName = (String) userData.get("firstName");
             String lastName = (String) userData.get("lastName");
+            String otherName = (String) userData.get("otherName");
             String accountType = (String) userData.get("accountType");
             String status = (String) userData.get("status");
             String email = (String) userData.get("email");
@@ -70,7 +72,7 @@ public class UserFactory {
 //            System.out.println("userRole: " + userRole.getUserRoleName());
 
 //            if (accountType.equalsIgnoreCase("student")){
-                return new User(userId,firstName, lastName, email, userRole,username,password,status);
+                return new User(userId,firstName, lastName,otherName, email, userRole,username,password,status);
 //            }
 //            if (accountType.equalsIgnoreCase("tutor")) {
 //                return new Tutor(userId,firstName, lastName, email, userRole,username,password);

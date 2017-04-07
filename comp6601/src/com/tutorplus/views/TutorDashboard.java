@@ -64,8 +64,10 @@ public class TutorDashboard extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         MyProfileJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("My Profile"));
+        if (TutorialClient.user != null) {
 
          jLabel2.setText(TutorialClient.user.getFirstName()+ " " + TutorialClient.user.getLastName());
+        }
 
         jLabel1.setText("Welcome");
 

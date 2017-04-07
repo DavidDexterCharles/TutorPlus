@@ -76,7 +76,9 @@ public class StudentDashboard extends javax.swing.JFrame {
         jLabel1.setText("Welcome");
 
 //        jLabel2.setText("UserName of logged in user");
-          jLabel2.setText(TutorialClient.user.getFirstName()+ " " + TutorialClient.user.getLastName());
+           if (TutorialClient.user != null) {
+            jLabel2.setText(TutorialClient.user.getFirstName()+ " " + TutorialClient.user.getLastName());
+           }
 
         ViewStudentInfo.setText("View my information");
         ViewStudentInfo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -380,7 +382,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         //GEN-FIRST:event_LogOutStudentMouseClicked
         
         TutorialClient.tutorplusIntf.logout(TutorialClient.userSession);
-        // TODO add your handling code here:
         Login regFace =new Login();
         regFace.setVisible(true);
         dispose();
@@ -425,8 +426,9 @@ public class StudentDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitMouseClicked
 
     private void OpenStudentTutorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OpenStudentTutorialMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OpenStudentTutorialMouseClicked
+        StudentTutorial regFace =new StudentTutorial("top2");
+        regFace.setVisible(true);
+        dispose();    }//GEN-LAST:event_OpenStudentTutorialMouseClicked
 
     /**
      * @param args the command line arguments

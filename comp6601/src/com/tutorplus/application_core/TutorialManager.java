@@ -65,7 +65,7 @@ public class TutorialManager {
         //sotre in tutorial list
         this.tutorialList.add(tutorial);
 
-        TutorPlusApplication.dbHelper.saveTutorial(tutorial);
+//        TutorPlusApplication.dbHelper.saveTutorial(tutorial);
 
     }
     public void editTutorial (){
@@ -83,8 +83,9 @@ public class TutorialManager {
 
 
     }
-    public Tutorial getAllTutorials (){
-
+    public Tutorial getTutorialTopics (){
+        
+//        TutorPlusApplication.dbHelper.getTutorialData(tutorial);
         return null;
     }
 

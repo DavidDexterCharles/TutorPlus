@@ -1,6 +1,8 @@
 package com.tutorplus.client;
 
 
+import com.tutorplus.application_core.QuestionOptions;
+import com.tutorplus.application_core.TopicQuestions;
 import com.tutorplus.application_core.TutorPlusApplicationIntf;
 import com.tutorplus.application_core.User;
 import com.tutorplus.permissions.TutorPlusPermission;
@@ -165,7 +167,20 @@ public class Client {
 
                                                     break;
                                                 case 6:
-//                                                    currentUser
+                                                    System.out.println("Enter topic id");
+                                                    input = keyboardInput.next();
+
+                                                    HashMap<String,QuestionOptions> result = 
+                                                            tutorPlusApplicationIntf.getQuestionOptions(input);
+//                                                    
+
+                                                    break;
+                                                case 7:
+                                                    System.out.println("Enter topic id");
+                                                    input = keyboardInput.next();                                                    
+                                                    HashMap<String,TopicQuestions> result1 = 
+                                                            tutorPlusApplicationIntf.getTopicQuestions(input);
+//                                                    
 
                                                     break;
                                                 case -1:
@@ -218,7 +233,7 @@ public class Client {
                                             }
                                             int userRoleType = keyboardInput.nextInt();
 
-                                            tutorPlusApplicationIntf.registerUser(firstName,lastName,email,username,password,userRoleType);
+                                            tutorPlusApplicationIntf.registerUser(firstName,lastName,"tata",email,username,password,userRoleType);
                                         }
                                     }
                                 }

@@ -1,6 +1,11 @@
 package com.tutorplus.views;
 
 import com.tutorplus.controllers.TutorialClient;
+import com.tutorplus.utils.UserMgmtException;
+import java.rmi.RemoteException;
+import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /*
@@ -74,6 +79,7 @@ public class EditStudent extends javax.swing.JFrame {
             jLabel2.setText(TutorialClient.user.getFirstName()+ " " + TutorialClient.user.getLastName());
             StudentFN.setText(TutorialClient.user.getFirstName());
             StudentLN.setText(TutorialClient.user.getLastName());
+            StudentMN.setText(TutorialClient.user.getOtherName());
             StudentEmail.setText(TutorialClient.user.getEmail());
         }
 
@@ -191,7 +197,7 @@ public class EditStudent extends javax.swing.JFrame {
 
         PasswordJLabel.setText("Password");
 
-        StudentPassword.setText("jPasswordField1");
+        StudentPassword.setText("");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -335,8 +341,29 @@ public class EditStudent extends javax.swing.JFrame {
     }//GEN-LAST:event_MyDashboardMenuMouseClicked
 
     private void UpdateStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateStudentMouseClicked
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null,"You're profile has been updated."); 
+            if (TutorialClient.user !=  null){//user is logged in
+            try {
+                HashMap<String,Object> userDetails = new HashMap<String, Object>();
+                userDetails.put("firstName", StudentFN.getText());
+                userDetails.put("lastName", StudentLN.getText());
+                userDetails.put("email", StudentEmail.getText());
+                userDetails.put("otherName", StudentMN.getText());
+                userDetails.put("password", StudentPassword.getPassword());
+                
+                String usernameToUpdate = TutorialClient.user.login.getUsername();
+                String userSession = TutorialClient.userSession;
+                boolean result = TutorialClient.tutorplusIntf.
+                        updateUser(userDetails,userSession, usernameToUpdate);
+                
+                if (result) JOptionPane.showMessageDialog(null,"Your Profile has been updated");
+                else JOptionPane.showMessageDialog(null,"Your profile cannot be updated at this time!");
+                
+            } catch (RemoteException ex) {
+                Logger.getLogger(EditTutor.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (UserMgmtException ex) {
+                Logger.getLogger(EditTutor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_UpdateStudentMouseClicked
 
     private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked

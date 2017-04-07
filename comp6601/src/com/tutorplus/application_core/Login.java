@@ -7,8 +7,8 @@ import java.io.Serializable;
  */
 public class Login implements Serializable {
 
-    private String username;
-    private String password;
+    protected String username;
+    protected String password;
 
     public Login(String username, String password){
 

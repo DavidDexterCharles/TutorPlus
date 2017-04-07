@@ -16,6 +16,8 @@ import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Created by jason on 29/03/2017.
@@ -30,6 +32,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
     public static UserSession userSession;
     public static TutorialComponentManager tutorialComponentManager;
     public static TutorialManager tutorialManager;
+    public static TopicQuestionsOptionsManager topicQuestionsOptionsManager;
     public static int nextAvailUserId;
     public static int nextAvailTutorialId;
 
@@ -48,6 +51,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
         userManager = new UserManager();
         tutorialComponentManager = new TutorialComponentManager();
         tutorialManager = new TutorialManager();
+        topicQuestionsOptionsManager = new TopicQuestionsOptionsManager();
 
     }
   
@@ -99,7 +103,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
     }
 
     @Override
-    public void registerUser(String firstName, String lastName, String email, String username,
+    public boolean registerUser(String firstName, String lastName,String otherName, String email, String username,
                              String password, int userRoleType) throws RemoteException {
 
         try {
@@ -107,17 +111,22 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
             password = this.getHashedPassword(password);
 
 //            userData.put("password",password);
-            userManager.createUser(firstName,lastName,email,username,password,userRoleType);
-
+           User  user = userManager.createUser(firstName,lastName,otherName,email,username,password,userRoleType);
+           if (user !=  null){
+               return true;
+           }
+           return false;
 
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
+            return false;
         }
+        
 
     }
 
     @Override
-    public void updateUser(HashMap<String, Object> userDetails, String userSessionId,
+    public boolean updateUser(HashMap<String, Object> userDetails, String userSessionId,
                            String usernameToUpdate) throws RemoteException, UserMgmtException {
 
         String username = TutorPlusApplication.userSession.getUsername(userSessionId);
@@ -127,13 +136,15 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
 
             UserMgmtPermission userMgmtPermission =
                     (UserMgmtPermission) userToCarryOutUpdate.getUserRole().getRolePermissions().get("userMgmtPermissions");
-            if (userMgmtPermission.isCanEdit() || (userMgmtPermission.isCanEditSelf() && userToCarryOutUpdate.userId == userToUpdate.userId)){
+            if (userMgmtPermission.isCanEdit() || (userMgmtPermission.isCanEditSelf() && userToCarryOutUpdate.userId.equalsIgnoreCase(userToUpdate.userId))){
 
-                TutorPlusApplication.userManager.updateUser(userToUpdate,userDetails);
+             return TutorPlusApplication.userManager.updateUser(userToUpdate,userDetails);
             }
 
         }
         else throw new UserMgmtException(UserMgmtException.LOGIN);
+        
+        return false;
 
     }
 
@@ -191,6 +202,46 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
     public void updateATutorial(HashMap<String, Object> tutorialDetails,
                                 String userSessionId, String tutorialId) throws RemoteException{
 
+    }
+     @Override
+    public HashMap<String,QuestionOptions> getQuestionOptions(String topicId) throws RemoteException{
+//           System.out.println("fsafdsa");
+
+        HashMap<String,QuestionOptions> result =  topicQuestionsOptionsManager.getQuestionOptionsList(topicId);
+        
+        
+        Iterator iterator = result.entrySet().iterator();
+        
+        while (iterator.hasNext()){
+            
+              Map.Entry pair = (Map.Entry)iterator.next();
+              
+                 System.out.println(pair.getKey() + " = " + pair.getValue());
+            QuestionOptions q = (QuestionOptions) pair.getValue();
+            
+            q.toString();
+        }
+        
+        return result;
+    }
+        @Override
+    public HashMap<String,TopicQuestions> getTopicQuestions(String topicId) throws RemoteException{
+        
+         HashMap<String,TopicQuestions> result =  topicQuestionsOptionsManager.getTopicQuestionList(topicId);
+        
+        
+        Iterator iterator = result.entrySet().iterator();
+        
+        while (iterator.hasNext()){
+            
+              Map.Entry pair = (Map.Entry)iterator.next();
+              
+                 System.out.println(pair.getKey() + " = " + pair.getValue());
+            TopicQuestions q = (TopicQuestions) pair.getValue();
+            
+            q.toString();
+        }
+        return result;
     }
 
     @Override

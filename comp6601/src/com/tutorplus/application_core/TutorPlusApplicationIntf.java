@@ -26,7 +26,8 @@ public interface TutorPlusApplicationIntf extends Remote {
      * Allows a user to terminate a session in tutorplus
      */
     public void logout(String userSessionId) throws RemoteException;
-
+    
+    
     /**
      *  Creates a new user in Tutor Plus
      * @param firstName
@@ -37,7 +38,7 @@ public interface TutorPlusApplicationIntf extends Remote {
      * @param userRoleType
      * @throws RemoteException
      */
-    public void registerUser(String firstName, String lastName, String email,
+    public boolean registerUser(String firstName, String lastName,String otherName, String email,
                              String username, String password, int userRoleType) throws RemoteException;
 
     /**
@@ -47,7 +48,7 @@ public interface TutorPlusApplicationIntf extends Remote {
      * @param usernameToUpdate
      * @throws RemoteException
      */
-    public void updateUser(HashMap<String, Object> userDetails,
+    public boolean updateUser(HashMap<String, Object> userDetails,
                            String userSessionId, String usernameToUpdate) throws RemoteException, UserMgmtException;
 
     /**
@@ -99,7 +100,20 @@ public interface TutorPlusApplicationIntf extends Remote {
      * @throws RemoteException
      */
     public void submitTutorial(Tutorial tutorial, String userSessionId) throws RemoteException, UserMgmtException;
-
+    
+    /**
+     * Get options related to a specific question
+     * @param topicId
+     * @return 
+     */
+    public HashMap<String,QuestionOptions> getQuestionOptions(String topicId) throws RemoteException;
+    
+    /**
+     * Get question related to a specific topic
+     * @param topicId
+     * @return 
+     */
+    public HashMap<String,TopicQuestions> getTopicQuestions(String topicId) throws RemoteException;
 
 
     /**

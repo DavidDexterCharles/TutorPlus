@@ -1,6 +1,12 @@
 package com.tutorplus.views;
 
 import com.tutorplus.controllers.TutorialClient;
+import com.tutorplus.utils.UserMgmtException;
+import java.rmi.RemoteException;
+import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -62,12 +68,15 @@ public class EditTutor extends javax.swing.JFrame {
         MenuBar = new javax.swing.JMenuBar();
         MyDashboardMenu = new javax.swing.JMenu();
         Exit = new javax.swing.JMenu();
+        
+        
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         MyProfileJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("My Profile"));
+
 
 //        jLabel2.setText("UserName of logged in user");
 
@@ -77,7 +86,9 @@ public class EditTutor extends javax.swing.JFrame {
             jLabel2.setText(TutorialClient.user.getFirstName()+ " " + TutorialClient.user.getLastName());
             TutorFN.setText(TutorialClient.user.getFirstName());
             TutorLN.setText(TutorialClient.user.getLastName());
+            TutorMN.setText(TutorialClient.user.getOtherName());
             TutorEmail.setText(TutorialClient.user.getEmail());
+            
         }
 
 
@@ -210,9 +221,9 @@ public class EditTutor extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TutorCourses);
 
-        PasswordJLabel.setText("Password");
+        PasswordJLabel.setText("New Password");
 
-        TutorPassword.setText("jPasswordField1");
+        TutorPassword.setText("");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -402,7 +413,30 @@ public class EditTutor extends javax.swing.JFrame {
     }//GEN-LAST:event_ManageSudentsActionPerformed
 
     private void UpdateTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTutorActionPerformed
-        // TODO add your handling code here:
+        
+        if (TutorialClient.user !=  null){//user is logged in
+            try {
+                HashMap<String,Object> userDetails = new HashMap<String, Object>();
+                userDetails.put("firstName", TutorFN.getText());
+                userDetails.put("lastName", TutorLN.getText());
+                userDetails.put("email", TutorEmail.getText());
+                userDetails.put("otherName", TutorMN.getText());
+                userDetails.put("password", TutorPassword.getPassword());
+                
+                String usernameToUpdate = TutorialClient.user.login.getUsername();
+                String userSession = TutorialClient.userSession;
+                boolean result = TutorialClient.tutorplusIntf.
+                        updateUser(userDetails,userSession, usernameToUpdate);
+                
+                if (result) JOptionPane.showMessageDialog(null,"Your Profile has been updated");
+                else JOptionPane.showMessageDialog(null,"Your profile cannot be updated at this time!");
+                
+            } catch (RemoteException ex) {
+                Logger.getLogger(EditTutor.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (UserMgmtException ex) {
+                Logger.getLogger(EditTutor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_UpdateTutorActionPerformed
 
     private void EditTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTutorActionPerformed
