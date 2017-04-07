@@ -59,6 +59,7 @@ public class StudentDashboard extends javax.swing.JFrame {
             }else{
              DefaultListModel dlm = new DefaultListModel();
              StudentCourseListPrintout.setModel(dlm);
+             TutorialClient.userCourseID=null;//resets the course list
             }
         } catch (RemoteException ex) {
             Logger.getLogger(StudentDashboard.class.getName()).log(Level.SEVERE, null, ex);
@@ -159,7 +160,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         SearchCoursePrintout = new javax.swing.JList<>();
         RegisterCourse = new javax.swing.JButton();
-        ViewCourseInfo = new javax.swing.JButton();
         CourseOverviewJPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         StudentTutorialMainListPrintout = new javax.swing.JList<>();
@@ -320,18 +320,6 @@ public class StudentDashboard extends javax.swing.JFrame {
             }
         });
 
-        ViewCourseInfo.setText("View Course Information");
-        ViewCourseInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ViewCourseInfoMouseClicked(evt);
-            }
-        });
-        ViewCourseInfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewCourseInfoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout CourseSearchJPanelLayout = new javax.swing.GroupLayout(CourseSearchJPanel);
         CourseSearchJPanel.setLayout(CourseSearchJPanelLayout);
         CourseSearchJPanelLayout.setHorizontalGroup(
@@ -342,7 +330,6 @@ public class StudentDashboard extends javax.swing.JFrame {
                     .addComponent(jScrollPane3)
                     .addGroup(CourseSearchJPanelLayout.createSequentialGroup()
                         .addGroup(CourseSearchJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ViewCourseInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(RegisterCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CourseSearchJPanelLayout.createSequentialGroup()
                                 .addComponent(SearchCourse)
@@ -357,9 +344,7 @@ public class StudentDashboard extends javax.swing.JFrame {
                 .addComponent(SearchCourse)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(ViewCourseInfo)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addComponent(RegisterCourse)
                 .addContainerGap())
         );
@@ -530,13 +515,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         
     }//GEN-LAST:event_RegisterCourseMouseClicked
 
-    private void ViewCourseInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewCourseInfoMouseClicked
-        // TODO add your handling code here:
-//        StudenCourse regFace =new StudenCourse();
-//        regFace.setVisible(true);
-//        dispose();
-    }//GEN-LAST:event_ViewCourseInfoMouseClicked
-
     private void MyDashboardMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MyDashboardMenuMouseClicked
         // TODO add your handling code here:
         StudentDashboard regFace =new StudentDashboard();
@@ -560,9 +538,14 @@ public class StudentDashboard extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"You can only open valid tutorials\n [i.e tutorials that are not blank and generated from the My Courses view]");
             else {
             
-            regFace =new StudentTutorial(topicID);
-            regFace.setVisible(true);
-           // dispose();
+                try {
+                     regFace =new StudentTutorial(topicID);
+                     regFace.setVisible(true);
+                     dispose();
+                } catch (Exception e) {
+                     JOptionPane.showMessageDialog(null,"No questions currently exist for this tutorial ");
+                }
+
             
             
             
@@ -637,7 +620,7 @@ public class StudentDashboard extends javax.swing.JFrame {
                 else{
                 
                     System.out.println("The CourseNUmber"+CourseNumber);
-                    System.out.println("What is this TutorialClient.userCourseID lenght???="+TutorialClient.userCourseID[0]+"\n");
+                    //System.out.println("What is this TutorialClient.userCourseID lenght???="+TutorialClient.userCourseID[0]+"\n");
                     if(TutorialClient.userCourseID==null)mylist = Arrays.asList("");
                      else   mylist = Arrays.asList(TutorialClient.userCourseID);
                        if(! mylist.contains(CourseNumber)){
@@ -690,21 +673,15 @@ public class StudentDashboard extends javax.swing.JFrame {
                 }
                 DefaultListModel dlm = new DefaultListModel();
                  StudentTutorialMainListPrintout.setModel(dlm);
+                 //listMyCourses();
             } catch (RemoteException ex) {
                 Logger.getLogger(StudentDashboard.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_UnregiesterCourseActionPerformed
 
-    private void ViewCourseInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewCourseInfoActionPerformed
-        // TODO add your handling code here:
-          StudentDashboard regFace =new StudentDashboard();
-        regFace.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_ViewCourseInfoActionPerformed
-
     private void OpenStudentTutorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenStudentTutorialActionPerformed
-        // TODO add your handling code here:
+   /*     // TODO add your handling code here:
         String topicID="";StudentTutorial regFace ;
         if(iHaveTopics){
             topicID=isThisMyTopic(StudentTutorialMainListPrintout.getSelectedValue());
@@ -777,7 +754,6 @@ public class StudentDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel StudentCoursesJPanel;
     private javax.swing.JList<String> StudentTutorialMainListPrintout;
     private javax.swing.JButton UnregiesterCourse;
-    private javax.swing.JButton ViewCourseInfo;
     private javax.swing.JButton ViewStudentInfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
