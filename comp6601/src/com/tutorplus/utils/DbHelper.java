@@ -317,5 +317,162 @@ public class DbHelper {
         } 
        
     }
+    
+    
+    /*Added by David*/
+    
+     public String  getMyCourses(User userInfo,String request) {
+        try {
+            Statement statement = conn.createStatement();
+            try {
+                //            HashMap<String,String> data = new HashMap();
+                // ArrayList<HashMap<String, String>> mycourses= new ArrayList<HashMap<String, String>>();;
+                
+                String sql ="select * from STUDENT_COURSE SC,COURSES C WHERE SC.USERID="+userInfo.getUserId()+" AND SC.COURSE_NUMBER=C.COURSE_NUMBER";
+                String s="";
+                
+                
+                ResultSet rs = statement.executeQuery(sql);
+                
+                while (rs.next()) {
+                    s=rs.getString("USERID")+"-"+rs.getString("COURSE_NUMBER")+"-"+rs.getString("NAME")+"~"+s;
+                }
+                
+                
+                try { rs.close(); } catch (Exception ignore) { }
+                return s;
+            } catch (SQLException ex) {
+                Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
+            }finally {
+                try { statement.close(); } catch (Exception ignore) { }
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         return "getMyCourses failed";
+
+    }
+    
+       public String  getAllCourses() {
+        try {
+            Statement statement = conn.createStatement();
+            try {
+                
+                
+                String sql ="select * from COURSES";
+                String s="";
+                
+                
+                ResultSet rs = statement.executeQuery(sql);
+                
+                while (rs.next()) {
+                    s=rs.getString("COURSE_NUMBER")+"-"+rs.getString("NAME")+"~"+s;
+                }
+                
+                
+                try { rs.close(); } catch (Exception ignore) { }
+                return s;
+            } catch (SQLException ex) {
+                Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
+            }finally {
+                try { statement.close(); } catch (Exception ignore) { }
+            }
+          
+        } catch (SQLException ex) {
+            Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          return "getAllCourses failed";
+    }
+    
+     public String  getCourseTopics(String Data) {
+        try {
+            Statement statement = conn.createStatement();
+            try {
+                
+                
+                String sql ="select * from course_topics where course_number='"+Data+"'";
+                String s="";
+                
+                ResultSet rs = statement.executeQuery(sql);
+                
+                while (rs.next()) {
+                    s=rs.getString("COURSE_NUMBER")+"-"+rs.getString("TOPIC_NAME")+"-"+rs.getString("TOPIC_ID")+"~"+s;
+                }
+                
+                try { rs.close(); } catch (Exception ignore) { }
+                
+                return s;
+            } catch (SQLException ex) {
+                Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
+            }finally {
+                try { statement.close(); } catch (Exception ignore) { }
+            }
+         
+        } catch (SQLException ex) {
+            Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           return "getCourseTopics faled";
+    }
+     public String  registerForCourse(User userInfo,String Data) {
+        try {
+            Statement statement = conn.createStatement();
+            try {
+                
+                
+                String sql ="insert into STUDENT_COURSE (USERID, COURSE_NUMBER, STATUS_ID) values ('"+userInfo.getUserId()+"','"+Data+"','A')";
+                String s="success";
+                
+                ResultSet rs = statement.executeQuery(sql);
+                
+//                while (rs.next()) {
+//                    s=rs.getString("COURSE_NUMBER")+"-"+rs.getString("TOPIC_NAME")+"~"+s;
+//                }
+                
+                try { rs.close(); } catch (Exception ignore) { }
+                
+                return s;
+            } catch (SQLException ex) {
+                Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
+            }finally {
+                try { statement.close(); } catch (Exception ignore) { }
+            }
+         
+        } catch (SQLException ex) {
+            Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           return "registerForCourse failed";
+    }
+    
+     public String  deregisterCourse(User userInfo,String Data) {
+        try {
+            Statement statement = conn.createStatement();
+            try {
+                
+                
+                String sql ="DELETE FROM STUDENT_COURSE WHERE USERID = '"+userInfo.getUserId()+"' and COURSE_NUMBER='"+Data+"'";
+                String s="success";
+                
+                ResultSet rs = statement.executeQuery(sql);
+                
+                try { rs.close(); } catch (Exception ignore) { }
+                
+                return s;
+            } catch (SQLException ex) {
+                Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
+            }finally {
+                try { statement.close(); } catch (Exception ignore) { }
+            }
+         
+        } catch (SQLException ex) {
+            Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           return "deregisterCourse failed";
+    }
+    
+    
+    
+    
+    
 
 }

@@ -14,6 +14,7 @@ import com.tutorplus.views.Login;
 public class TutorialClient {
     
     public static User user;
+    public static String[] userCourseID;
     public static String userSession;
     public static TutorPlusApplicationIntf tutorplusIntf;
     private static final String tutorialServerURL= "rmi://" + "localhost" + "/TutorPlusApplication";

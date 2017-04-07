@@ -14,9 +14,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Created by jason on 29/03/2017.
- */
 public class TutorPlusApplication extends UnicastRemoteObject implements TutorPlusApplicationIntf {
 
 
@@ -225,6 +222,29 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
 
     }
     //=======================================End of Helpers==========================================
+     @Override
+     public String doaction(User userInfo,String request,String data)throws RemoteException{
 
+
+            if(("getMyCourses").equals(request)){
+                return dbHelper.getMyCourses(userInfo,request);
+            }
+            if(("getAllCourses").equals(request)){
+                return dbHelper.getAllCourses();
+            }
+              if(("getCourseTopics").equals(request)){
+                return dbHelper.getCourseTopics(data);
+            }
+              if(("registerForCourse").equals(request)){
+                return dbHelper.registerForCourse(userInfo,data);
+            }
+               if(("deregisterCourse").equals(request)){
+                return dbHelper.deregisterCourse(userInfo,data);
+            }
+
+        return "Strange things";
+            
+      
+     }
 
 }

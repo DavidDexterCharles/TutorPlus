@@ -24,7 +24,7 @@ public interface TutorPlusApplicationIntf extends Remote {
      * Allows a user to terminate a session in tutorplus
      */
     public void logout(String userSessionId) throws RemoteException;
-    
+     public String doaction(User userInfo,String request,String Data)throws RemoteException;
     
     /**
      *  Creates a new user in Tutor Plus
