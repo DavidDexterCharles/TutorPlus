@@ -63,14 +63,4 @@ public interface TutorPlusApplicationIntf extends Remote {
     public HashMap<String,TopicQuestions> getTopicQuestions(String topicId) throws RemoteException;
 
 
-    /**
-     * Gets a list of all the registered tutorial_components on in
-     * @param userSessionId
-     * @return A list of all registered tutorial_components
-     */
-    public HashMap<String,Object> getComponentRegisteredList(String userSessionId)throws RemoteException;
-
-
-
-
 }

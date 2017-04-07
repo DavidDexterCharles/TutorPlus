@@ -28,8 +28,6 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
     public static int nextAvailUserId;
     public static int nextAvailTutorialId;
 
-//    String saltStr = "#$%&@abcd";
-//    byte[] salt = new byte[16];
 
     public TutorPlusApplication() throws RemoteException{
 
@@ -177,10 +175,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
         }
         return result;
     }
-    @Override
-    public HashMap<String, Object> getComponentRegisteredList(String userSessionId) throws RemoteException {
-        return null;
-    }
+ 
 
     //=======================================Helpers==========================================
     /**
