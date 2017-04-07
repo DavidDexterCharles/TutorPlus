@@ -2,7 +2,6 @@ package com.tutorplus.utils;
 
 import com.tutorplus.application_core.QuestionOptions;
 import com.tutorplus.application_core.TopicQuestions;
-import com.tutorplus.application_core.Tutorial;
 import com.tutorplus.application_core.User;
 
 import java.sql.*;
@@ -17,8 +16,6 @@ public class DbHelper {
 
     public  DbHelper(){
 
-//        String user = "system";//"tutorplus";
-//        String password ="Flowerz*27"; //"adm1n123";
         String user = "TPLUS";//"tutorplus";
         String password ="TPLUS"; //"adm1n123";
 
@@ -26,33 +23,6 @@ public class DbHelper {
         conn = jdbcConnection.conn;
     }
 
-    /**
-     *Get a list of all the privileges in tutor plus
-     * @return A string array list with all the privilege types
-     */
-    /*
-    public ArrayList<String> getPrivileges(){
-
-        ArrayList<String> privilegeTypes = new ArrayList<>();
-
-        try {
-            Statement statement = conn.createStatement();
-            String sql = "select privilege_name from privilege";
-            ResultSet rs = statement.executeQuery(sql);
-            while (rs.next()){
-
-                privilegeTypes.add(rs.getString(1));
-
-            }
-            return privilegeTypes;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        finally {
-            return privilegeTypes;
-        }
-    }
-        */
     /**
      *Gets a the data of a user of tutor plus
      * @param username
@@ -66,11 +36,6 @@ public class DbHelper {
 
         try {
             Statement statement = conn.createStatement();
-//            String sql = "select tu.userid,tu.firstname, tu.lastname, uc.acount_id," +
-//                    " tu.password,tu.email\n" +
-//                    "join account uc on ucp.account_id = uc.account_id \n" +
-//                    "join users tu on ucp.account_id = tu.account_id\n" +
-//                    "where tu.username = '"+username+"'";
             
             String sql = "select u.userid, u.account_id, u.firstname, "
                     + "u.lastname, u.email, u.status_id, u.password, u.othername\n" +
@@ -88,11 +53,6 @@ public class DbHelper {
                 userData.put("password",rs.getString(7));
                 userData.put("otherName",rs.getString(8));
 
-//                userPrivilegeTypes.add(rs.getString(5));
-//
-//                while (rs.next()) userPrivilegeTypes.add(rs.getString(5));
-
-//                userData.put("privileges",userPrivilegeTypes);
             }
 
             return userData;
@@ -202,13 +162,6 @@ public class DbHelper {
                   ResultSet rs = statement.executeQuery(sql);
                   
             while (rs.next()) {
-//                topicQuestionsData.put("courseNumber",rs.getString(1));
-//                topicQuestionsData.put("courseName",rs.getString(2));
-//                topicQuestionsData.put("topicId",rs.getString(3));
-//                topicQuestionsData.put("topicName",rs.getString(4));
-//                topicQuestionsData.put("questionId",rs.getString(5));
-//                topicQuestionsData.put("question",rs.getString(6));
-//                topicQuestionsData.put("answer",rs.getString(7));
 
                     String courseNumber = rs.getString(1);
                     String courseName = rs.getString(2);
@@ -253,12 +206,7 @@ public class DbHelper {
                   ResultSet rs = statement.executeQuery(sql);
                   
             while (rs.next()) {
-//                questionOptionsData.put("topicId",rs.getString(1));
-//                questionOptionsData.put("questionId",rs.getString(2));
-//                questionOptionsData.put("answer",rs.getString(3));
-//                questionOptionsData.put("optionId",rs.getString(4));
-//                questionOptionsData.put("option",rs.getString(5));
-                
+
                 String questionId = rs.getString(2);
                 String answer = rs.getString(3);
                 String optionId = rs.getString(4);

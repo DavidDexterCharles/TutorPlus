@@ -112,89 +112,78 @@ public class Client {
 
 
                                     UserRole accountType = currentUser.getUserRole();
-//                                    System.out.println(currentUser.getFirstName());
-//                                    System.out.println(currentUser.getEmail());
-                                    try {
-                                        //==============================User Menu===========================
-                                        while (currentUser != null) {
-                                            option = -2;
-                                            String[] menuOptionList = {};
-                                            if (accountType.getUserRoleName().equalsIgnoreCase("student")) {
-                                                menuOptionList = studentMenuOptionList;
-                                            } else menuOptionList = tutorMenuOptionList;
-                                            for (String menuOption : menuOptionList) {
-                                                System.out.printf(menuOption);
-                                                Thread.sleep(65);
-                                            }
-                                            if (keyboardInput.hasNextInt()) {
-                                                option = keyboardInput.nextInt();
-                                            } else {
-                                                System.out.printf("Invalid input. Try again\n");
-                                                keyboardInput.next();
-                                                Thread.sleep(500);
-                                            }
-
-                                            switch (option) {
-
-                                                case 1:
-//                                                    System.out.println(currentUser.getUsername());
-                                                    String tutorialName = "My Math";
-                                                    String tutorialType = "Math";
-                                                    boolean isPublished = true;
-                                                    ArrayList<String> components = new ArrayList<>();
-                                                    components.add("courses");
-
-                                                    tutorPlusApplicationIntf.createTutorial(tutorialName,tutorialType,
-                                                            isPublished,components,currentUser.getUserSessionId());
-
-
-                                                    break;
-                                                case 2:
-                                                    System.out.println(currentUser.toString());
-
-
-                                                    break;
-                                                case 3:
-                                                    tutorPlusApplicationIntf.logout(currentUser.getUserSessionId());
-                                                    currentUser = null;
-                                                    break;
-                                                case 4:
-                                                    System.out.println(currentUser.toString());
-
-                                                    break;
-                                                case 5:
-                                                    System.out.println(currentUser.toString());
-
-                                                    break;
-                                                case 6:
-                                                    System.out.println("Enter topic id");
-                                                    input = keyboardInput.next();
-
-                                                    HashMap<String,QuestionOptions> result = 
-                                                            tutorPlusApplicationIntf.getQuestionOptions(input);
-//                                                    
-
-                                                    break;
-                                                case 7:
-                                                    System.out.println("Enter topic id");
-                                                    input = keyboardInput.next();                                                    
-                                                    HashMap<String,TopicQuestions> result1 = 
-                                                            tutorPlusApplicationIntf.getTopicQuestions(input);
-//                                                    
-
-                                                    break;
-                                                case -1:
-                                                    tutorPlusApplicationIntf.logout(username);
-                                                    System.exit(0);
-                                                    break;
-                                            }
+                                    //==============================User Menu===========================
+                                    while (currentUser != null) {
+                                        option = -2;
+                                        String[] menuOptionList = {};
+                                        if (accountType.getUserRoleName().equalsIgnoreCase("student")) {
+                                            menuOptionList = studentMenuOptionList;
+                                        } else menuOptionList = tutorMenuOptionList;
+                                        for (String menuOption : menuOptionList) {
+                                            System.out.printf(menuOption);
+                                            Thread.sleep(65);
                                         }
-                                    } catch (UserMgmtException e) {
-                                        System.out.println(e.getMessage());
-                                    } catch (TutorialMgmtException e) {
-                                        System.out.println(e.getMessage());
+                                        if (keyboardInput.hasNextInt()) {
+                                            option = keyboardInput.nextInt();
+                                        } else {
+                                            System.out.printf("Invalid input. Try again\n");
+                                            keyboardInput.next();
+                                            Thread.sleep(500);
+                                        }
+                                        
+                                        switch (option) {
+                                            
+                                            case 1:
+//                                                    System.out.println(currentUser.getUsername());
+                                                String tutorialName = "My Math";
+                                                String tutorialType = "Math";
+                                                boolean isPublished = true;
+                                                ArrayList<String> components = new ArrayList<>();
+                                                components.add("courses");
+                                                
+                                                
+                                                
+                                                break;
+                                            case 2:
+                                                System.out.println(currentUser.toString());
+                                                
+                                                
+                                                break;
+                                            case 3:
+                                                tutorPlusApplicationIntf.logout(currentUser.getUserSessionId());
+                                                currentUser = null;
+                                                break;
+                                            case 4:
+                                                System.out.println(currentUser.toString());
+                                                
+                                                break;
+                                            case 5:
+                                                System.out.println(currentUser.toString());
+                                                
+                                                break;
+                                            case 6:
+                                                System.out.println("Enter topic id");
+                                                input = keyboardInput.next();
+                                                
+                                                HashMap<String,QuestionOptions> result =
+                                                        tutorPlusApplicationIntf.getQuestionOptions(input);
+//
+                                                
+                                                break;
+                                            case 7:
+                                                System.out.println("Enter topic id");
+                                                input = keyboardInput.next();
+                                                HashMap<String,TopicQuestions> result1 =
+                                                        tutorPlusApplicationIntf.getTopicQuestions(input);
+//
+                                                
+                                                break;
+                                            case -1:
+                                                tutorPlusApplicationIntf.logout(username);
+                                                System.exit(0);
+                                                break;
+                                        }
                                     }
-                                    //==============================End of User Menu===========================
 
                                 } else {
                                     System.out.println("Invaild username and/or password.\n");

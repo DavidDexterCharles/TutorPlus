@@ -1,10 +1,6 @@
 package com.tutorplus.application_core;
 
-
-import com.tutorplus.permissions.TutorPlusPermission;
-import com.tutorplus.permissions.TutorialMgmtPermission;
 import com.tutorplus.permissions.UserMgmtPermission;
-import com.tutorplus.tutorial_components.TutorialComponentManager;
 import com.tutorplus.utils.*;
 
 import java.math.BigInteger;
@@ -14,7 +10,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -28,10 +23,7 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
     public static DbHelper dbHelper;
     public static UserManager userManager;
     public static UserFactory userFactory;
-    public static TutorialFactory tutorialFactory;
     public static UserSession userSession;
-    public static TutorialComponentManager tutorialComponentManager;
-    public static TutorialManager tutorialManager;
     public static TopicQuestionsOptionsManager topicQuestionsOptionsManager;
     public static int nextAvailUserId;
     public static int nextAvailTutorialId;
@@ -49,8 +41,6 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
         userFactory = new UserFactory();
         userSession = new UserSession();
         userManager = new UserManager();
-        tutorialComponentManager = new TutorialComponentManager();
-        tutorialManager = new TutorialManager();
         topicQuestionsOptionsManager = new TopicQuestionsOptionsManager();
 
     }
@@ -147,62 +137,6 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
         return false;
 
     }
-
-    @Override
-    public void createTutorial(String tutorialName,
-                               String tutorialType,boolean isPublished,
-                               ArrayList<String> tutorialComponents,
-                               String userSessionId) throws RemoteException, TutorialMgmtException, UserMgmtException {
-
-
-        //validates if user in logged in
-        String username = TutorPlusApplication.userSession.getUsername(userSessionId);
-
-        if (username != null) {
-
-            User user = TutorPlusApplication.userManager.findUser(username);
-            HashMap<String, TutorPlusPermission> tutorPlusPermissionList = user.getUserRole().getRolePermissions();
-            TutorialMgmtPermission tutorialMgmtPermissions = (TutorialMgmtPermission) tutorPlusPermissionList.get("tutorialMgmtPermissions");
-
-            if (tutorialMgmtPermissions.isCanCreate()) {//checks for tutorial create permissions on user.
-
-                System.out.println("valid pass");
-                tutorialManager.createTutorial(tutorialName,tutorialType,isPublished,tutorialComponents,user);
-
-
-            } else throw new TutorialMgmtException(TutorialMgmtException.CREATE_TUTORIAL);
-        }
-        else throw new UserMgmtException(UserMgmtException.LOGIN);
-
-    }
-
-
-    @Override
-    public void submitTutorial(Tutorial tutorial, String userSessionId) throws RemoteException, UserMgmtException {
-        String username = TutorPlusApplication.userSession.getUsername(userSessionId);
-        if (username != null) {
-
-
-        }
-        else throw new UserMgmtException(UserMgmtException.LOGIN);
-    }
-
-    @Override
-    public ArrayList<Tutorial> getTutorialList(String userSessionId) throws RemoteException, UserMgmtException {
-        String username = TutorPlusApplication.userSession.getUsername(userSessionId);
-        if (username != null) {
-
-            return null;
-
-        }
-        else throw new UserMgmtException(UserMgmtException.LOGIN);
-    }
-
-    @Override
-    public void updateATutorial(HashMap<String, Object> tutorialDetails,
-                                String userSessionId, String tutorialId) throws RemoteException{
-
-    }
      @Override
     public HashMap<String,QuestionOptions> getQuestionOptions(String topicId) throws RemoteException{
 //           System.out.println("fsafdsa");
@@ -243,17 +177,6 @@ public class TutorPlusApplication extends UnicastRemoteObject implements TutorPl
         }
         return result;
     }
-
-    @Override
-    public void removeATutorial(String tutorialId, String userSessionId) throws RemoteException {
-
-    }
-
-    @Override
-    public boolean publishAtutorial(String tutorialid, String userSessionId) throws RemoteException {
-        return false;
-    }
-
     @Override
     public HashMap<String, Object> getComponentRegisteredList(String userSessionId) throws RemoteException {
         return null;

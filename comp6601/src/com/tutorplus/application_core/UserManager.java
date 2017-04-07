@@ -1,6 +1,5 @@
 package com.tutorplus.application_core;
 
-import com.sun.xml.internal.fastinfoset.util.CharArray;
 import com.tutorplus.roles.StudentRole;
 import com.tutorplus.roles.TutorRole;
 import com.tutorplus.roles.UserRole;
